@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AV Video Editing Portfolio</title>
+    <meta
+      name="description"
+      content="Video editing portfolio by Andreas Vianna, featuring long-form edits, shorts, editing process, contact links, and Q&A."
+    />
+    <meta name="theme-color" content="#020202" />
+    <meta property="og:title" content="AV Video Editing Portfolio" />
+    <meta
+      property="og:description"
+      content="Where creativity meets precision. Explore long-form video edits, shorts, process, and contact links."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/av-logo.png" />
+    <link rel="icon" type="image/png" href="assets/av-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.youtube.com" />
+    <link rel="preconnect" href="https://i.ytimg.com" />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+    </noscript>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="is-loading">
+    <div class="site-noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Go to home">
+        <img src="assets/av-logo.png" alt="AV" />
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#home" data-i18n="nav.home">Home</a>
+        <a href="#about" data-i18n="nav.about">About Me</a>
+        <div class="nav-menu">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="jobs-menu">
+            <span data-i18n="nav.jobs">MY JOBS</span>
+            <span aria-hidden="true">v</span>
+          </button>
+          <div class="dropdown" id="jobs-menu">
+            <a href="#long-form" data-i18n="nav.longForm">Long-Form</a>
+            <a href="#shorts" data-i18n="nav.shorts">Shorts</a>
+          </div>
+        </div>
+        <a href="#faq" data-i18n="nav.qa">Q&A</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <div class="language-menu">
+          <button class="language-trigger" type="button" aria-expanded="false" aria-controls="language-options" aria-label="Choose language">
+            <span aria-hidden="true">◎</span>
+            <span class="language-code">EN</span>
+          </button>
+          <div class="language-options" id="language-options">
+            <button type="button" data-lang="en" aria-pressed="true">English</button>
+            <button type="button" data-lang="pt" aria-pressed="false">Portuguese</button>
+            <button type="button" data-lang="es" aria-pressed="false">Spanish</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section-fade" id="home">
+        <canvas class="hero-bg-video" id="hero-bg-video" aria-hidden="true"></canvas>
+        <div class="hero-scroll-fade" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Video Editor Portfolio</p>
+          <h1 class="typing-title" aria-label="Creativity, Precision, Pacing, Decoupage, Vision">
+            <span class="typing-word" id="typing-word">CREATIVITY.</span><span class="typing-cursor" aria-hidden="true"></span>
+          </h1>
+          <p class="hero-welcome" data-i18n="hero.welcome">Welcome to my editing portfolio. Where creativity meets precision.</p>
+        </div>
+      </section>
+
+      <section class="about section-fade" id="about" aria-labelledby="about-title">
+        <div class="about-copy">
+          <p class="eyebrow" data-i18n="about.eyebrow">About Me</p>
+          <h2 id="about-title" data-i18n="about.title">Meet Andreas,</h2>
+          <p data-i18n="about.p1">
+            I specialize in high-quality video editing with a strong focus on storytelling,
+            retention, sound design, visual impact, and detail. My workflow blends clean cuts,
+            modern transitions, color refinement, motion graphics, and final delivery for every
+            platform.
+          </p>
+          <p data-i18n="about.p2">
+            I have been editing for 6 years and work confidently with Adobe Premiere, After
+            Effects, Sony Vegas, and Media Encoder. Whether the project is a full YouTube episode
+            or a fast vertical short, I keep the edit smooth, clear, and built to hold attention.
+          </p>
+          <div class="tool-list" aria-label="Editing software">
+            <span>Adobe Premiere</span>
+            <span>After Effects</span>
+            <span>Sony Vegas</span>
+            <span>Media Encoder</span>
+          </div>
+        </div>
+        <figure class="portrait-frame">
+          <img src="assets/andreas-photo.jpeg" alt="Portrait of Andreas" />
+        </figure>
+      </section>
+
+      <section class="timeline section-fade" aria-labelledby="timeline-title">
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="timeline.eyebrow">Process</p>
+          <h2 id="timeline-title" data-i18n="timeline.title">A smooth edit timeline</h2>
+        </div>
+        <div class="editor-timeline" aria-label="Animated black and white editing timeline">
+          <div class="timeline-stage">
+            <div class="time-ruler" aria-hidden="true">
+              <span>00:00</span>
+              <span>01:30</span>
+              <span>03:00</span>
+              <span>04:30</span>
+              <span>06:00</span>
+              <span>07:30</span>
+              <span>09:00</span>
+              <span>10:30</span>
+            </div>
+            <div class="playhead" aria-hidden="true"></div>
+            <div class="track-row" data-track-type="video">
+              <button class="track-label" type="button" aria-pressed="false">V4</button>
+              <div class="track-lane">
+                <span class="clip video fx thumb-c c1">TRANSFORM</span>
+                <span class="clip video fx thumb-d c2">TRANSFORM</span>
+                <span class="clip video fx thumb-e c3">TRANSFORM</span>
+              </div>
+            </div>
+            <div class="track-row" data-track-type="video">
+              <button class="track-label" type="button" aria-pressed="false">V3</button>
+              <div class="track-lane">
+                <span class="clip video dark thumb-f c4">LEGENDS</span>
+                <span class="clip video dark thumb-a c5">LEGENDS</span>
+                <span class="clip video dark thumb-b c6">LEGENDS</span>
+                <span class="clip video dark thumb-c c7">LEGENDS</span>
+              </div>
+            </div>
+            <div class="track-row" data-track-type="video">
+              <button class="track-label" type="button" aria-pressed="false">V2</button>
+              <div class="track-lane">
+                <span class="clip video mid broll-preview-1 c8">GAMEPLAY</span>
+                <span class="clip video mid broll-preview-2 c9">GAMEPLAY</span>
+                <span class="clip video mid broll-preview-3 c10">GAMEPLAY</span>
+                <span class="clip video mid thumb-d c11">GAMEPLAY</span>
+              </div>
+            </div>
+            <div class="track-row main-row" data-track-type="video">
+              <button class="track-label" type="button" aria-pressed="false">V1</button>
+              <div class="track-lane">
+                <span class="clip video main minecraft-preview-1 c12">GAMEPLAY 2</span>
+                <span class="clip video main minecraft-preview-2 c13">GAMEPLAY 2</span>
+              </div>
+            </div>
+            <div class="track-row audio-row" data-track-type="audio">
+              <button class="track-label" type="button" aria-pressed="false">A2</button>
+              <div class="track-lane">
+                <span class="clip audio wave-pink c14">WHOOSH</span>
+                <span class="clip audio wave-blue c15">WHOOSH</span>
+                <span class="clip audio wave-yellow c16">RISE</span>
+                <span class="clip audio wave-brown c17">RISE</span>
+                <span class="clip audio c18">RISE</span>
+                <span class="clip audio c19">RISE</span>
+              </div>
+            </div>
+            <div class="track-row audio-row" data-track-type="audio">
+              <button class="track-label" type="button" aria-pressed="false">A1</button>
+              <div class="track-lane">
+                <span class="clip bed wave-purple">BACKGROUND MUSIC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="work section-fade" id="long-form" aria-labelledby="long-title">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow" data-i18n="work.eyebrow">Selected Work</p>
+            <h2 id="long-title" data-i18n="work.longTitle">Long-Form</h2>
+          </div>
+          <p data-i18n="work.longCopy">Horizontal edits with cinematic pacing, strong hooks, and clean visual flow.</p>
+        </div>
+        <div class="carousel-shell horizontal">
+          <div class="edge left"></div>
+          <div class="edge right"></div>
+          <div class="carousel-track" data-track="long-form">
+            <article class="video-card wide youtube-card" data-youtube="gicoX0Xk04M" data-start="12" data-title="Long-Form video 1"><img src="https://i.ytimg.com/vi/gicoX0Xk04M/hqdefault.jpg" alt="Long-Form video 1 thumbnail" loading="lazy" decoding="async" /></article>
+            <article class="video-card wide youtube-card" data-youtube="unkCxtvg-B4" data-start="52" data-title="Long-Form video 2"><img src="https://i.ytimg.com/vi/unkCxtvg-B4/hqdefault.jpg" alt="Long-Form video 2 thumbnail" loading="lazy" decoding="async" /></article>
+            <article class="video-card wide youtube-card" data-youtube="0gFONqX1Jt4" data-start="8" data-title="Long-Form video 3"><img src="https://i.ytimg.com/vi/0gFONqX1Jt4/hqdefault.jpg" alt="Long-Form video 3 thumbnail" loading="lazy" decoding="async" /></article>
+            <article class="video-card wide youtube-card" data-youtube="auXGEklHlgg" data-start="23" data-title="Long-Form video 4"><img src="https://i.ytimg.com/vi/auXGEklHlgg/hqdefault.jpg" alt="Long-Form video 4 thumbnail" loading="lazy" decoding="async" /></article>
+            <article class="video-card wide youtube-card" data-youtube="2Kk0CahL4yQ" data-start="13" data-title="Long-Form video 5"><img src="https://i.ytimg.com/vi/2Kk0CahL4yQ/hqdefault.jpg" alt="Long-Form video 5 thumbnail" loading="lazy" decoding="async" /></article>
+            <article class="video-card wide youtube-card" data-youtube="VPkyRs8d9SA" data-start="4" data-title="Long-Form video 6"><img src="https://i.ytimg.com/vi/VPkyRs8d9SA/hqdefault.jpg" alt="Long-Form video 6 thumbnail" loading="lazy" decoding="async" /></article>
+            <article class="video-card wide youtube-card" data-youtube="s-vmyDvOyVc" data-start="1" data-title="Long-Form video 7"><img src="https://i.ytimg.com/vi/s-vmyDvOyVc/hqdefault.jpg" alt="Long-Form video 7 thumbnail" loading="lazy" decoding="async" /></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="work section-fade" id="shorts" aria-labelledby="shorts-title">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow" data-i18n="shorts.eyebrow">Vertical Edits</p>
+            <h2 id="shorts-title" data-i18n="shorts.title">Shorts</h2>
+          </div>
+          <p data-i18n="shorts.copy">Fast vertical cuts made for retention, captions, impact frames, and replay value.</p>
+        </div>
+        <div class="carousel-shell vertical">
+          <div class="edge left"></div>
+          <div class="edge right"></div>
+          <div class="carousel-track reverse" data-track="shorts">
+            <article class="video-card tall youtube-card" data-youtube="48G_1dqb3jY" data-title="Buckshot Roulette BETA Multiplayer e SENSACIONAL!"><img src="https://i.ytimg.com/vi/48G_1dqb3jY/hqdefault.jpg" alt="Buckshot Roulette BETA Multiplayer e SENSACIONAL! thumbnail" loading="lazy" decoding="async" /></article>
+            <article class="video-card tall youtube-card" data-youtube="Sr3orvc0Cug" data-title="League of Brother's - Melhores momentos pt.4"><img src="https://i.ytimg.com/vi/Sr3orvc0Cug/hqdefault.jpg" alt="League of Brother's - Melhores momentos pt.4 thumbnail" loading="lazy" decoding="async" /></article>
+            <article class="video-card tall youtube-card" data-youtube="bHZLmx76-vk" data-title="Brother's Ring pt.2"><img src="https://i.ytimg.com/vi/bHZLmx76-vk/hqdefault.jpg" alt="Brother's Ring pt.2 thumbnail" loading="lazy" decoding="async" /></article>
+            <article class="video-card tall youtube-card" data-youtube="d6NCxM5XM58" data-title="CS2 Best Funny Moments"><img src="https://i.ytimg.com/vi/d6NCxM5XM58/hqdefault.jpg" alt="CS2 Best Funny Moments thumbnail" loading="lazy" decoding="async" /></article>
+            <article class="video-card tall youtube-card" data-youtube="fYfgd4OWnfs" data-title="Render Minecraft Music Edit"><img src="https://i.ytimg.com/vi/fYfgd4OWnfs/hqdefault.jpg" alt="Render Minecraft Music Edit thumbnail" loading="lazy" decoding="async" /></article>
+            <article class="video-card tall youtube-card" data-youtube="lpPojl2sk0w" data-title="Minecraft Render Shorts 2"><img src="https://i.ytimg.com/vi/lpPojl2sk0w/hqdefault.jpg" alt="Minecraft Render Shorts 2 thumbnail" loading="lazy" decoding="async" /></article>
+            <article class="video-card tall youtube-card" data-youtube="VZSabC5XGKk" data-title="Minecraft Render Video 3"><img src="https://i.ytimg.com/vi/VZSabC5XGKk/hqdefault.jpg" alt="Minecraft Render Video 3 thumbnail" loading="lazy" decoding="async" /></article>
+            <article class="video-card tall youtube-card" data-youtube="C4klXmIOeww" data-title="Minecraft Render Shorts 1"><img src="https://i.ytimg.com/vi/C4klXmIOeww/hqdefault.jpg" alt="Minecraft Render Shorts 1 thumbnail" loading="lazy" decoding="async" /></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq section-fade" id="faq" aria-labelledby="faq-title">
+        <div class="section-heading">
+          <p class="eyebrow faq-kicker" data-i18n="faq.eyebrow">FAQ'S</p>
+          <h2 id="faq-title" data-i18n="faq.title">Answers</h2>
+          <p data-i18n="faq.copy">Find answers to common questions about my editing process, services and workflow.</p>
+        </div>
+        <div class="faq-list">
+          <article class="faq-item is-open">
+            <button class="faq-question" type="button" aria-expanded="true">
+              <span data-i18n="faq.q1">What services do you provide?</span>
+              <span class="faq-icon" aria-hidden="true">x</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq.a1">I edit videos, both long and short, and I can also create thumbnails, but that is not my main focus.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span data-i18n="faq.q2">How do I start working with you?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq.a2">We can chat on any of my social media platforms so we can discuss your goals, vision, and how we can bring your project to life.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span data-i18n="faq.q3">What editing tools do you use?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq.a3">I work with Adobe Premiere, Adobe After Effects, Adobe Photoshop, Sony Vegas, and Media Encoder.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span data-i18n="faq.q4">How long does a project take?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq.a4">It depends on the size and complexity of your video. Longer videos can take 2-7 days, while short videos usually take 1-2 days.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span data-i18n="faq.q5">Do you provide revisions?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq.a5">Absolutely. My goal is to deliver the edit you are envisioning, so I offer two revision rounds to refine details and keep the project moving smoothly.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span data-i18n="faq.q6">What is your pricing structure?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="faq.a6">Pricing is handled individually according to complexity, duration, and delivery needs. Send me your idea and we can find an agreement that works for both of us.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact section-fade" id="contact" aria-labelledby="contact-title">
+        <div class="silver-smoke" aria-hidden="true"></div>
+        <p class="status"><span class="status-dot" aria-hidden="true"></span> <span class="status-text" data-i18n="contact.status">Available For Work</span></p>
+        <h2 id="contact-title" data-i18n="contact.title">Curious about what we can create together?</h2>
+        <div class="contact-links">
+          <a class="contact-icon" href="https://x.com/ViannaEnte36568" target="_blank" rel="noreferrer" aria-label="X">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.6 10.4 22.1 2h-1.8l-6.5 7.3L8.6 2h-6l7.9 11.1L2.6 22h1.8l6.9-7.8 5.5 7.8h6L14.6 10.4Zm-2.4 2.7-.8-1.1L5 3.3h2.7l5.1 7.1.8 1.1 6.7 9.2h-2.7l-5.4-7.6Z"/></svg>
+          </a>
+          <a class="contact-icon" href="mailto:viannafxeditor@gmail.com" aria-label="Gmail">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.8 5h16.4c1 0 1.8.8 1.8 1.8v10.4c0 1-.8 1.8-1.8 1.8H3.8c-1 0-1.8-.8-1.8-1.8V6.8C2 5.8 2.8 5 3.8 5Zm.1 2.3v.4l8.1 5.2 8.1-5.2v-.4l-8.1 5.1-8.1-5.1Zm0 2.7v6.7h16.2V10l-8.1 5.1L3.9 10Z"/></svg>
+          </a>
+          <a class="contact-icon" href="https://discord.com/users/1500901931101716725" target="_blank" rel="noreferrer" aria-label="Discord">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.1 5.2A16.4 16.4 0 0 0 15 4l-.2.4c1.5.4 2.2 1 2.2 1s-1.8-1-5-1-5 1-5 1 .8-.6 2.3-1L9 4a16.4 16.4 0 0 0-4.1 1.2C2.3 9 1.6 12.7 2 16.4A16.5 16.5 0 0 0 7 19l1-1.4c-.6-.2-1.2-.5-1.7-.8l.4-.3c3.3 1.5 7 1.5 10.6 0l.4.3c-.5.3-1.1.6-1.7.8l1 1.4a16.5 16.5 0 0 0 5-2.6c.5-4.3-.7-8-2.9-11.2ZM8.8 14.4c-.9 0-1.6-.8-1.6-1.8s.7-1.8 1.6-1.8 1.6.8 1.6 1.8-.7 1.8-1.6 1.8Zm6.4 0c-.9 0-1.6-.8-1.6-1.8s.7-1.8 1.6-1.8 1.6.8 1.6 1.8-.7 1.8-1.6 1.8Z"/></svg>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <div class="video-modal" id="video-modal" aria-hidden="true" role="dialog" aria-label="YouTube video player">
+      <div class="video-modal-frame">
+        <div id="youtube-modal-player"></div>
+      </div>
+    </div>
+
+    <footer>
+      <span data-i18n="footer.brand">AV Portfolio</span>
+      <span data-i18n="footer.rights">All rights reserved, &copy;2026</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
