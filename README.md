@@ -1,41 +1,24 @@
-# AV Video Editing Portfolio
+# VIANNA Portfolio
 
-Static portfolio website for a video editor, built with plain HTML, CSS, and JavaScript.
+React/Vite portfolio and cinematic scene library for https://www.viannafx.media/.
 
-## Files to Upload
+## Deployment
 
-Upload these items to your GitHub repository:
+GitHub Pages serves the application. Video, thumbnail and poster files are served from a separate HTTPS media origin without recompressing the originals. The media catalog is about 9.94 GB and cannot be included in the Pages artifact.
 
-- `index.html`
-- `styles.css`
-- `script.js`
-- `assets/`
-- `.nojekyll`
-- `404.html`
-- `robots.txt`
+1. Upload all files listed in `deploy/media-manifest.json` to the chosen media host, preserving the `media/` prefix.
+2. Set the repository Actions variable `MEDIA_ORIGIN` to the actual HTTPS origin, without a path.
+3. Keep the custom domain `www.viannafx.media` and Enforce HTTPS. Change the Pages build source to GitHub Actions only when media and repository access are ready.
+4. Merge the prepared branch into `main`. The workflow builds, verifies that every media file is available, and deploys the Pages artifact.
 
-The `screenshots/` folder is only for previews and does not need to be uploaded.
+`npm run build:pages` requires `VITE_MEDIA_ORIGIN`. The build includes direct access to `/cinematic/` and retains `CNAME`. The site rejects missing or insecure media-host configuration rather than publishing broken video links.
 
-## GitHub Pages Setup
+## Local development
 
-1. Create a new repository on GitHub.
-2. Upload the portfolio files listed above.
-3. Go to `Settings` > `Pages`.
-4. In `Build and deployment`, choose:
-   - Source: `Deploy from a branch`
-   - Branch: `main`
-   - Folder: `/ (root)`
-5. Click `Save`.
+Run `npm ci` and `npm run dev`. Restore the `public/media/` folder from the original local project for local media playback. Large originals, build output, environment secrets and dependencies are intentionally excluded from Git.
 
-After GitHub finishes publishing, your portfolio will be available at:
+The old site remains in Git history at commit `83706b56ebfb4f7a05de47a33bd8c77361740737`. No force push or history replacement is needed.
 
-```text
-https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/
-```
+## Cloudflare R2 storage budget
 
-## Notes
-
-- The site is fully static, so it does not need Node.js, a backend, or a build step.
-- YouTube embeds work best when the site is served through `https://`, which GitHub Pages provides automatically.
-- If you use a custom domain later, add a `CNAME` file with only your domain name inside it.
-
+The selected 384 media files total 9,936,935,508 bytes. Use Standard storage. The site keeps 18 scenes in each Fallout game, with Home and process footage intact. `build:pages` rejects a media manifest that reaches 10,000,000,000 bytes. Upload only the manifest entries, preserving their `media/` paths. The local recovery archive is not part of the site. Configure CORS from `deploy/r2-cors.json`. Other account storage and R2 operation quotas are separate.

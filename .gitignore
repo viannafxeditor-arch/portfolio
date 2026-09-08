@@ -1,0 +1,10 @@
+node_modules/
+dist/
+public/media/
+*.log
+.env
+.env.*
+!.env.example
+
+.tools/
+__pycache__/

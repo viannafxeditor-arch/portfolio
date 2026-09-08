@@ -1,0 +1,134 @@
+{
+  "storageBudgetBytes": 10000000000,
+  "beforeBytes": 10330755595,
+  "afterBytes": 9936935508,
+  "removedBytes": 393820087,
+  "remainingScenes": {
+    "fallout-4": 18,
+    "fallout-76": 18
+  },
+  "removedClips": [
+    {
+      "id": "fallout-4-ambient-417",
+      "title": "Ambient 417",
+      "sourceFilename": "Ambient 417.mp4",
+      "videoSrc": "/media/fallout-4-ambient-417-r0457840b0b.mp4",
+      "poster": "/media/fallout-4-ambient-417-r0457840b0b-center-35.jpg",
+      "thumb": "/media/fallout-4-ambient-417-r0457840b0b-center-35.jpg",
+      "width": 1920,
+      "height": 1080,
+      "fps": 60.0,
+      "hasAudio": false,
+      "game": "fallout-4",
+      "previousSequence": 14
+    },
+    {
+      "id": "fallout-4-characters-88",
+      "title": "Characters 88",
+      "sourceFilename": "Characters 88.mp4",
+      "videoSrc": "/media/fallout-4-characters-88-r57b1b02f63.mp4",
+      "poster": "/media/fallout-4-characters-88-r57b1b02f63-center-35.jpg",
+      "thumb": "/media/fallout-4-characters-88-r57b1b02f63-center-35.jpg",
+      "width": 1920,
+      "height": 1080,
+      "fps": 60.0,
+      "hasAudio": false,
+      "game": "fallout-4",
+      "previousSequence": 18
+    },
+    {
+      "id": "fallout-76-ambient-7",
+      "title": "Ambient 7",
+      "sourceFilename": "Ambient 7.mp4",
+      "videoSrc": "/media/fallout-76-ambient-7-rfdfd16dd76.mp4",
+      "poster": "/media/fallout-76-ambient-7-rfdfd16dd76-center-35.jpg",
+      "thumb": "/media/fallout-76-ambient-7-rfdfd16dd76-center-35.jpg",
+      "width": 1920,
+      "height": 1080,
+      "fps": 60.0,
+      "hasAudio": false,
+      "game": "fallout-76",
+      "previousSequence": 11
+    },
+    {
+      "id": "fallout-76-ambient-9",
+      "title": "Ambient 9",
+      "sourceFilename": "Ambient 9.mp4",
+      "videoSrc": "/media/fallout-76-ambient-9-r19cae9f6c8.mp4",
+      "poster": "/media/fallout-76-ambient-9-r19cae9f6c8-center-35.jpg",
+      "thumb": "/media/fallout-76-ambient-9-r19cae9f6c8-center-35.jpg",
+      "width": 1920,
+      "height": 1080,
+      "fps": 60.0,
+      "hasAudio": false,
+      "game": "fallout-76",
+      "previousSequence": 12
+    }
+  ],
+  "removedFiles": [
+    {
+      "key": "media/backgrounds/fallout-4-ambient-417-r0457840b0b-1920-v2.mp4",
+      "bytes": 8296012
+    },
+    {
+      "key": "media/backgrounds/fallout-4-characters-88-r57b1b02f63-1920-v2.mp4",
+      "bytes": 8221441
+    },
+    {
+      "key": "media/backgrounds/fallout-76-ambient-7-rfdfd16dd76-1920-v2.mp4",
+      "bytes": 8190810
+    },
+    {
+      "key": "media/backgrounds/fallout-76-ambient-9-r19cae9f6c8-1920-v2.mp4",
+      "bytes": 8281279
+    },
+    {
+      "key": "media/fallout-4-ambient-417-r0457840b0b-center-35.jpg",
+      "bytes": 176952
+    },
+    {
+      "key": "media/fallout-4-ambient-417-r0457840b0b.mp4",
+      "bytes": 82915633
+    },
+    {
+      "key": "media/fallout-4-characters-88-r57b1b02f63-center-35.jpg",
+      "bytes": 192976
+    },
+    {
+      "key": "media/fallout-4-characters-88-r57b1b02f63.mp4",
+      "bytes": 78312755
+    },
+    {
+      "key": "media/fallout-76-ambient-7-rfdfd16dd76-center-35.jpg",
+      "bytes": 219144
+    },
+    {
+      "key": "media/fallout-76-ambient-7-rfdfd16dd76.mp4",
+      "bytes": 103870709
+    },
+    {
+      "key": "media/fallout-76-ambient-9-r19cae9f6c8-center-35.jpg",
+      "bytes": 185319
+    },
+    {
+      "key": "media/fallout-76-ambient-9-r19cae9f6c8.mp4",
+      "bytes": 94803513
+    },
+    {
+      "key": "media/thumbnails/fallout-4-ambient-417-r0457840b0b-center-35-640.webp",
+      "bytes": 35586
+    },
+    {
+      "key": "media/thumbnails/fallout-4-characters-88-r57b1b02f63-center-35-640.webp",
+      "bytes": 37058
+    },
+    {
+      "key": "media/thumbnails/fallout-76-ambient-7-rfdfd16dd76-center-35-640.webp",
+      "bytes": 44340
+    },
+    {
+      "key": "media/thumbnails/fallout-76-ambient-9-r19cae9f6c8-center-35-640.webp",
+      "bytes": 36560
+    }
+  ]
+}

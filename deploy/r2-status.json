@@ -1,0 +1,28 @@
+{
+  "accountId": "645c2f26259019a7d0cd8ad5008d7db0",
+  "bucket": "vianna-portfolio-media",
+  "storageClass": "Standard",
+  "mediaBytes": 9936935508,
+  "storageCeilingBytes": 10000000000,
+  "status": "384 R2 objects verified: 9,936,935,508 bytes. All 384 public HTTPS assets verified with exact Content-Length. Ready for GitHub Pages deployment.",
+  "customDomain": "media.viannafx.media",
+  "customDomainStatus": "Active and Enabled: media.viannafx.media. HTTPS, browser CORS, and byte-range playback verified.",
+  "initialAccountBytes": 0,
+  "verifiedObjectCount": 384,
+  "verifiedBytes": 9936935508,
+  "nameservers": [
+    "blair.ns.cloudflare.com",
+    "rajeev.ns.cloudflare.com"
+  ],
+  "domainRegistrar": "GoDaddy",
+  "dnsStatus": "Cloudflare zone active. GoDaddy nameservers changed to blair.ns.cloudflare.com and rajeev.ns.cloudflare.com.",
+  "githubStatus": "Authenticated; MEDIA_ORIGIN configured. Ready for Pages workflow publication.",
+  "pagesBuildStatus": "Built and tested with https://media.viannafx.media. Public media validation required before publication.",
+  "pullRequest": "https://github.com/viannafxeditor-arch/portfolio/pull/1",
+  "publicValidation": {
+    "assetCount": 384,
+    "origin": "https://media.viannafx.media",
+    "byteRangeStatus": 206,
+    "corsOrigin": "https://www.viannafx.media"
+  }
+}
