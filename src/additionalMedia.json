@@ -1,0 +1,150 @@
+{
+  "shorts": [
+    {
+      "id": "short-league-1",
+      "title": "League of Brother's - Melhores momentos pt.1  #momentos #multiplayer#leagueofleg",
+      "sourceFilename": "League of Brother's - Melhores momentos pt.1  #momentos #multiplayer#leagueofleg.webm",
+      "videoSrc": "/media/short-league-1.webm",
+      "poster": "/media/short-league-1.jpg",
+      "thumb": "/media/short-league-1.jpg",
+      "fps": 60.0,
+      "width": 1080,
+      "height": 1920,
+      "hasAudio": true,
+      "format": "shorts",
+      "orientation": "portrait"
+    },
+    {
+      "id": "short-league-4",
+      "title": "League of Brother's - Melhores momentos pt.4 #momentos #multiplayer#leagueoflege",
+      "sourceFilename": "League of Brother's - Melhores momentos pt.4 #momentos #multiplayer#leagueoflege.webm",
+      "videoSrc": "/media/short-league-4.webm",
+      "poster": "/media/short-league-4.jpg",
+      "thumb": "/media/short-league-4.jpg",
+      "fps": 60.0,
+      "width": 1080,
+      "height": 1920,
+      "hasAudio": true,
+      "format": "shorts",
+      "orientation": "portrait"
+    },
+    {
+      "id": "short-ring-1",
+      "title": "Brother's Ring🤨 pt.1  #momentos #eldenring #multiplayer",
+      "sourceFilename": "Brother's Ring🤨 pt.1  #momentos #eldenring #multiplayer.webm",
+      "videoSrc": "/media/short-ring-1.webm",
+      "poster": "/media/short-ring-1.jpg",
+      "thumb": "/media/short-ring-1.jpg",
+      "fps": 60.0,
+      "width": 1080,
+      "height": 1920,
+      "hasAudio": true,
+      "format": "shorts",
+      "orientation": "portrait"
+    },
+    {
+      "id": "short-ring-2",
+      "title": "Brother's Ring🤨 pt.2 #momentos #eldenring #multiplayer",
+      "sourceFilename": "Brother's Ring🤨 pt.2 #momentos #eldenring #multiplayer.webm",
+      "videoSrc": "/media/short-ring-2.webm",
+      "poster": "/media/short-ring-2.jpg",
+      "thumb": "/media/short-ring-2.jpg",
+      "fps": 60.0,
+      "width": 1080,
+      "height": 1920,
+      "hasAudio": true,
+      "format": "shorts",
+      "orientation": "portrait"
+    },
+    {
+      "id": "short-ring-3",
+      "title": "Brother's Ring🤨 pt.3 #momentos #eldenring #multiplayer",
+      "sourceFilename": "Brother's Ring🤨 pt.3 #momentos #eldenring #multiplayer.webm",
+      "videoSrc": "/media/short-ring-3.webm",
+      "poster": "/media/short-ring-3.jpg",
+      "thumb": "/media/short-ring-3.jpg",
+      "fps": 60.0,
+      "width": 1080,
+      "height": 1920,
+      "hasAudio": true,
+      "format": "shorts",
+      "orientation": "portrait"
+    },
+    {
+      "id": "short-buckshot",
+      "title": "Buckshot Roulette BETA Multiplayer é SENSACIONAL! 💀 #buckshotroulette #multiplay",
+      "sourceFilename": "Buckshot Roulette BETA Multiplayer é SENSACIONAL! 💀 #buckshotroulette #multiplay.webm",
+      "videoSrc": "/media/short-buckshot.webm",
+      "poster": "/media/short-buckshot.jpg",
+      "thumb": "/media/short-buckshot.jpg",
+      "fps": 60.0,
+      "width": 1080,
+      "height": 1920,
+      "hasAudio": true,
+      "format": "shorts",
+      "orientation": "portrait"
+    }
+  ],
+  "fallout76": [
+    {
+      "id": "fallout76-ambient-23",
+      "title": "Ambient 23",
+      "sourceFilename": "Ambient 23.mp4",
+      "videoSrc": "/media/fallout76-ambient-23.mp4",
+      "poster": "/media/fallout76-ambient-23.jpg",
+      "thumb": "/media/fallout76-ambient-23.jpg",
+      "fps": 60.0,
+      "width": 1920,
+      "height": 1080,
+      "hasAudio": false
+    },
+    {
+      "id": "fallout76-ambient-8",
+      "title": "Ambient 8",
+      "sourceFilename": "Ambient 8.mp4",
+      "videoSrc": "/media/fallout76-ambient-8.mp4",
+      "poster": "/media/fallout76-ambient-8.jpg",
+      "thumb": "/media/fallout76-ambient-8.jpg",
+      "fps": 60.0,
+      "width": 1920,
+      "height": 1080,
+      "hasAudio": false
+    },
+    {
+      "id": "fallout76-ambient-18",
+      "title": "Ambient 18",
+      "sourceFilename": "Ambient 18.mp4",
+      "videoSrc": "/media/fallout76-ambient-18.mp4",
+      "poster": "/media/fallout76-ambient-18.jpg",
+      "thumb": "/media/fallout76-ambient-18.jpg",
+      "fps": 60.0,
+      "width": 1920,
+      "height": 1080,
+      "hasAudio": false
+    },
+    {
+      "id": "fallout76-ambient-19",
+      "title": "Ambient 19",
+      "sourceFilename": "Ambient 19.mp4",
+      "videoSrc": "/media/fallout76-ambient-19.mp4",
+      "poster": "/media/fallout76-ambient-19.jpg",
+      "thumb": "/media/fallout76-ambient-19.jpg",
+      "fps": 60.0,
+      "width": 1920,
+      "height": 1080,
+      "hasAudio": false
+    },
+    {
+      "id": "fallout76-ambient-20",
+      "title": "Ambient 20",
+      "sourceFilename": "Ambient 20.mp4",
+      "videoSrc": "/media/fallout76-ambient-20.mp4",
+      "poster": "/media/fallout76-ambient-20.jpg",
+      "thumb": "/media/fallout76-ambient-20.jpg",
+      "fps": 60.0,
+      "width": 1920,
+      "height": 1080,
+      "hasAudio": false
+    }
+  ]
+}

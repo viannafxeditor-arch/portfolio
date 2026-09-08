@@ -1,0 +1,154 @@
+{
+  "cyberpunk": [
+    {
+      "id": "cyberpunk-20260906-14534933-00000843",
+      "title": "Cyberpunk 2077 2026.09.06 - 14.53.49.33_00000843",
+      "sourceFilename": "Cyberpunk 2077 2026.09.06 - 14.53.49.33_00000843.mp4",
+      "videoSrc": "/media/cyberpunk-20260906-14534933-00000843.mp4",
+      "poster": "/media/cyberpunk-20260906-14534933-00000843-center-35.jpg",
+      "thumb": "/media/cyberpunk-20260906-14534933-00000843-center-35.jpg",
+      "width": 3840,
+      "height": 2160,
+      "fps": 59.94005994005994,
+      "hasAudio": false
+    },
+    {
+      "id": "cyberpunk-20260906-15015838-00000133",
+      "title": "Cyberpunk 2077 2026.09.06 - 15.01.58.38_00000133",
+      "sourceFilename": "Cyberpunk 2077 2026.09.06 - 15.01.58.38_00000133.mp4",
+      "videoSrc": "/media/cyberpunk-20260906-15015838-00000133.mp4",
+      "poster": "/media/cyberpunk-20260906-15015838-00000133-center-35.jpg",
+      "thumb": "/media/cyberpunk-20260906-15015838-00000133-center-35.jpg",
+      "width": 3840,
+      "height": 2160,
+      "fps": 57.0,
+      "hasAudio": false
+    },
+    {
+      "id": "cyberpunk-20260906-15022139-00000038",
+      "title": "Cyberpunk 2077 2026.09.06 - 15.02.21.39_00000038",
+      "sourceFilename": "Cyberpunk 2077 2026.09.06 - 15.02.21.39_00000038.mp4",
+      "videoSrc": "/media/cyberpunk-20260906-15022139-00000038.mp4",
+      "poster": "/media/cyberpunk-20260906-15022139-00000038-center-35.jpg",
+      "thumb": "/media/cyberpunk-20260906-15022139-00000038-center-35.jpg",
+      "width": 3840,
+      "height": 2160,
+      "fps": 57.0,
+      "hasAudio": false
+    }
+  ],
+  "red-dead-redemption-2": [
+    {
+      "id": "rdr2-1",
+      "title": "RDR 2 #1_00000271",
+      "sourceFilename": "RDR 2 #1_00000271.mp4",
+      "videoSrc": "/media/rdr2-1-r20260906-00000271.mp4",
+      "poster": "/media/rdr2-1-r20260906-00000271-center-35.jpg",
+      "thumb": "/media/rdr2-1-r20260906-00000271-center-35.jpg",
+      "width": 3840,
+      "height": 2160,
+      "fps": 60.0,
+      "hasAudio": false
+    },
+    {
+      "id": "rdr2-3",
+      "title": "RDR 2 #3_00000656",
+      "sourceFilename": "RDR 2 #3_00000656.mp4",
+      "videoSrc": "/media/rdr2-3-r20260906-00000656.mp4",
+      "poster": "/media/rdr2-3-r20260906-00000656-center-35.jpg",
+      "thumb": "/media/rdr2-3-r20260906-00000656-center-35.jpg",
+      "width": 3840,
+      "height": 2160,
+      "fps": 60.0,
+      "hasAudio": false
+    },
+    {
+      "id": "rdr2-20260906-15441445-00000167",
+      "title": "Red Dead Redemption 2 2026.09.06 - 15.44.14.45_00000167",
+      "sourceFilename": "Red Dead Redemption 2 2026.09.06 - 15.44.14.45_00000167.mp4",
+      "videoSrc": "/media/rdr2-20260906-15441445-00000167.mp4",
+      "poster": "/media/rdr2-20260906-15441445-00000167-center-35.jpg",
+      "thumb": "/media/rdr2-20260906-15441445-00000167-center-35.jpg",
+      "width": 3840,
+      "height": 2160,
+      "fps": 60.0,
+      "hasAudio": false
+    }
+  ],
+  "fallout-4": [
+    {
+      "id": "process-fallout-4-gameplay-13",
+      "title": "Gameplay 13",
+      "sourceFilename": "Gameplay 13.mp4",
+      "videoSrc": "/media/process-fallout-4-gameplay-13.mp4",
+      "poster": "/media/process-fallout-4-gameplay-13-center-35.jpg",
+      "thumb": "/media/process-fallout-4-gameplay-13-center-35.jpg",
+      "width": 1920,
+      "height": 1080,
+      "fps": 60.0,
+      "hasAudio": false
+    },
+    {
+      "id": "process-fallout-4-gameplay-24",
+      "title": "Gameplay 24",
+      "sourceFilename": "Gameplay 24.mp4",
+      "videoSrc": "/media/process-fallout-4-gameplay-24.mp4",
+      "poster": "/media/process-fallout-4-gameplay-24-center-35.jpg",
+      "thumb": "/media/process-fallout-4-gameplay-24-center-35.jpg",
+      "width": 1920,
+      "height": 1080,
+      "fps": 60.0,
+      "hasAudio": true
+    },
+    {
+      "id": "process-fallout-4-gameplay-11",
+      "title": "Gameplay 11",
+      "sourceFilename": "Gameplay 11.mp4",
+      "videoSrc": "/media/process-fallout-4-gameplay-11.mp4",
+      "poster": "/media/process-fallout-4-gameplay-11-center-35.jpg",
+      "thumb": "/media/process-fallout-4-gameplay-11-center-35.jpg",
+      "width": 1920,
+      "height": 1080,
+      "fps": 60.0,
+      "hasAudio": false
+    }
+  ],
+  "fallout-76": [
+    {
+      "id": "process-fallout-76-ambient-25",
+      "title": "Ambient 25",
+      "sourceFilename": "Ambient 25.mp4",
+      "videoSrc": "/media/process-fallout-76-ambient-25.mp4",
+      "poster": "/media/process-fallout-76-ambient-25-center-35.jpg",
+      "thumb": "/media/process-fallout-76-ambient-25-center-35.jpg",
+      "width": 1920,
+      "height": 1080,
+      "fps": 60.0,
+      "hasAudio": false
+    },
+    {
+      "id": "process-fallout-76-ambient-22",
+      "title": "Ambient 22",
+      "sourceFilename": "Ambient 22.mp4",
+      "videoSrc": "/media/process-fallout-76-ambient-22.mp4",
+      "poster": "/media/process-fallout-76-ambient-22-center-35.jpg",
+      "thumb": "/media/process-fallout-76-ambient-22-center-35.jpg",
+      "width": 1920,
+      "height": 1080,
+      "fps": 60.0,
+      "hasAudio": false
+    },
+    {
+      "id": "process-fallout-76-ambient-24",
+      "title": "Ambient 24",
+      "sourceFilename": "Ambient 24.mp4",
+      "videoSrc": "/media/process-fallout-76-ambient-24.mp4",
+      "poster": "/media/process-fallout-76-ambient-24-center-35.jpg",
+      "thumb": "/media/process-fallout-76-ambient-24-center-35.jpg",
+      "width": 1920,
+      "height": 1080,
+      "fps": 60.0,
+      "hasAudio": false
+    }
+  ]
+}

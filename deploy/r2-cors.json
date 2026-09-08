@@ -1,0 +1,23 @@
+[
+  {
+    "AllowedOrigins": [
+      "https://www.viannafx.media",
+      "https://viannafx.media",
+      "http://127.0.0.1:5173"
+    ],
+    "AllowedMethods": [
+      "GET",
+      "HEAD"
+    ],
+    "AllowedHeaders": [
+      "Range"
+    ],
+    "ExposeHeaders": [
+      "Content-Length",
+      "Content-Range",
+      "Accept-Ranges",
+      "ETag"
+    ],
+    "MaxAgeSeconds": 86400
+  }
+]

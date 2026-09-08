@@ -1,0 +1,56 @@
+{
+  "fallout-4": {
+    "title": "Fallout 4",
+    "cover": "/media/covers/fallout-4.jpg",
+    "source": "https://store.steampowered.com/app/377160/",
+    "imageSource": "https://cdn.akamai.steamstatic.com/steam/apps/377160/library_600x900.jpg"
+  },
+  "fallout-76": {
+    "title": "Fallout 76",
+    "cover": "/media/covers/fallout-76.jpg",
+    "source": "https://store.steampowered.com/app/1151340/",
+    "imageSource": "https://cdn.akamai.steamstatic.com/steam/apps/1151340/library_600x900.jpg"
+  },
+  "cyberpunk": {
+    "title": "Cyberpunk 2077",
+    "cover": "/media/covers/cyberpunk.jpg",
+    "source": "https://store.steampowered.com/app/1091500/",
+    "imageSource": "https://cdn.akamai.steamstatic.com/steam/apps/1091500/library_600x900.jpg"
+  },
+  "dark-souls": {
+    "title": "DARK SOULS\u2122: REMASTERED",
+    "cover": "/media/covers/dark-souls.jpg",
+    "source": "https://store.steampowered.com/app/570940/",
+    "imageSource": "https://cdn.akamai.steamstatic.com/steam/apps/570940/library_600x900.jpg"
+  },
+  "elden-ring": {
+    "title": "ELDEN RING",
+    "cover": "/media/covers/elden-ring.jpg",
+    "source": "https://store.steampowered.com/app/1245620/",
+    "imageSource": "https://cdn.akamai.steamstatic.com/steam/apps/1245620/library_600x900.jpg"
+  },
+  "the-last-of-us-1": {
+    "title": "The Last of Us\u2122 Part I",
+    "cover": "/media/covers/the-last-of-us-1.jpg",
+    "source": "https://store.steampowered.com/app/1888930/",
+    "imageSource": "https://cdn.akamai.steamstatic.com/steam/apps/1888930/library_600x900.jpg"
+  },
+  "the-last-of-us-2": {
+    "title": "The Last of Us\u2122 Part II Remastered",
+    "cover": "/media/covers/the-last-of-us-2.jpg",
+    "source": "https://store.steampowered.com/app/2531310/",
+    "imageSource": "https://cdn.akamai.steamstatic.com/steam/apps/2531310/library_600x900.jpg"
+  },
+  "red-dead-redemption-2": {
+    "title": "Red Dead Redemption 2",
+    "cover": "/media/covers/red-dead-redemption-2.jpg",
+    "source": "https://store.steampowered.com/app/1174180/",
+    "imageSource": "https://cdn.akamai.steamstatic.com/steam/apps/1174180/library_600x900.jpg"
+  },
+  "minecraft": {
+    "title": "Minecraft",
+    "cover": "/media/covers/minecraft.jpg",
+    "source": "https://www.minecraft.net/en-us/article/key-art-update",
+    "imageSource": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/NewKeyArt_Header.jpg"
+  }
+}
