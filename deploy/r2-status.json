@@ -4,9 +4,9 @@
   "storageClass": "Standard",
   "mediaBytes": 9936935508,
   "storageCeilingBytes": 10000000000,
-  "status": "Upload verified under 10 GB. New source pushed to GitHub preparation branch. Production replacement pending Cloudflare DNS activation and public media verification.",
+  "status": "384 R2 objects verified: 9,936,935,508 bytes. All 384 public HTTPS assets verified with exact Content-Length. Ready for GitHub Pages deployment.",
   "customDomain": "media.viannafx.media",
-  "customDomainStatus": "Not connected yet. R2 Connect domain returned to preview without confirmation while zone awaits activation. Recheck existing domain before any retry.",
+  "customDomainStatus": "Active and Enabled: media.viannafx.media. HTTPS, browser CORS, and byte-range playback verified.",
   "initialAccountBytes": 0,
   "verifiedObjectCount": 384,
   "verifiedBytes": 9936935508,
@@ -15,8 +15,14 @@
     "rajeev.ns.cloudflare.com"
   ],
   "domainRegistrar": "GoDaddy",
-  "dnsStatus": "GoDaddy identity verification completed. Registrar now lists blair.ns.cloudflare.com and rajeev.ns.cloudflare.com. Cloudflare activation pending DNS propagation.",
-  "githubStatus": "Authenticated. MEDIA_ORIGIN configured. Preparation branch pushed and draft PR #1 opened. main and legacy Pages deployment unchanged; HTTPS remains enforced.",
+  "dnsStatus": "Cloudflare zone active. GoDaddy nameservers changed to blair.ns.cloudflare.com and rajeev.ns.cloudflare.com.",
+  "githubStatus": "Authenticated; MEDIA_ORIGIN configured. Ready for Pages workflow publication.",
   "pagesBuildStatus": "Built and tested with https://media.viannafx.media. Public media validation required before publication.",
-  "pullRequest": "https://github.com/viannafxeditor-arch/portfolio/pull/1"
+  "pullRequest": "https://github.com/viannafxeditor-arch/portfolio/pull/1",
+  "publicValidation": {
+    "assetCount": 384,
+    "origin": "https://media.viannafx.media",
+    "byteRangeStatus": 206,
+    "corsOrigin": "https://www.viannafx.media"
+  }
 }
