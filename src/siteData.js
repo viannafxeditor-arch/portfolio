@@ -76,7 +76,7 @@ export const siteCopy = {
       title: "Stories shape how we see.",
       paragraphs: [
         "I’m a video editor focused on storytelling, rhythm, and audience connection.",
-        "My approach combines creative editing with principles from Media Psychology—attention, perception, emotion, pacing, narrative structure, and retention.",
+        "My approach combines creative editing with principles from Media Psychology, including attention, perception, emotion, pacing, narrative structure, and retention.",
         "Every cut has a purpose: to build tension, create impact, give a moment space, or guide attention. I edit to make stories felt, understood, and remembered.",
       ],
     },
@@ -128,7 +128,7 @@ export const siteCopy = {
       title: "Histórias moldam a forma como vemos.",
       paragraphs: [
         "Sou editor de vídeo focado em narrativa, ritmo e conexão com o público.",
-        "Minha abordagem combina edição criativa com princípios da Psicologia da Mídia—atenção, percepção, emoção, ritmo, estrutura narrativa e retenção.",
+        "Minha abordagem combina edição criativa com princípios da Psicologia da Mídia, como atenção, percepção, emoção, ritmo, estrutura narrativa e retenção.",
         "Cada corte tem um propósito: criar tensão, gerar impacto, dar espaço a um momento ou guiar a atenção. Edito para que histórias sejam sentidas, compreendidas e lembradas.",
       ],
     },
@@ -180,7 +180,7 @@ export const siteCopy = {
       title: "Las historias moldean nuestra mirada.",
       paragraphs: [
         "Soy editor de video especializado en narrativa, ritmo y conexión con la audiencia.",
-        "Mi enfoque combina la edición creativa con principios de Psicología de los Medios—atención, percepción, emoción, ritmo, estructura narrativa y retención.",
+        "Mi enfoque combina la edición creativa con principios de Psicología de los Medios, como atención, percepción, emoción, ritmo, estructura narrativa y retención.",
         "Cada corte tiene un propósito: crear tensión, generar impacto, dar espacio a un momento o guiar la atención. Edito para que las historias se sientan, se comprendan y se recuerden.",
       ],
     },

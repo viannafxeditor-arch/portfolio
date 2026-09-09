@@ -7,7 +7,7 @@ export function ClosingSections({ copy }) {
   return (
     <section className="closing" aria-label={copy.accessibility.aboutContact}>
       <div id="about" className="closing-copy">
-        <div className="eyebrow"><span>{copy.about.eyebrow}</span><i aria-hidden="true" /></div>
+        <h2 className="about-heading">{copy.about.eyebrow}</h2>
         {copy.about.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
       </div>
 
