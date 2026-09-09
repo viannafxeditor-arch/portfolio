@@ -7,21 +7,17 @@ const languages = ["ENG", "PTBR", "ES"];
 export function Header({ language, onLanguageChange, copy, cinematic = false, onNavigate }) {
   const [languageOpen, setLanguageOpen] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
-  const [workOpen, setWorkOpen] = useState(false);
   const languageRef = useRef(null);
-  const workRef = useRef(null);
 
   useEffect(() => {
     function handlePointerDown(event) {
       if (!languageRef.current?.contains(event.target)) setLanguageOpen(false);
-      if (!workRef.current?.contains(event.target)) setWorkOpen(false);
     }
 
     function handleKeyDown(event) {
       if (event.key === "Escape") {
         setLanguageOpen(false);
         setNavOpen(false);
-        setWorkOpen(false);
       }
     }
 
@@ -36,7 +32,6 @@ export function Header({ language, onLanguageChange, copy, cinematic = false, on
   function navigate(event) {
     setNavOpen(false);
     setLanguageOpen(false);
-    setWorkOpen(false);
     onNavigate?.(event);
   }
 
@@ -91,16 +86,8 @@ export function Header({ language, onLanguageChange, copy, cinematic = false, on
           )}
         </div>
 
-        <div className="work-navigation" ref={workRef}>
-          <button className="language__trigger work-navigation__trigger" type="button" aria-expanded={workOpen} aria-controls="work-options"
-            onClick={() => { setWorkOpen(value => !value); setLanguageOpen(false); }}>
-            <span>{copy.nav.work}</span><PiCaretDownThin className={workOpen ? "is-rotated" : ""} aria-hidden="true" />
-          </button>
-          {workOpen && <div id="work-options" className="language__menu work-navigation__menu">
-            <a href="/" onClick={navigate} aria-current={!cinematic ? "page" : undefined}>{copy.hero.title}</a>
-            <a href="/cinematic" onClick={navigate} aria-current={cinematic ? "page" : undefined}>Cinematic</a>
-          </div>}
-        </div>
+        <a href="/" onClick={navigate} aria-current={!cinematic ? "page" : undefined}>{copy.hero.title}</a>
+        <a href="/cinematic" onClick={navigate} aria-current={cinematic ? "page" : undefined}>Cinematic</a>
         <a href={`${cinematic ? "/cinematic" : "/"}#about`} onClick={navigate}>{copy.nav.about}</a>
         <a href={discordProfileUrl} target="_blank" rel="noopener noreferrer" onClick={navigate}>{copy.nav.contact}</a>
       </nav>
