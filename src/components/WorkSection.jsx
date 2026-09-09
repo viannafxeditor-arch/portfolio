@@ -1,3 +1,4 @@
+import { videoPresentationProps } from "../videoPresentation.js";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { PiCaretDownThin, PiCaretUpThin, PiCaretLeftThin, PiCaretRightThin, PiPlayFill } from "react-icons/pi";
 import { usePreviewVideo } from "../hooks/usePreviewVideo.js";
@@ -119,7 +120,7 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
   return (
     <section ref={sectionRef} id={section.id} data-game={section.gameId} data-format-transition={transitionPhase || undefined} className={`work-section${horizontal ? " work-section--shorts" : ""}`} aria-labelledby={`${section.id}-title`}>
       {cinematic && activeProject ? <CinematicBackground clip={activeProject} paused={cinemaOpen} containerRef={sectionRef} onEnded={advancePreview} /> : activeProject?.videoSrc && (
-        <video
+        <video {...videoPresentationProps}
           ref={videoRef}
           key={activeProject.videoSrc}
           className={`work-section__poster ${transitioning ? "is-transitioning" : ""}${baked ? " is-baked-preview" : ""}`}

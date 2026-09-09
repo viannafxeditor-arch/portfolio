@@ -1,3 +1,4 @@
+import { videoPresentationProps } from "../videoPresentation.js";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { PiPlayFill, PiPauseFill, PiXThin, PiSpeakerHighThin, PiSpeakerSlashThin, PiCornersOutThin } from "react-icons/pi";
 import videoQualities from "../videoQualities.json";
@@ -163,7 +164,7 @@ export function CinemaPlayer({ project, copy, onClose }) {
           <button className="cinema__button" type="button" aria-label={copy.close} onClick={close} autoFocus><PiXThin /></button>
         </header>
         <div className="cinema__screen">
-          {source ? <video ref={attachVideo} src={source} poster={project.poster} playsInline preload="metadata"
+          {source ? <video {...videoPresentationProps} ref={attachVideo} src={source} poster={project.poster} playsInline preload="metadata"
             onLoadedMetadata={loaded} onTimeUpdate={event => setTime(event.currentTarget.currentTime)}
             onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onEnded={() => setPlaying(false)}
             onWaiting={() => setLoading(true)} onCanPlay={() => setLoading(false)} onPlaying={() => setLoading(false)}
