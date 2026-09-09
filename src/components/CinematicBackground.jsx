@@ -1,3 +1,4 @@
+import { videoPresentationProps } from "../videoPresentation.js";
 import { useEffect, useReducer, useRef, useState } from "react";
 import { usePreviewVideo } from "../hooks/usePreviewVideo.js";
 import { selectBackgroundMedia } from "../backgroundMedia.js";
@@ -19,7 +20,7 @@ function AmbientLayer({ clip, incoming, fading, duration, paused, transitioning,
       if (incoming && fading && event.target === event.currentTarget && event.propertyName === "opacity") onFadeComplete(clip.id);
     }}
     style={{ backgroundImage: `url("${clip.poster}")`, "--scene-fade-duration": `${duration || 0}ms` }}>
-    <video ref={videoRef} className={baked ? "is-baked-preview" : undefined} muted playsInline preload="none" aria-hidden="true"
+    <video {...videoPresentationProps} ref={videoRef} className={baked ? "is-baked-preview" : undefined} muted playsInline preload="none" aria-hidden="true"
       onEmptied={() => setReady(false)}
       onPlaying={() => { setReady(true); if (incoming) onReady(clip.id, videoRef.current); }} />
   </div>;
