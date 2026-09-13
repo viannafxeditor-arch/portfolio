@@ -23,7 +23,7 @@ test("1080p screens avoid 4K decoding while larger screens retain a native 4K ba
   assert.equal(selectBackgroundMedia(source, 1920).src, backgrounds[source].variants[0].src);
   assert.equal(selectBackgroundMedia(source, 3840).src, backgrounds[source].variants[1].src);
   assert.equal(backgrounds[source].variants[1].height, 2160);
-  assert.equal(selectBackgroundMedia(source, 1080, 1920).src, backgrounds[source].variants[1].src);
+  assert.equal(selectBackgroundMedia(source, 1080, 1920).src, backgrounds[source].variants[0].src);
   assert.equal(selectBackgroundMedia(source, 1920, 1080).src, backgrounds[source].variants[0].src);
   const portrait = backgrounds["/media/short-ring-1.webm"].variants[0];
   assert.equal(portrait.width / portrait.height, 9 / 16);

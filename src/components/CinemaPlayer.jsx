@@ -1,5 +1,6 @@
 import { videoPresentationProps } from "../videoPresentation.js";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { selectPlaybackQuality, lighterPlaybackQuality, watchPlaybackPressure } from "../playbackQuality.js";
 import { PiPlayFill, PiPauseFill, PiXThin, PiSpeakerHighThin, PiSpeakerSlashThin, PiCornersOutThin } from "react-icons/pi";
 import videoQualities from "../videoQualities.json";
 import { INITIAL_VIDEO_VOLUME, clampSeek, formatTime, fullscreenVideoLayout, createIdleCountdown } from "../mediaControls.js";
@@ -14,8 +15,13 @@ export function CinemaPlayer({ project, copy, onClose }) {
   }, []);
   const closeTimer = useRef(null);
   const resumeRef = useRef({ time: 0, playing: true });
-  const qualities = [...(videoQualities[project.videoSrc] || [])].sort((a, b) => b.height - a.height);
-  const [source, setSource] = useState(project.videoSrc);
+  const qualities = useMemo(() => [...(videoQualities[project.videoSrc] || [])].sort((a, b) => b.height - a.height), [project.videoSrc]);
+  const preferredSource = () => selectPlaybackQuality(qualities, {
+    height: typeof window !== "undefined" && window.innerWidth < 640 ? 720 : 1080,
+    maxMbps: typeof navigator !== "undefined" && navigator.connection?.saveData ? 3 : 12,
+  })?.src || project.videoSrc;
+  const [source, setSource] = useState(preferredSource);
+  const [automatic, setAutomatic] = useState(true);
   const [playing, setPlaying] = useState(false);
   const [time, setTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -27,6 +33,32 @@ export function CinemaPlayer({ project, copy, onClose }) {
   const [fullscreen, setFullscreen] = useState(false);
   const [controlsHidden, setControlsHidden] = useState(false);
   const [immersive, setImmersive] = useState(false);
+
+  useEffect(() => {
+    if (!automatic || closing || error) return;
+    const video = videoRef.current;
+    if (!video) return;
+    const reduce = () => {
+      if (document.hidden || video.paused) return;
+      const next = lighterPlaybackQuality(qualities, source);
+      if (next) switchSource(next.src);
+    };
+    const stop = watchPlaybackPressure(video, reduce);
+    const timer = loading && playing ? setTimeout(reduce, 4000) : undefined;
+    return () => { stop(); clearTimeout(timer); };
+  }, [automatic, source, loading, playing, closing, error, qualities]);
+
+  useEffect(() => {
+    let resume = false;
+    const visibility = () => {
+      const video = videoRef.current;
+      if (!video) return;
+      if (document.hidden) { resume = !video.paused; video.pause(); }
+      else if (resume && !closing) { resume = false; video.play().catch(() => {}); }
+    };
+    document.addEventListener("visibilitychange", visibility);
+    return () => document.removeEventListener("visibilitychange", visibility);
+  }, [closing]);
 
   useEffect(() => {
     const previousFocus = project.triggerElement || document.activeElement;
@@ -128,12 +160,18 @@ export function CinemaPlayer({ project, copy, onClose }) {
     setTime(videoRef.current.currentTime);
   }
 
-  function changeQuality(next) {
+  function switchSource(next) {
+    if (next === source) return;
     const video = videoRef.current;
     resumeRef.current = { time: video.currentTime, playing: !video.paused };
     setLoading(true);
     setError(false);
     setSource(next);
+  }
+
+  function changeQuality(next) {
+    setAutomatic(next === "auto");
+    switchSource(next === "auto" ? preferredSource() : next);
   }
 
   function loaded() {
@@ -192,7 +230,8 @@ export function CinemaPlayer({ project, copy, onClose }) {
                 onChange={event => { videoRef.current.volume = Number(event.target.value); videoRef.current.muted = false; }} />
             </div>
             <label className="cinema__quality"><span>{copy.quality}</span>
-              <select aria-label={copy.quality} value={source} onChange={event => changeQuality(event.target.value)}>
+              <select aria-label={copy.quality} value={automatic ? "auto" : source} onChange={event => changeQuality(event.target.value)}>
+                <option value="auto">Auto · {qualities.find(quality => quality.src === source)?.height || ""}p</option>
                 {qualities.map(quality => <option key={quality.src} value={quality.src}>{quality.height}p · {Number(quality.fps.toFixed(2))} fps{quality.original ? ` · ${copy.original}` : ""}</option>)}
               </select>
             </label>

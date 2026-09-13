@@ -12,6 +12,7 @@ export function selectBackgroundMedia(source, pixelWidth = 1920, pixelHeight = 0
   if (!media) return { src: source, excerpt: excerpts[source], baked: false, playbackRate: excerpts[source] ? 1 : .8 };
   const variants = media.variants;
   // Cover can enlarge a landscape clip by its height on a tall display.
-  const variant = variants.find(item => item.width >= pixelWidth && item.height >= pixelHeight) || variants.at(-1);
+  const portrait = pixelHeight > pixelWidth;
+  const variant = portrait ? variants[0] : variants.find(item => item.width >= pixelWidth && item.height >= pixelHeight) || variants.at(-1);
   return { src: timelines[source]?.unavailable ? undefined : variant.src, excerpt: timelines[source], baked: true, playbackRate: media.excerpt ? 1 : .8 };
 }
