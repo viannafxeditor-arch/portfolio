@@ -50,7 +50,7 @@ export function createBackgroundPlayback(video, source, rate, {
       cancel(startTimer);
       startTimer = undefined;
       video.pause();
-      if (hidden || reducedMotion) {
+      if (hidden || reducedMotion || suspended) {
         cancel(releaseTimer);
         release();
       } else if (releaseTimer == null) releaseTimer = schedule(release, BACKGROUND_RELEASE_MS);

@@ -510,7 +510,7 @@ button:focus-visible, a:focus-visible { outline: 1px solid rgba(255, 255, 255, 0
   overscroll-behavior: contain;
 }
 .cinema[open] { display: grid; place-items: center; }
-.cinema::backdrop { background: rgba(0,0,0,.78); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); animation: cinema-darken 800ms ease both; }
+.cinema::backdrop { background: rgba(0,0,0,.78); animation: cinema-darken 800ms ease both; }
 .cinema__window { width: min(100%, 88rem); border: 1px solid rgba(255,255,255,.12); border-radius: 1.15rem; overflow: hidden; background: #070707; box-shadow: 0 30px 100px #0009; animation: cinema-enter 700ms cubic-bezier(.2,.7,.2,1) both; }
 .cinema__heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .5rem 1rem .5rem 1.5rem; }
 .cinema__heading h2 { font-size: clamp(.85rem, 1.5vw, 1.1rem); font-weight: 500; letter-spacing: .07em; line-height: 1.5; margin: 0; text-transform: uppercase; }
@@ -559,8 +559,8 @@ button:focus-visible, a:focus-visible { outline: 1px solid rgba(255, 255, 255, 0
 .cinema__window:fullscreen .cinema__controls { bottom: 0; padding-top: 1.5rem; padding-bottom: max(1rem, env(safe-area-inset-bottom)); background: linear-gradient(transparent, #000c); }
 .cinema__window:fullscreen.is-controls-hidden { cursor: none; }
 .cinema__window:fullscreen.is-controls-hidden .cinema__heading, .cinema__window:fullscreen.is-controls-hidden .cinema__controls { opacity: 0; visibility: hidden; pointer-events: none; }
-@keyframes cinema-darken { from { background: transparent; backdrop-filter: blur(0); } to { background: rgba(0,0,0,.78); backdrop-filter: blur(22px); } }
-@keyframes cinema-lighten { from { background: rgba(0,0,0,.78); backdrop-filter: blur(22px); } to { background: transparent; backdrop-filter: blur(0); } }
+@keyframes cinema-darken { from { background: transparent; } to { background: rgba(0,0,0,.78); } }
+@keyframes cinema-lighten { from { background: rgba(0,0,0,.78); } to { background: transparent; } }
 @keyframes cinema-enter { from { opacity: 0; transform: translateY(16px) scale(.98); } to { opacity: 1; transform: none; } }
 @keyframes cinema-exit { from { opacity: 1; } to { opacity: 0; transform: translateY(8px) scale(.99); } }
 

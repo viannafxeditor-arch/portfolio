@@ -86,6 +86,7 @@ test("dialog, hidden tab and reduced-motion states prevent background playback",
   await f.flush(BACKGROUND_START_MS);
   assert.equal(f.video.plays, 2);
   f.playback.setSuspended(true);
+  assert.equal(f.video.src, "", "opening a player immediately releases the background decoder");
   await f.flush(BACKGROUND_RELEASE_MS);
   assert.equal(f.video.src, "");
   f.playback.destroy();

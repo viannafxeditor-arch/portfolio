@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { selectBackgroundMedia } from "../backgroundMedia.js";
+import { backgroundViewport } from "../playbackQuality.js";
 
 const viewportPixels = () => {
   if (typeof window === "undefined") return { width: 1920, height: 1080 };
-  const density = Math.min(window.devicePixelRatio || 1, 2);
-  return { width: window.innerWidth * density, height: window.innerHeight * density };
+  return backgroundViewport(window.innerWidth, window.innerHeight);
 };
 
 export function useBackgroundMedia(source) {
