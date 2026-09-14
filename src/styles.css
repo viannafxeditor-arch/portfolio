@@ -833,6 +833,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
 /* Shared game typography, with a restrained color palette for each world. */
 [data-game="fallout-4"] { --game-accent: #c9c69b; --game-rgb: 130,148,95; }
 [data-game="fallout-76"] { --game-accent: #e3bc80; --game-rgb: 143,101,53; }
+[data-game="minecraft"] { --game-accent: #bfd49e; --game-rgb: 87,116,65; }
 [data-game="cyberpunk"] { --game-accent: #f4ec45; --game-rgb: 28,143,157; }
 [data-game="red-dead-redemption-2"] { --game-accent: #e57662; --game-rgb: 122,35,24; }
 .work-section[data-game] .work-section__shade { background: linear-gradient(90deg, rgba(var(--game-rgb),.2), transparent 58%), linear-gradient(0deg,#000a,transparent 65%), linear-gradient(90deg,#0005,transparent 65%); }
@@ -849,7 +850,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
 
 .game-library { width: min(92vw, 74rem); background: #080a0cf5; box-shadow: 0 24px 100px #000a; }
 .game-library__surface { background: radial-gradient(ellipse at 50% 0, rgba(var(--game-rgb),.2), transparent 70%); }
-.game-library__grid { grid-template-columns: repeat(4,minmax(0,1fr)); gap: clamp(.7rem,1.5vw,1.3rem); }
+.game-library__grid { grid-template-columns: repeat(5,minmax(0,1fr)); gap: clamp(.7rem,1.5vw,1.3rem); }
 .game-card { position: relative; display: block; overflow: hidden; aspect-ratio: 3 / 4; border: 1px solid #ffffff20; border-radius: 1rem; isolation: isolate; background: #101214; transition: border-color 220ms ease, transform 220ms ease; }
 .game-card::after { content: ""; position: absolute; z-index: 1; inset: 0; background: linear-gradient(0deg,#050607fa, #05060720 68%, transparent); pointer-events: none; }
 .game-card img { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; aspect-ratio: auto; border: 0; border-radius: 0; transition: transform 700ms cubic-bezier(.22,1,.36,1); }
@@ -860,6 +861,9 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
 .game-card strong { font-size: clamp(.85rem,1.25vw,1.15rem); line-height: 1.2; letter-spacing: .035em; text-transform: uppercase; }
 .game-card small { color: var(--game-accent); font-size: .57rem; letter-spacing: .13em; text-transform: uppercase; }
 .game-card[data-game="cyberpunk"] strong { color: #f4ec45; }
+@media (min-width: 721px) and (max-width: 1000px) {
+  .game-library__grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
 @media (max-width: 720px) {
   .game-library__grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .game-card { aspect-ratio: 4 / 5; }

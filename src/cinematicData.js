@@ -3,6 +3,7 @@ import imported from "./cinematicImports.json" with { type: "json" };
 import excerpts from "./cinematicExcerpts.json" with { type: "json" };
 import additionalMedia from "./additionalMedia.json" with { type: "json" };
 import covers from "./gameCovers.json" with { type: "json" };
+import minecraftMedia from "./minecraftMedia.json" with { type: "json" };
 
 const fallout4Clips = [75, 141, 149, 88, 364].map((number) => ({
   id: `ambient-${number}`,
@@ -21,9 +22,11 @@ const fallout4 = numbered([...fallout4Clips, ...imported.fallout4, ...folderMedi
 const fallout76 = numbered([...additionalMedia.fallout76, ...folderMedia["fallout-76"]].map(withPreviewPoster), "Fallout 76");
 const cyberpunk = numbered(imported.cyberpunk.map(withPreviewPoster), "Cyberpunk");
 const rdr2 = numbered(imported.rdr2.map(withPreviewPoster), "Red Dead Redemption 2");
+const minecraft = numbered(minecraftMedia.map(withPreviewPoster), "Minecraft");
 
 export const cinematicClips = [
   fallout4.find(clip => clip.id === "ambient-75"),
+  minecraft.find(clip => clip.id === "minecraft-1"),
   cyberpunk.find(clip => clip.id === "cyberpunk-20260906-14411025-00000209"),
   rdr2.find(clip => clip.id === "rdr2-1"),
   fallout76.find(clip => clip.id === "fallout76-ambient-23"),
@@ -39,6 +42,7 @@ export const cinematicGames = [
   { id: "red-dead-redemption-2", title: "Red Dead Redemption 2", clips: rdr2 },
   { id: "fallout-4", title: "Fallout 4", clips: fallout4 },
   { id: "fallout-76", title: "Fallout 76", clips: fallout76 },
+  { id: "minecraft", title: "Minecraft", clips: minecraft },
 ].filter(game => game.clips.length).map(game => ({ ...game, cover: covers[game.id]?.cover }));
 
 export const cinematicCopy = {

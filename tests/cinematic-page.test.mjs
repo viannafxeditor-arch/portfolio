@@ -17,7 +17,7 @@ test("cinematic includes the process section between scenes and About with local
     const { processClips, processCopy } = await vite.ssrLoadModule("/src/cinematicProcess.js");
     const { GameLibrary } = await vite.ssrLoadModule("/src/components/GameLibrary.jsx");
     const { cinematicCopy } = await vite.ssrLoadModule("/src/cinematicData.js");
-    assert.deepEqual(cinematicClips.map(clip => clip.id), ["ambient-75", "cyberpunk-20260906-14411025-00000209", "rdr2-1", "fallout76-ambient-23", "ambient-296", "cyberpunk-3", "rdr2-3", "fallout76-ambient-20", "rdr2-2"]);
+    assert.deepEqual(cinematicClips.map(clip => clip.id), ["ambient-75", "minecraft-1", "cyberpunk-20260906-14411025-00000209", "rdr2-1", "fallout76-ambient-23", "ambient-296", "cyberpunk-3", "rdr2-3", "fallout76-ambient-20", "rdr2-2"]);
     for (const language of ["ENG", "PTBR", "ES"]) {
       const copy = siteCopy[language];
       const html = renderToStaticMarkup(React.createElement(CinematicPage, { language, copy, paused: false, onPlay() {} }));
@@ -44,7 +44,7 @@ test("cinematic includes the process section between scenes and About with local
         assert.ok(library.includes(game.cover));
       }
       assert.ok(!html.includes("Comparison") && !html.includes("Comparação"));
-      assert.ok(!library.includes("Minecraft") && !library.includes("Dark Souls"));
+      assert.ok(library.includes("Minecraft") && !library.includes("Dark Souls"));
       assert.ok(html.includes("Cyberpunk"));
       assert.ok(!/Back to portfolio|Voltar ao portfólio|Volver al portafolio|Ambient collection|Coleção Ambient|Colección Ambient/i.test(html));
       assert.ok(html.includes(cinematicClips[0].poster));
@@ -68,3 +68,4 @@ test("cinematic includes the process section between scenes and About with local
     }
   } finally { await vite.close(); }
 });
+

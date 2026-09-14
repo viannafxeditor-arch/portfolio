@@ -352,5 +352,29 @@
     "end": 7.225,
     "sourceDuration": 10.95,
     "poster": "/media/fallout-76-ambient-30-r24cb7d62fc-center-35.jpg"
+  },
+  "/media/minecraft-01.mp4": {
+    "start": 10.5165,
+    "end": 14.0165,
+    "sourceDuration": 24.533,
+    "poster": "/media/minecraft-01-center-35.jpg"
+  },
+  "/media/minecraft-02.mp4": {
+    "start": 20.042,
+    "end": 23.542,
+    "sourceDuration": 43.584,
+    "poster": "/media/minecraft-02-center-35.jpg"
+  },
+  "/media/minecraft-03.mp4": {
+    "start": 9.5245,
+    "end": 13.0245,
+    "sourceDuration": 22.549,
+    "poster": "/media/minecraft-03-center-35.jpg"
+  },
+  "/media/minecraft-04.mp4": {
+    "start": 3.6365,
+    "end": 7.1365,
+    "sourceDuration": 10.773,
+    "poster": "/media/minecraft-04-center-35.jpg"
   }
 }

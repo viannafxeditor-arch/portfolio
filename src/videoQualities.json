@@ -758,5 +758,37 @@
       "src": "/media/fallout-76-ambient-30-r24cb7d62fc.mp4",
       "original": true
     }
+  ],
+  "/media/minecraft-01.mp4": [
+    {
+      "height": 1080,
+      "fps": 60,
+      "src": "/media/minecraft-01.mp4",
+      "original": true
+    }
+  ],
+  "/media/minecraft-02.mp4": [
+    {
+      "height": 1080,
+      "fps": 60,
+      "src": "/media/minecraft-02.mp4",
+      "original": true
+    }
+  ],
+  "/media/minecraft-03.mp4": [
+    {
+      "height": 1080,
+      "fps": 60,
+      "src": "/media/minecraft-03.mp4",
+      "original": true
+    }
+  ],
+  "/media/minecraft-04.mp4": [
+    {
+      "height": 1080,
+      "fps": 60,
+      "src": "/media/minecraft-04.mp4",
+      "original": true
+    }
   ]
 }

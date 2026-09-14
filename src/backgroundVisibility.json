@@ -363,5 +363,25 @@
     "duration": 5.5,
     "ranges": [],
     "scannedSrc": "/media/backgrounds/fallout-76-ambient-30-r24cb7d62fc-1920-v2.mp4"
+  },
+  "/media/minecraft-01.mp4": {
+    "duration": 5.5,
+    "ranges": [],
+    "scannedSrc": "/media/backgrounds/minecraft-01-1920-v2.mp4"
+  },
+  "/media/minecraft-02.mp4": {
+    "duration": 5.5,
+    "ranges": [],
+    "scannedSrc": "/media/backgrounds/minecraft-02-1920-v2.mp4"
+  },
+  "/media/minecraft-03.mp4": {
+    "duration": 5.5,
+    "ranges": [],
+    "scannedSrc": "/media/backgrounds/minecraft-03-1920-v2.mp4"
+  },
+  "/media/minecraft-04.mp4": {
+    "duration": 5.5,
+    "ranges": [],
+    "scannedSrc": "/media/backgrounds/minecraft-04-1920-v2.mp4"
   }
 }
