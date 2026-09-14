@@ -1193,26 +1193,6 @@
       }
     ]
   },
-  "/media/fallout-4-ambient-304-r489384905f.mp4": {
-    "treatment": "cinematic-detail-v2",
-    "sourceBytes": 61233591,
-    "sourceDuration": 13.333333,
-    "duration": 5.5,
-    "excerpt": {
-      "start": 0,
-      "end": 3.5
-    },
-    "sourceStart": 4.9166665,
-    "variants": [
-      {
-        "src": "/media/backgrounds/fallout-4-ambient-304-r489384905f-1920-v2.mp4",
-        "width": 1920,
-        "height": 1080,
-        "fps": 60,
-        "bytes": 8019155
-      }
-    ]
-  },
   "/media/fallout-4-ambient-320-ra5728a3bf6.mp4": {
     "treatment": "cinematic-detail-v2",
     "sourceBytes": 32588846,
@@ -1233,46 +1213,6 @@
       }
     ]
   },
-  "/media/fallout-4-ambient-340-r5c2a04e7fc.mp4": {
-    "treatment": "cinematic-detail-v2",
-    "sourceBytes": 47170852,
-    "sourceDuration": 9.533333,
-    "duration": 5.5,
-    "excerpt": {
-      "start": 0,
-      "end": 3.5
-    },
-    "sourceStart": 3.0166665000000004,
-    "variants": [
-      {
-        "src": "/media/backgrounds/fallout-4-ambient-340-r5c2a04e7fc-1920-v2.mp4",
-        "width": 1920,
-        "height": 1080,
-        "fps": 60,
-        "bytes": 8065460
-      }
-    ]
-  },
-  "/media/fallout-4-ambient-428-r28cd269360.mp4": {
-    "treatment": "cinematic-detail-v2",
-    "sourceBytes": 55158507,
-    "sourceDuration": 16.8,
-    "duration": 5.5,
-    "excerpt": {
-      "start": 0,
-      "end": 3.5
-    },
-    "sourceStart": 6.65,
-    "variants": [
-      {
-        "src": "/media/backgrounds/fallout-4-ambient-428-r28cd269360-1920-v2.mp4",
-        "width": 1920,
-        "height": 1080,
-        "fps": 60,
-        "bytes": 8052915
-      }
-    ]
-  },
   "/media/fallout-4-characters-8-r22e1fac3c3.mp4": {
     "treatment": "cinematic-detail-v2",
     "sourceBytes": 28367333,
@@ -1290,26 +1230,6 @@
         "height": 1080,
         "fps": 60,
         "bytes": 8019329
-      }
-    ]
-  },
-  "/media/fallout-4-characters-10-rc26f14429f.mp4": {
-    "treatment": "cinematic-detail-v2",
-    "sourceBytes": 61770022,
-    "sourceDuration": 12.733333,
-    "duration": 5.5,
-    "excerpt": {
-      "start": 0,
-      "end": 3.5
-    },
-    "sourceStart": 4.6166665,
-    "variants": [
-      {
-        "src": "/media/backgrounds/fallout-4-characters-10-rc26f14429f-1920-v2.mp4",
-        "width": 1920,
-        "height": 1080,
-        "fps": 60,
-        "bytes": 8194528
       }
     ]
   },
