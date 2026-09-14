@@ -68,4 +68,3 @@ test("cinematic includes the process section between scenes and About with local
     }
   } finally { await vite.close(); }
 });
-
