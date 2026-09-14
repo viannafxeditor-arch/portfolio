@@ -397,6 +397,10 @@
       "bytes": 4499172
     },
     {
+      "key": "media/backgrounds/minecraft-01-home-start-1920-v3.mp4",
+      "bytes": 10142094
+    },
+    {
       "key": "media/backgrounds/minecraft-02-1920-v2.mp4",
       "bytes": 3050178
     },
@@ -951,6 +955,10 @@
     {
       "key": "media/minecraft-01-center-35.jpg",
       "bytes": 34081
+    },
+    {
+      "key": "media/minecraft-01-home-start.jpg",
+      "bytes": 12461
     },
     {
       "key": "media/minecraft-01.mp4",
@@ -1537,5 +1545,5 @@
       "bytes": 1406166199
     }
   ],
-  "totalBytes": 9770670548
+  "totalBytes": 9780825103
 }
