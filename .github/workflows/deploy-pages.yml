@@ -20,7 +20,7 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: node --test tests/pages-build.test.mjs tests/playback-quality.test.mjs tests/background-playback.test.mjs tests/background-media.test.mjs tests/media-controls.test.mjs tests/cinematic-fade.test.mjs
+      - run: node --test tests/pages-build.test.mjs tests/playback-quality.test.mjs tests/background-playback.test.mjs tests/background-media.test.mjs tests/media-controls.test.mjs tests/cinematic-fade.test.mjs tests/minecraft-library.test.mjs
       - run: npm run build:pages
       - run: node scripts/verify-pages-media.mjs
       - uses: actions/configure-pages@v5

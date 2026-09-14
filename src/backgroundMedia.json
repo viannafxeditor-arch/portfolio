@@ -1532,5 +1532,85 @@
         "bytes": 8161600
       }
     ]
+  },
+  "/media/minecraft-01.mp4": {
+    "treatment": "cinematic-detail-v2",
+    "sourceBytes": 9220213,
+    "sourceDuration": 24.533,
+    "duration": 5.5,
+    "excerpt": {
+      "start": 0,
+      "end": 3.5
+    },
+    "sourceStart": 10.5165,
+    "variants": [
+      {
+        "src": "/media/backgrounds/minecraft-01-1920-v2.mp4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 60,
+        "bytes": 4499172
+      }
+    ]
+  },
+  "/media/minecraft-02.mp4": {
+    "treatment": "cinematic-detail-v2",
+    "sourceBytes": 16618462,
+    "sourceDuration": 43.584,
+    "duration": 5.5,
+    "excerpt": {
+      "start": 0,
+      "end": 3.5
+    },
+    "sourceStart": 20.042,
+    "variants": [
+      {
+        "src": "/media/backgrounds/minecraft-02-1920-v2.mp4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 60,
+        "bytes": 3050178
+      }
+    ]
+  },
+  "/media/minecraft-03.mp4": {
+    "treatment": "cinematic-detail-v2",
+    "sourceBytes": 11876410,
+    "sourceDuration": 22.549,
+    "duration": 5.5,
+    "excerpt": {
+      "start": 0,
+      "end": 3.5
+    },
+    "sourceStart": 9.5245,
+    "variants": [
+      {
+        "src": "/media/backgrounds/minecraft-03-1920-v2.mp4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 60,
+        "bytes": 5788204
+      }
+    ]
+  },
+  "/media/minecraft-04.mp4": {
+    "treatment": "cinematic-detail-v2",
+    "sourceBytes": 33795379,
+    "sourceDuration": 10.773,
+    "duration": 5.5,
+    "excerpt": {
+      "start": 0,
+      "end": 3.5
+    },
+    "sourceStart": 3.6365,
+    "variants": [
+      {
+        "src": "/media/backgrounds/minecraft-04-1920-v2.mp4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 60,
+        "bytes": 7048009
+      }
+    ]
   }
 }

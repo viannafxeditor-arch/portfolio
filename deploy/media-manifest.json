@@ -393,6 +393,22 @@
       "bytes": 18182239
     },
     {
+      "key": "media/backgrounds/minecraft-01-1920-v2.mp4",
+      "bytes": 4499172
+    },
+    {
+      "key": "media/backgrounds/minecraft-02-1920-v2.mp4",
+      "bytes": 3050178
+    },
+    {
+      "key": "media/backgrounds/minecraft-03-1920-v2.mp4",
+      "bytes": 5788204
+    },
+    {
+      "key": "media/backgrounds/minecraft-04-1920-v2.mp4",
+      "bytes": 7048009
+    },
+    {
       "key": "media/backgrounds/process-fallout-4-gameplay-11-1920-v2.mp4",
       "bytes": 8122772
     },
@@ -933,6 +949,38 @@
       "bytes": 362597
     },
     {
+      "key": "media/minecraft-01-center-35.jpg",
+      "bytes": 34081
+    },
+    {
+      "key": "media/minecraft-01.mp4",
+      "bytes": 9220213
+    },
+    {
+      "key": "media/minecraft-02-center-35.jpg",
+      "bytes": 127136
+    },
+    {
+      "key": "media/minecraft-02.mp4",
+      "bytes": 16618462
+    },
+    {
+      "key": "media/minecraft-03-center-35.jpg",
+      "bytes": 244624
+    },
+    {
+      "key": "media/minecraft-03.mp4",
+      "bytes": 11876410
+    },
+    {
+      "key": "media/minecraft-04-center-35.jpg",
+      "bytes": 168270
+    },
+    {
+      "key": "media/minecraft-04.mp4",
+      "bytes": 33795379
+    },
+    {
       "key": "media/process-fallout-4-gameplay-11-center-35.jpg",
       "bytes": 209967
     },
@@ -1389,6 +1437,22 @@
       "bytes": 45350
     },
     {
+      "key": "media/thumbnails/minecraft-01-640.webp",
+      "bytes": 3808
+    },
+    {
+      "key": "media/thumbnails/minecraft-02-640.webp",
+      "bytes": 16598
+    },
+    {
+      "key": "media/thumbnails/minecraft-03-640.webp",
+      "bytes": 37336
+    },
+    {
+      "key": "media/thumbnails/minecraft-04-640.webp",
+      "bytes": 17226
+    },
+    {
       "key": "media/thumbnails/process-fallout-4-gameplay-11-center-35-640.webp",
       "bytes": 41678
     },
@@ -1473,5 +1537,5 @@
       "bytes": 1406166199
     }
   ],
-  "totalBytes": 9678125442
+  "totalBytes": 9770670548
 }

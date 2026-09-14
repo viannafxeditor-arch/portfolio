@@ -1,0 +1,50 @@
+[
+  {
+    "id": "minecraft-1",
+    "title": "Render Minecraft Video #1",
+    "sourceFilename": "Render Minecraft Video #1.mkv",
+    "videoSrc": "/media/minecraft-01.mp4",
+    "poster": "/media/minecraft-01-center-35.jpg",
+    "thumb": "/media/minecraft-01-center-35.jpg",
+    "width": 1920,
+    "height": 1080,
+    "fps": 60,
+    "hasAudio": true
+  },
+  {
+    "id": "minecraft-2",
+    "title": "Render Minecraft Vídeo #2",
+    "sourceFilename": "Render Minecraft Vídeo #2.mkv",
+    "videoSrc": "/media/minecraft-02.mp4",
+    "poster": "/media/minecraft-02-center-35.jpg",
+    "thumb": "/media/minecraft-02-center-35.jpg",
+    "width": 1920,
+    "height": 1080,
+    "fps": 60,
+    "hasAudio": true
+  },
+  {
+    "id": "minecraft-3",
+    "title": "Minecraft Render Video #3",
+    "sourceFilename": "Minecraft Render Video #3.mkv",
+    "videoSrc": "/media/minecraft-03.mp4",
+    "poster": "/media/minecraft-03-center-35.jpg",
+    "thumb": "/media/minecraft-03-center-35.jpg",
+    "width": 1920,
+    "height": 1080,
+    "fps": 60,
+    "hasAudio": true
+  },
+  {
+    "id": "minecraft-4",
+    "title": "Minecraft 2026.07.23 - 20.05.04.04",
+    "sourceFilename": "Minecraft 2026.07.23 - 20.05.04.04.mp4",
+    "videoSrc": "/media/minecraft-04.mp4",
+    "poster": "/media/minecraft-04-center-35.jpg",
+    "thumb": "/media/minecraft-04-center-35.jpg",
+    "width": 1920,
+    "height": 1080,
+    "fps": 60,
+    "hasAudio": true
+  }
+]
