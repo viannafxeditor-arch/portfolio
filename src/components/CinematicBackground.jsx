@@ -7,7 +7,7 @@ import { cinematicFadeReducer, fadeDuration, guardCinematicBoundary } from "../c
 function AmbientLayer({ clip, incoming, fading, duration, paused, transitioning, containerRef, onEnded, onReady, onFadeComplete, videos }) {
   const videoRef = useRef(null);
   const [ready, setReady] = useState(false);
-  const timeline = selectBackgroundMedia(clip.videoSrc).excerpt;
+  const timeline = selectBackgroundMedia(clip.backgroundSrc || clip.videoSrc).excerpt;
   const baked = usePreviewVideo(containerRef, videoRef, clip, paused, !incoming && !transitioning ? onEnded : undefined, incoming || transitioning);
   useEffect(() => {
     const video = videoRef.current;
@@ -43,8 +43,8 @@ export function CinematicBackground({ clip, paused, containerRef, onEnded }) {
 
   function ready(id, video) {
     const outgoing = videos.current.get(layers.base.id);
-    const from = selectBackgroundMedia(layers.base.videoSrc).excerpt;
-    const to = selectBackgroundMedia(layers.incoming?.videoSrc).excerpt;
+    const from = selectBackgroundMedia(layers.base.backgroundSrc || layers.base.videoSrc).excerpt;
+    const to = selectBackgroundMedia(layers.incoming?.backgroundSrc || layers.incoming?.videoSrc).excerpt;
     const duration = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : fadeDuration(
       (from?.safeEnd ?? outgoing?.duration ?? 0) - (outgoing?.currentTime || 0),
       (to?.safeEnd ?? video.duration) - video.currentTime, from?.fadeSeconds);

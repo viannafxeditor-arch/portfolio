@@ -1612,5 +1612,25 @@
         "bytes": 7048009
       }
     ]
+  },
+  "/media/backgrounds/minecraft-01-home-start-1920-v3.mp4": {
+    "treatment": "cinematic-detail-v3",
+    "sourceBytes": 9220213,
+    "sourceDuration": 24.533,
+    "duration": 15,
+    "excerpt": {
+      "start": 0,
+      "end": 13
+    },
+    "sourceStart": 0,
+    "variants": [
+      {
+        "src": "/media/backgrounds/minecraft-01-home-start-1920-v3.mp4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 60,
+        "bytes": 10142094
+      }
+    ]
   }
 }

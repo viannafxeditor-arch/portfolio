@@ -26,7 +26,7 @@ const minecraft = numbered(minecraftMedia.map(withPreviewPoster), "Minecraft");
 
 export const cinematicClips = [
   fallout4.find(clip => clip.id === "ambient-75"),
-  minecraft.find(clip => clip.id === "minecraft-1"),
+  { ...minecraft.find(clip => clip.id === "minecraft-1"), backgroundSrc: "/media/backgrounds/minecraft-01-home-start-1920-v3.mp4", poster: "/media/minecraft-01-home-start.jpg" },
   cyberpunk.find(clip => clip.id === "cyberpunk-20260906-14411025-00000209"),
   rdr2.find(clip => clip.id === "rdr2-1"),
   fallout76.find(clip => clip.id === "fallout76-ambient-23"),
