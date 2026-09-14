@@ -49,18 +49,6 @@
       "hasAudio": false
     },
     {
-      "id": "fallout-4-ambient-304",
-      "title": "Ambient 304",
-      "sourceFilename": "Ambient 304.mp4",
-      "videoSrc": "/media/fallout-4-ambient-304-r489384905f.mp4",
-      "poster": "/media/fallout-4-ambient-304-r489384905f-center-35.jpg",
-      "thumb": "/media/fallout-4-ambient-304-r489384905f-center-35.jpg",
-      "width": 1920,
-      "height": 1080,
-      "fps": 60.0,
-      "hasAudio": false
-    },
-    {
       "id": "fallout-4-ambient-320",
       "title": "Ambient 320",
       "sourceFilename": "Ambient 320.mp4",
@@ -73,48 +61,12 @@
       "hasAudio": false
     },
     {
-      "id": "fallout-4-ambient-340",
-      "title": "Ambient 340",
-      "sourceFilename": "Ambient 340.mp4",
-      "videoSrc": "/media/fallout-4-ambient-340-r5c2a04e7fc.mp4",
-      "poster": "/media/fallout-4-ambient-340-r5c2a04e7fc-center-35.jpg",
-      "thumb": "/media/fallout-4-ambient-340-r5c2a04e7fc-center-35.jpg",
-      "width": 1920,
-      "height": 1080,
-      "fps": 60.0,
-      "hasAudio": false
-    },
-    {
-      "id": "fallout-4-ambient-428",
-      "title": "Ambient 428",
-      "sourceFilename": "Ambient 428.mp4",
-      "videoSrc": "/media/fallout-4-ambient-428-r28cd269360.mp4",
-      "poster": "/media/fallout-4-ambient-428-r28cd269360-center-35.jpg",
-      "thumb": "/media/fallout-4-ambient-428-r28cd269360-center-35.jpg",
-      "width": 1920,
-      "height": 1080,
-      "fps": 60.0,
-      "hasAudio": true
-    },
-    {
       "id": "fallout-4-characters-8",
       "title": "Characters 8",
       "sourceFilename": "Characters 8.mp4",
       "videoSrc": "/media/fallout-4-characters-8-r22e1fac3c3.mp4",
       "poster": "/media/fallout-4-characters-8-r22e1fac3c3-center-35.jpg",
       "thumb": "/media/fallout-4-characters-8-r22e1fac3c3-center-35.jpg",
-      "width": 1920,
-      "height": 1080,
-      "fps": 60.0,
-      "hasAudio": true
-    },
-    {
-      "id": "fallout-4-characters-10",
-      "title": "Characters 10",
-      "sourceFilename": "Characters 10.mp4",
-      "videoSrc": "/media/fallout-4-characters-10-rc26f14429f.mp4",
-      "poster": "/media/fallout-4-characters-10-rc26f14429f-center-35.jpg",
-      "thumb": "/media/fallout-4-characters-10-rc26f14429f-center-35.jpg",
       "width": 1920,
       "height": 1080,
       "fps": 60.0,

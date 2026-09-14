@@ -623,14 +623,6 @@
       "original": true
     }
   ],
-  "/media/fallout-4-ambient-304-r489384905f.mp4": [
-    {
-      "height": 1080,
-      "fps": 60.0,
-      "src": "/media/fallout-4-ambient-304-r489384905f.mp4",
-      "original": true
-    }
-  ],
   "/media/fallout-4-ambient-320-ra5728a3bf6.mp4": [
     {
       "height": 1080,
@@ -639,35 +631,11 @@
       "original": true
     }
   ],
-  "/media/fallout-4-ambient-340-r5c2a04e7fc.mp4": [
-    {
-      "height": 1080,
-      "fps": 60.0,
-      "src": "/media/fallout-4-ambient-340-r5c2a04e7fc.mp4",
-      "original": true
-    }
-  ],
-  "/media/fallout-4-ambient-428-r28cd269360.mp4": [
-    {
-      "height": 1080,
-      "fps": 60.0,
-      "src": "/media/fallout-4-ambient-428-r28cd269360.mp4",
-      "original": true
-    }
-  ],
   "/media/fallout-4-characters-8-r22e1fac3c3.mp4": [
     {
       "height": 1080,
       "fps": 60.0,
       "src": "/media/fallout-4-characters-8-r22e1fac3c3.mp4",
-      "original": true
-    }
-  ],
-  "/media/fallout-4-characters-10-rc26f14429f.mp4": [
-    {
-      "height": 1080,
-      "fps": 60.0,
-      "src": "/media/fallout-4-characters-10-rc26f14429f.mp4",
       "original": true
     }
   ],

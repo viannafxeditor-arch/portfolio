@@ -285,24 +285,8 @@
       "bytes": 7985295
     },
     {
-      "key": "media/backgrounds/fallout-4-ambient-304-r489384905f-1920-v2.mp4",
-      "bytes": 8019155
-    },
-    {
       "key": "media/backgrounds/fallout-4-ambient-320-ra5728a3bf6-1920-v2.mp4",
       "bytes": 7996288
-    },
-    {
-      "key": "media/backgrounds/fallout-4-ambient-340-r5c2a04e7fc-1920-v2.mp4",
-      "bytes": 8065460
-    },
-    {
-      "key": "media/backgrounds/fallout-4-ambient-428-r28cd269360-1920-v2.mp4",
-      "bytes": 8052915
-    },
-    {
-      "key": "media/backgrounds/fallout-4-characters-10-rc26f14429f-1920-v2.mp4",
-      "bytes": 8194528
     },
     {
       "key": "media/backgrounds/fallout-4-characters-8-r22e1fac3c3-1920-v2.mp4",
@@ -709,44 +693,12 @@
       "bytes": 42960123
     },
     {
-      "key": "media/fallout-4-ambient-304-r489384905f-center-35.jpg",
-      "bytes": 169440
-    },
-    {
-      "key": "media/fallout-4-ambient-304-r489384905f.mp4",
-      "bytes": 61233591
-    },
-    {
       "key": "media/fallout-4-ambient-320-ra5728a3bf6-center-35.jpg",
       "bytes": 107116
     },
     {
       "key": "media/fallout-4-ambient-320-ra5728a3bf6.mp4",
       "bytes": 32588846
-    },
-    {
-      "key": "media/fallout-4-ambient-340-r5c2a04e7fc-center-35.jpg",
-      "bytes": 264603
-    },
-    {
-      "key": "media/fallout-4-ambient-340-r5c2a04e7fc.mp4",
-      "bytes": 47170852
-    },
-    {
-      "key": "media/fallout-4-ambient-428-r28cd269360-center-35.jpg",
-      "bytes": 305655
-    },
-    {
-      "key": "media/fallout-4-ambient-428-r28cd269360.mp4",
-      "bytes": 55158507
-    },
-    {
-      "key": "media/fallout-4-characters-10-rc26f14429f-center-35.jpg",
-      "bytes": 203292
-    },
-    {
-      "key": "media/fallout-4-characters-10-rc26f14429f.mp4",
-      "bytes": 61770022
     },
     {
       "key": "media/fallout-4-characters-8-r22e1fac3c3-center-35.jpg",
@@ -1337,24 +1289,8 @@
       "bytes": 42998
     },
     {
-      "key": "media/thumbnails/fallout-4-ambient-304-r489384905f-center-35-640.webp",
-      "bytes": 33126
-    },
-    {
       "key": "media/thumbnails/fallout-4-ambient-320-ra5728a3bf6-center-35-640.webp",
       "bytes": 19966
-    },
-    {
-      "key": "media/thumbnails/fallout-4-ambient-340-r5c2a04e7fc-center-35-640.webp",
-      "bytes": 58682
-    },
-    {
-      "key": "media/thumbnails/fallout-4-ambient-428-r28cd269360-center-35-640.webp",
-      "bytes": 63950
-    },
-    {
-      "key": "media/thumbnails/fallout-4-characters-10-rc26f14429f-center-35-640.webp",
-      "bytes": 46288
     },
     {
       "key": "media/thumbnails/fallout-4-characters-8-r22e1fac3c3-center-35-640.webp",
@@ -1537,5 +1473,5 @@
       "bytes": 1406166199
     }
   ],
-  "totalBytes": 9936935508
+  "totalBytes": 9678125442
 }
