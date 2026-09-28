@@ -1552,5 +1552,21 @@
         "bytes": 10142094
       }
     ]
+  },
+  "/media/trial-v2.mp4": {
+    "treatment": "portfolio-preview",
+    "sourceBytes": 449320646,
+    "sourceDuration": 88.983333,
+    "sourceStart": 10,
+    "duration": 30,
+    "variants": [
+      {
+        "src": "/media/backgrounds/trial-v2-1920.mp4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 60,
+        "bytes": 34384155
+      }
+    ]
   }
 }

@@ -24,10 +24,10 @@ export function PortfolioPage({ copy, paused, onPlay }) {
   }
   const heroRef = useRef(null);
   const videoRef = useRef(null);
-  const baked = usePreviewVideo(heroRef, videoRef, { videoSrc: "/media/home-loop.mp4" }, paused);
+  const baked = usePreviewVideo(heroRef, videoRef, { videoSrc: "/media/trial-v2.mp4" }, paused);
   return <>
     <section ref={heroRef} id="home" className="hero" aria-label={copy.accessibility.introduction}>
-      <video {...videoPresentationProps} ref={videoRef} className={`hero__poster${baked ? " is-baked-preview" : ""}`} poster="/media/home-frame.jpg" loop muted playsInline preload="none" aria-hidden="true" />
+      <video {...videoPresentationProps} ref={videoRef} className={`hero__poster${baked ? " is-baked-preview" : ""}`} poster="/media/trial-v2-poster.jpg" loop muted playsInline preload="none" aria-hidden="true" />
       <div className="edge-shade" aria-hidden="true" />
       <h1 className="hero-title" aria-label={copy.hero.title} tabIndex={-1}>{copy.hero.title}</h1>
       <a className="scroll-cue" href="#youtube" aria-label={copy.accessibility.scrollToWork}><PiArrowDownThin aria-hidden="true" /><span>{copy.hero.scroll}</span></a>

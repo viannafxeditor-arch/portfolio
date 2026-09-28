@@ -485,6 +485,10 @@
       "bytes": 47665358
     },
     {
+      "key": "media/backgrounds/trial-v2-1920.mp4",
+      "bytes": 34384155
+    },
+    {
       "key": "media/backgrounds/youtube-loop-1920-v2.mp4",
       "bytes": 46529173
     },
@@ -1073,6 +1077,10 @@
       "bytes": 143308812
     },
     {
+      "key": "media/qualities/trial-v2-720p60.mp4",
+      "bytes": 42796958
+    },
+    {
       "key": "media/qualities/youtube-144p60.mp4",
       "bytes": 17644231
     },
@@ -1457,8 +1465,20 @@
       "bytes": 31498
     },
     {
+      "key": "media/thumbnails/trial-v2-640.webp",
+      "bytes": 44658
+    },
+    {
       "key": "media/thumbnails/youtube-frame-640.webp",
       "bytes": 28846
+    },
+    {
+      "key": "media/trial-v2-poster.jpg",
+      "bytes": 367202
+    },
+    {
+      "key": "media/trial-v2.mp4",
+      "bytes": 449320646
     },
     {
       "key": "media/youtube-01-video-thumb.jpg",
@@ -1473,5 +1493,5 @@
       "bytes": 1406166199
     }
   ],
-  "totalBytes": 9407996027
+  "totalBytes": 9934909646
 }

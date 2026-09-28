@@ -1,0 +1,162 @@
+{
+  "status": "R2 replacement complete and verified",
+  "storageBudgetBytes": 10000000000,
+  "beforeBytes": 9780825103,
+  "afterBytes": 9934909646,
+  "removedBytes": 372829076,
+  "addedBytes": 526913619,
+  "remainingScenes": {
+    "fallout-4": 14,
+    "fallout-76": 14
+  },
+  "removedClips": [
+    {
+      "id": "fallout76-ambient-8",
+      "title": "Ambient 8",
+      "sourceFilename": "Ambient 8.mp4",
+      "videoSrc": "/media/fallout76-ambient-8.mp4",
+      "poster": "/media/fallout76-ambient-8.jpg",
+      "thumb": "/media/fallout76-ambient-8.jpg",
+      "fps": 60.0,
+      "width": 1920,
+      "height": 1080,
+      "hasAudio": false,
+      "previousSequence": 2
+    },
+    {
+      "id": "fallout-76-ambient-1",
+      "title": "Ambient 1",
+      "sourceFilename": "Ambient 1.mp4",
+      "videoSrc": "/media/fallout-76-ambient-1-r4862c3914b.mp4",
+      "poster": "/media/fallout-76-ambient-1-r4862c3914b-center-35.jpg",
+      "thumb": "/media/fallout-76-ambient-1-r4862c3914b-center-35.jpg",
+      "width": 1920,
+      "height": 1080,
+      "fps": 60.0,
+      "hasAudio": false,
+      "previousSequence": 6
+    },
+    {
+      "id": "fallout-76-ambient-4",
+      "title": "Ambient 4",
+      "sourceFilename": "Ambient 4.mp4",
+      "videoSrc": "/media/fallout-76-ambient-4-r6d6efa419b.mp4",
+      "poster": "/media/fallout-76-ambient-4-r6d6efa419b-center-35.jpg",
+      "thumb": "/media/fallout-76-ambient-4-r6d6efa419b-center-35.jpg",
+      "width": 1920,
+      "height": 1080,
+      "fps": 60.0,
+      "hasAudio": false,
+      "previousSequence": 8
+    },
+    {
+      "id": "fallout-76-ambient-16",
+      "title": "Ambient 16",
+      "sourceFilename": "Ambient 16.mp4",
+      "videoSrc": "/media/fallout-76-ambient-16-rc04869c10e.mp4",
+      "poster": "/media/fallout-76-ambient-16-rc04869c10e-center-35.jpg",
+      "thumb": "/media/fallout-76-ambient-16-rc04869c10e-center-35.jpg",
+      "width": 1920,
+      "height": 1080,
+      "fps": 60.0,
+      "hasAudio": false,
+      "previousSequence": 14
+    }
+  ],
+  "removedFiles": [
+    {
+      "key": "media/backgrounds/fallout-76-ambient-1-r4862c3914b-1920-v2.mp4",
+      "bytes": 8820289
+    },
+    {
+      "key": "media/backgrounds/fallout-76-ambient-16-rc04869c10e-1920-v2.mp4",
+      "bytes": 8232030
+    },
+    {
+      "key": "media/backgrounds/fallout-76-ambient-4-r6d6efa419b-1920-v2.mp4",
+      "bytes": 8178298
+    },
+    {
+      "key": "media/backgrounds/fallout76-ambient-8-1920-v2.mp4",
+      "bytes": 8219276
+    },
+    {
+      "key": "media/fallout-76-ambient-1-r4862c3914b-center-35.jpg",
+      "bytes": 109834
+    },
+    {
+      "key": "media/fallout-76-ambient-1-r4862c3914b.mp4",
+      "bytes": 78804517
+    },
+    {
+      "key": "media/fallout-76-ambient-16-rc04869c10e-center-35.jpg",
+      "bytes": 224657
+    },
+    {
+      "key": "media/fallout-76-ambient-16-rc04869c10e.mp4",
+      "bytes": 85064376
+    },
+    {
+      "key": "media/fallout-76-ambient-4-r6d6efa419b-center-35.jpg",
+      "bytes": 127493
+    },
+    {
+      "key": "media/fallout-76-ambient-4-r6d6efa419b.mp4",
+      "bytes": 75395539
+    },
+    {
+      "key": "media/fallout76-ambient-8-center-35.jpg",
+      "bytes": 378167
+    },
+    {
+      "key": "media/fallout76-ambient-8-center.jpg",
+      "bytes": 384101
+    },
+    {
+      "key": "media/fallout76-ambient-8.jpg",
+      "bytes": 368123
+    },
+    {
+      "key": "media/fallout76-ambient-8.mp4",
+      "bytes": 98359688
+    },
+    {
+      "key": "media/thumbnails/fallout-76-ambient-1-r4862c3914b-center-35-640.webp",
+      "bytes": 25160
+    },
+    {
+      "key": "media/thumbnails/fallout-76-ambient-16-rc04869c10e-center-35-640.webp",
+      "bytes": 42386
+    },
+    {
+      "key": "media/thumbnails/fallout-76-ambient-4-r6d6efa419b-center-35-640.webp",
+      "bytes": 22652
+    },
+    {
+      "key": "media/thumbnails/fallout76-ambient-8-center-35-640.webp",
+      "bytes": 72490
+    }
+  ],
+  "addedFiles": [
+    {
+      "key": "media/backgrounds/trial-v2-1920.mp4",
+      "bytes": 34384155
+    },
+    {
+      "key": "media/qualities/trial-v2-720p60.mp4",
+      "bytes": 42796958
+    },
+    {
+      "key": "media/thumbnails/trial-v2-640.webp",
+      "bytes": 44658
+    },
+    {
+      "key": "media/trial-v2-poster.jpg",
+      "bytes": 367202
+    },
+    {
+      "key": "media/trial-v2.mp4",
+      "bytes": 449320646
+    }
+  ]
+}

@@ -368,5 +368,10 @@
     "duration": 15,
     "ranges": [],
     "scannedSrc": "/media/backgrounds/minecraft-01-home-start-1920-v3.mp4"
+  },
+  "/media/trial-v2.mp4": {
+    "duration": 30,
+    "ranges": [],
+    "scannedSrc": "/media/backgrounds/trial-v2-1920.mp4"
   }
 }

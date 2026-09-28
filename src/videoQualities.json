@@ -755,5 +755,22 @@
       "src": "/media/minecraft-04.mp4",
       "original": true
     }
+  ],
+  "/media/trial-v2.mp4": [
+    {
+      "height": 1080,
+      "width": 1920,
+      "encodedHeight": 1080,
+      "fps": 60,
+      "hasAudio": true,
+      "src": "/media/trial-v2.mp4",
+      "original": true
+    },
+    {
+      "height": 720,
+      "fps": 60,
+      "hasAudio": true,
+      "src": "/media/qualities/trial-v2-720p60.mp4"
+    }
   ]
 }
