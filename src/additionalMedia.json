@@ -99,18 +99,6 @@
       "hasAudio": false
     },
     {
-      "id": "fallout76-ambient-8",
-      "title": "Ambient 8",
-      "sourceFilename": "Ambient 8.mp4",
-      "videoSrc": "/media/fallout76-ambient-8.mp4",
-      "poster": "/media/fallout76-ambient-8.jpg",
-      "thumb": "/media/fallout76-ambient-8.jpg",
-      "fps": 60.0,
-      "width": 1920,
-      "height": 1080,
-      "hasAudio": false
-    },
-    {
       "id": "fallout76-ambient-18",
       "title": "Ambient 18",
       "sourceFilename": "Ambient 18.mp4",

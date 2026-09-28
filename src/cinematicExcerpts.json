@@ -59,12 +59,6 @@
     "sourceDuration": 12.433333,
     "poster": "/media/fallout76-ambient-23-center-35.jpg"
   },
-  "/media/fallout76-ambient-8.mp4": {
-    "start": 7.975,
-    "end": 11.475,
-    "sourceDuration": 19.45,
-    "poster": "/media/fallout76-ambient-8-center-35.jpg"
-  },
   "/media/cyberpunk-20260906-11253410-00000053.mp4": {
     "start": 0,
     "end": 3.45,
@@ -275,23 +269,11 @@
     "sourceDuration": 3.833333,
     "poster": "/media/fallout-4-items-36-rbcd24ef8d0-center-35.jpg"
   },
-  "/media/fallout-76-ambient-1-r4862c3914b.mp4": {
-    "start": 6.0916665,
-    "end": 9.591666499999999,
-    "sourceDuration": 15.683333,
-    "poster": "/media/fallout-76-ambient-1-r4862c3914b-center-35.jpg"
-  },
   "/media/fallout-76-ambient-3-rf64c8dc037.mp4": {
     "start": 2.6583335000000003,
     "end": 6.1583335,
     "sourceDuration": 8.816667,
     "poster": "/media/fallout-76-ambient-3-rf64c8dc037-center-35.jpg"
-  },
-  "/media/fallout-76-ambient-4-r6d6efa419b.mp4": {
-    "start": 6.3083335,
-    "end": 9.8083335,
-    "sourceDuration": 16.116667,
-    "poster": "/media/fallout-76-ambient-4-r6d6efa419b-center-35.jpg"
   },
   "/media/fallout-76-ambient-5-r9db5b757a0.mp4": {
     "start": 2.6583335000000003,
@@ -322,12 +304,6 @@
     "end": 6.9,
     "sourceDuration": 10.3,
     "poster": "/media/fallout-76-ambient-15-r046b835d5b-center-35.jpg"
-  },
-  "/media/fallout-76-ambient-16-rc04869c10e.mp4": {
-    "start": 6.8166665,
-    "end": 10.3166665,
-    "sourceDuration": 17.133333,
-    "poster": "/media/fallout-76-ambient-16-rc04869c10e-center-35.jpg"
   },
   "/media/fallout-76-ambient-21-rb8c64a4618.mp4": {
     "start": 4.8416665,

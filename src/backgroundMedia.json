@@ -325,26 +325,6 @@
       }
     ]
   },
-  "/media/fallout76-ambient-8.mp4": {
-    "treatment": "cinematic-detail-v2",
-    "sourceBytes": 98359688,
-    "sourceDuration": 19.45,
-    "duration": 5.5,
-    "excerpt": {
-      "start": 0,
-      "end": 3.5
-    },
-    "sourceStart": 7.975,
-    "variants": [
-      {
-        "src": "/media/backgrounds/fallout76-ambient-8-1920-v2.mp4",
-        "width": 1920,
-        "height": 1080,
-        "fps": 60,
-        "bytes": 8219276
-      }
-    ]
-  },
   "/media/fallout76-ambient-18.mp4": {
     "treatment": "cinematic-detail-v2",
     "sourceBytes": 53726479,
@@ -1273,26 +1253,6 @@
       }
     ]
   },
-  "/media/fallout-76-ambient-1-r4862c3914b.mp4": {
-    "treatment": "cinematic-detail-v2",
-    "sourceBytes": 78804517,
-    "sourceDuration": 15.683333,
-    "duration": 5.5,
-    "excerpt": {
-      "start": 0,
-      "end": 3.5
-    },
-    "sourceStart": 6.0916665,
-    "variants": [
-      {
-        "src": "/media/backgrounds/fallout-76-ambient-1-r4862c3914b-1920-v2.mp4",
-        "width": 1920,
-        "height": 1080,
-        "fps": 60,
-        "bytes": 8820289
-      }
-    ]
-  },
   "/media/fallout-76-ambient-3-rf64c8dc037.mp4": {
     "treatment": "cinematic-detail-v2",
     "sourceBytes": 38680601,
@@ -1310,26 +1270,6 @@
         "height": 1080,
         "fps": 60,
         "bytes": 8059806
-      }
-    ]
-  },
-  "/media/fallout-76-ambient-4-r6d6efa419b.mp4": {
-    "treatment": "cinematic-detail-v2",
-    "sourceBytes": 75395539,
-    "sourceDuration": 16.116667,
-    "duration": 5.5,
-    "excerpt": {
-      "start": 0,
-      "end": 3.5
-    },
-    "sourceStart": 6.3083335,
-    "variants": [
-      {
-        "src": "/media/backgrounds/fallout-76-ambient-4-r6d6efa419b-1920-v2.mp4",
-        "width": 1920,
-        "height": 1080,
-        "fps": 60,
-        "bytes": 8178298
       }
     ]
   },
@@ -1430,26 +1370,6 @@
         "height": 1080,
         "fps": 60,
         "bytes": 8160743
-      }
-    ]
-  },
-  "/media/fallout-76-ambient-16-rc04869c10e.mp4": {
-    "treatment": "cinematic-detail-v2",
-    "sourceBytes": 85064376,
-    "sourceDuration": 17.133333,
-    "duration": 5.5,
-    "excerpt": {
-      "start": 0,
-      "end": 3.5
-    },
-    "sourceStart": 6.8166665,
-    "variants": [
-      {
-        "src": "/media/backgrounds/fallout-76-ambient-16-rc04869c10e-1920-v2.mp4",
-        "width": 1920,
-        "height": 1080,
-        "fps": 60,
-        "bytes": 8232030
       }
     ]
   },

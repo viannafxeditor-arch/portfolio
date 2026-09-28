@@ -21,4 +21,4 @@ The old site remains in Git history at commit `83706b56ebfb4f7a05de47a33bd8c7736
 
 ## Cloudflare R2 storage budget
 
-The selected 384 media files total 9,936,935,508 bytes. Use Standard storage. The site keeps 18 scenes in each Fallout game, with Home and process footage intact. `build:pages` rejects a media manifest that reaches 10,000,000,000 bytes. Upload only the manifest entries, preserving their `media/` paths. The local recovery archive is not part of the site. Configure CORS from `deploy/r2-cors.json`. Other account storage and R2 operation quotas are separate.
+The selected 368 media files total 9,407,996,027 bytes. Use Standard storage. The site keeps 14 scenes in each Fallout game, with Home and process footage intact. `build:pages` rejects a media manifest that reaches 10,000,000,000 bytes. Upload only the manifest entries, preserving their `media/` paths. The local recovery archive is not part of the site. Configure CORS from `deploy/r2-cors.json`. Other account storage and R2 operation quotas are separate.

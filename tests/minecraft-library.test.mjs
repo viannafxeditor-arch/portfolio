@@ -9,7 +9,7 @@ import manifest from '../deploy/media-manifest.json' with { type: 'json' };
 import { selectBackgroundMedia } from '../src/backgroundMedia.js';
 
 test('Minecraft adds four scenes and the second Home shot without replacing existing Home shots', () => {
-  assert.deepEqual(cinematicGames.map(g=>[g.id,g.clips.length]), [['cyberpunk',16],['red-dead-redemption-2',5],['fallout-4',14],['fallout-76',18],['minecraft',4]]);
+  assert.deepEqual(cinematicGames.map(g=>[g.id,g.clips.length]), [['cyberpunk',16],['red-dead-redemption-2',5],['fallout-4',14],['fallout-76',14],['minecraft',4]]);
   assert.equal(cinematicClips[1].sourceFilename, 'Render Minecraft Video #1.mkv');
   const home = cinematicClips[1];
   const homePreview = selectBackgroundMedia(home.backgroundSrc);

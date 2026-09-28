@@ -301,10 +301,6 @@
       "bytes": 8108776
     },
     {
-      "key": "media/backgrounds/fallout-76-ambient-1-r4862c3914b-1920-v2.mp4",
-      "bytes": 8820289
-    },
-    {
       "key": "media/backgrounds/fallout-76-ambient-13-rc4fdf1ba2d-1920-v2.mp4",
       "bytes": 8087428
     },
@@ -315,10 +311,6 @@
     {
       "key": "media/backgrounds/fallout-76-ambient-15-r046b835d5b-1920-v2.mp4",
       "bytes": 8160743
-    },
-    {
-      "key": "media/backgrounds/fallout-76-ambient-16-rc04869c10e-1920-v2.mp4",
-      "bytes": 8232030
     },
     {
       "key": "media/backgrounds/fallout-76-ambient-21-rb8c64a4618-1920-v2.mp4",
@@ -339,10 +331,6 @@
     {
       "key": "media/backgrounds/fallout-76-ambient-30-r24cb7d62fc-1920-v2.mp4",
       "bytes": 8161600
-    },
-    {
-      "key": "media/backgrounds/fallout-76-ambient-4-r6d6efa419b-1920-v2.mp4",
-      "bytes": 8178298
     },
     {
       "key": "media/backgrounds/fallout-76-ambient-5-r9db5b757a0-1920-v2.mp4",
@@ -367,10 +355,6 @@
     {
       "key": "media/backgrounds/fallout76-ambient-23-1920-v2.mp4",
       "bytes": 8185201
-    },
-    {
-      "key": "media/backgrounds/fallout76-ambient-8-1920-v2.mp4",
-      "bytes": 8219276
     },
     {
       "key": "media/backgrounds/home-loop-1920-v2.mp4",
@@ -745,14 +729,6 @@
       "bytes": 11205225
     },
     {
-      "key": "media/fallout-76-ambient-1-r4862c3914b-center-35.jpg",
-      "bytes": 109834
-    },
-    {
-      "key": "media/fallout-76-ambient-1-r4862c3914b.mp4",
-      "bytes": 78804517
-    },
-    {
       "key": "media/fallout-76-ambient-13-rc4fdf1ba2d-center-35.jpg",
       "bytes": 308428
     },
@@ -775,14 +751,6 @@
     {
       "key": "media/fallout-76-ambient-15-r046b835d5b.mp4",
       "bytes": 50212197
-    },
-    {
-      "key": "media/fallout-76-ambient-16-rc04869c10e-center-35.jpg",
-      "bytes": 224657
-    },
-    {
-      "key": "media/fallout-76-ambient-16-rc04869c10e.mp4",
-      "bytes": 85064376
     },
     {
       "key": "media/fallout-76-ambient-21-rb8c64a4618-center-35.jpg",
@@ -823,14 +791,6 @@
     {
       "key": "media/fallout-76-ambient-30-r24cb7d62fc.mp4",
       "bytes": 51405623
-    },
-    {
-      "key": "media/fallout-76-ambient-4-r6d6efa419b-center-35.jpg",
-      "bytes": 127493
-    },
-    {
-      "key": "media/fallout-76-ambient-4-r6d6efa419b.mp4",
-      "bytes": 75395539
     },
     {
       "key": "media/fallout-76-ambient-5-r9db5b757a0-center-35.jpg",
@@ -911,22 +871,6 @@
     {
       "key": "media/fallout76-ambient-23.mp4",
       "bytes": 62410349
-    },
-    {
-      "key": "media/fallout76-ambient-8-center-35.jpg",
-      "bytes": 378167
-    },
-    {
-      "key": "media/fallout76-ambient-8-center.jpg",
-      "bytes": 384101
-    },
-    {
-      "key": "media/fallout76-ambient-8.jpg",
-      "bytes": 368123
-    },
-    {
-      "key": "media/fallout76-ambient-8.mp4",
-      "bytes": 98359688
     },
     {
       "key": "media/home-frame.jpg",
@@ -1361,10 +1305,6 @@
       "bytes": 29160
     },
     {
-      "key": "media/thumbnails/fallout-76-ambient-1-r4862c3914b-center-35-640.webp",
-      "bytes": 25160
-    },
-    {
       "key": "media/thumbnails/fallout-76-ambient-13-rc4fdf1ba2d-center-35-640.webp",
       "bytes": 58634
     },
@@ -1375,10 +1315,6 @@
     {
       "key": "media/thumbnails/fallout-76-ambient-15-r046b835d5b-center-35-640.webp",
       "bytes": 44720
-    },
-    {
-      "key": "media/thumbnails/fallout-76-ambient-16-rc04869c10e-center-35-640.webp",
-      "bytes": 42386
     },
     {
       "key": "media/thumbnails/fallout-76-ambient-21-rb8c64a4618-center-35-640.webp",
@@ -1399,10 +1335,6 @@
     {
       "key": "media/thumbnails/fallout-76-ambient-30-r24cb7d62fc-center-35-640.webp",
       "bytes": 40822
-    },
-    {
-      "key": "media/thumbnails/fallout-76-ambient-4-r6d6efa419b-center-35-640.webp",
-      "bytes": 22652
     },
     {
       "key": "media/thumbnails/fallout-76-ambient-5-r9db5b757a0-center-35-640.webp",
@@ -1427,10 +1359,6 @@
     {
       "key": "media/thumbnails/fallout76-ambient-23-center-35-640.webp",
       "bytes": 64274
-    },
-    {
-      "key": "media/thumbnails/fallout76-ambient-8-center-35-640.webp",
-      "bytes": 72490
     },
     {
       "key": "media/thumbnails/home-frame-640.webp",
@@ -1545,5 +1473,5 @@
       "bytes": 1406166199
     }
   ],
-  "totalBytes": 9780825103
+  "totalBytes": 9407996027
 }

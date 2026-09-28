@@ -301,17 +301,6 @@
       "original": true
     }
   ],
-  "/media/fallout76-ambient-8.mp4": [
-    {
-      "height": 1080,
-      "width": 1920,
-      "encodedHeight": 1080,
-      "fps": 60.0,
-      "hasAudio": false,
-      "src": "/media/fallout76-ambient-8.mp4",
-      "original": true
-    }
-  ],
   "/media/fallout76-ambient-18.mp4": [
     {
       "height": 1080,
@@ -655,27 +644,11 @@
       "original": true
     }
   ],
-  "/media/fallout-76-ambient-1-r4862c3914b.mp4": [
-    {
-      "height": 1080,
-      "fps": 60.0,
-      "src": "/media/fallout-76-ambient-1-r4862c3914b.mp4",
-      "original": true
-    }
-  ],
   "/media/fallout-76-ambient-3-rf64c8dc037.mp4": [
     {
       "height": 1080,
       "fps": 60.0,
       "src": "/media/fallout-76-ambient-3-rf64c8dc037.mp4",
-      "original": true
-    }
-  ],
-  "/media/fallout-76-ambient-4-r6d6efa419b.mp4": [
-    {
-      "height": 1080,
-      "fps": 60.0,
-      "src": "/media/fallout-76-ambient-4-r6d6efa419b.mp4",
       "original": true
     }
   ],
@@ -716,14 +689,6 @@
       "height": 1080,
       "fps": 60.0,
       "src": "/media/fallout-76-ambient-15-r046b835d5b.mp4",
-      "original": true
-    }
-  ],
-  "/media/fallout-76-ambient-16-rc04869c10e.mp4": [
-    {
-      "height": 1080,
-      "fps": 60.0,
-      "src": "/media/fallout-76-ambient-16-rc04869c10e.mp4",
       "original": true
     }
   ],
