@@ -755,7 +755,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
   --carousel-gap: clamp(.65rem, 1.3vw, 1.1rem);
   --short-card-width: calc((100% - 2 * var(--carousel-peek) - 2 * var(--carousel-gap)) / 3);
   --short-side-space: var(--carousel-peek);
-  inset: 55% auto auto 50%;
+  inset: 50% auto auto 50%;
   transform: translate(-50%, -50%);
   width: min(calc(100% - 2 * var(--page-pad)), 78rem, 120dvh);
   padding: 0;
