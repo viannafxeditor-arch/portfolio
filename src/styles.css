@@ -936,12 +936,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
   transform: scale(1.12);
   object-position: center;
 }
-.work-section--shorts .work-copy {
-  inset: max(5rem, 10dvh) var(--page-pad) auto;
-  width: auto;
-  text-align: center;
-}
-.work-section--shorts .work-copy__format { max-width: none; }
 .work-section--shorts .work-section__shade {
   background: radial-gradient(ellipse at center, transparent 25%, rgba(0,0,0,.65) 75%, #000 100%);
 }
@@ -952,8 +946,3 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
   mask-image: linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
 }
 .project-rail--horizontal .project-item.is-active .project-item__thumb { opacity: 1; border-color: #fff; }
-@media (max-height: 540px) {
-  .work-section--shorts .work-copy { top: 4.75rem; }
-  .work-section--shorts .work-copy h2 { font-size: 1.3rem; }
-  .work-section--shorts .work-copy__format { margin-top: .35rem; font-size: .65rem; }
-}
