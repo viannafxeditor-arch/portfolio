@@ -1,6 +1,5 @@
 import { PiArrowRightThin } from "react-icons/pi";
 import { discordProfileUrl } from "../contact.js";
-import portrait from "../assets/andreas-portrait.png";
 
 export function ClosingSections({ copy }) {
   const year = new Date().getFullYear();
@@ -20,7 +19,7 @@ export function ClosingSections({ copy }) {
       </div>
 
       <div className="portrait-panel">
-        <img src={portrait} alt={copy.accessibility.portraitAlt} loading="lazy" decoding="async" width="640" height="640" />
+        <img src="/media/andreas-portrait.png" alt={copy.accessibility.portraitAlt} loading="lazy" decoding="async" />
       </div>
 
       <footer>
