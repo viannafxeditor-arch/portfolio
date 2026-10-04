@@ -17,3 +17,9 @@ export function nextRailPreview(projects, activeId, startIndex) {
   const visibleOffset = wrapIndex(index - startIndex, projects.length);
   return { project: projects[index], startIndex: projects.length <= VISIBLE_COUNT ? 0 : visibleOffset < VISIBLE_COUNT ? startIndex : index };
 }
+
+// The featured short always follows the middle visible card, including wraparound.
+export function centerRailProject(projects, startIndex = 0) {
+  const visible = railSlots(projects, startIndex).filter(slot => !slot.isPeek);
+  return visible[Math.floor(visible.length / 2)]?.project;
+}

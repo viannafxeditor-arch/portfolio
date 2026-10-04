@@ -16,24 +16,28 @@ export function projectDisplayTitle(project, fallback) {
 export const workSections = [
   {
     id: "youtube",
+    format: "long-form",
+    subtitle: "LONG-FORM",
     projects: [
       makeProject("youtube-trial-v2", "", "/media/trial-v2-poster.jpg", "/media/trial-v2-poster.jpg", "/media/trial-v2.mp4", "Trial V2.mp4"),
       makeProject("youtube-01", "", "/media/youtube-frame.jpg", "/media/youtube-frame.jpg", "/media/youtube-loop.mp4", "TimeLine.mp4"),
       makeProject("youtube-02", "", "/media/content-warning-poster.jpg", "/media/content-warning-poster.jpg", "/media/content-warning-loop.mp4", "⛔️ CONTENT WARNING NÃO FOI FEITO PRA GENTE!.mkv"),
       makeProject("youtube-03", "", "/media/lethal-company-poster.jpg", "/media/lethal-company-poster.jpg", "/media/lethal-company-loop.mp4", "CLIPES DE LETHAL COMPANY QUE NÃO FORAM COMBINADOS!.mkv"),
       makeProject("youtube-04", "", "/media/lol-poster.jpg", "/media/lol-poster.jpg", "/media/lol-loop.webm", "LOL É UM JOGO QUE [NÃO] DEVERIA EXISTIR 🚫.webm"),
-    ].map(project => ({ ...project, format: "long-form" })).concat(additionalMedia.shorts),
+    ].map(project => ({ ...project, format: "long-form" })),
   },
   {
-    id: "documentary",
-    projects: [makeProject("documentary-01", "", "/media/home-frame.jpg", "/media/home-frame.jpg", "/media/home-loop.mp4", "Timeline 1.mp4")],
+    id: "youtube-shorts",
+    format: "shorts",
+    subtitle: "SHORTS",
+    projects: additionalMedia.shorts,
   },
  ].map(section => {
   const counts = {};
   return { ...section, projects: section.projects.map(project => {
     const group = project.format || section.id;
     const sequence = counts[group] = (counts[group] || 0) + 1;
-    const label = group === "shorts" ? "Short" : group === "long-form" ? "Long-Form" : "Documentary";
+    const label = group === "shorts" ? "Short" : "Long-Form";
     return { ...project, sequence, displayTitle: `${label} · ${String(sequence).padStart(2, "0")}` };
   }) };
 });
@@ -66,10 +70,6 @@ export const siteCopy = {
       youtube: {
         title: "YouTube",
         tagline: "Storytelling engineered for attention.",
-      },
-      documentary: {
-        title: "Documentary",
-        tagline: "Turning information into narrative.",
       },
     },
     about: {
@@ -119,10 +119,6 @@ export const siteCopy = {
         title: "YouTube",
         tagline: "Narrativas pensadas para prender a atenção.",
       },
-      documentary: {
-        title: "Documentário",
-        tagline: "Transformando informação em narrativa.",
-      },
     },
     about: {
       eyebrow: "Sobre mim",
@@ -170,10 +166,6 @@ export const siteCopy = {
       youtube: {
         title: "YouTube",
         tagline: "Narrativas diseñadas para captar la atención.",
-      },
-      documentary: {
-        title: "Documental",
-        tagline: "Transformando información en narrativa.",
       },
     },
     about: {

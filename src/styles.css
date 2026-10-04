@@ -253,7 +253,6 @@ button:focus-visible, a:focus-visible { outline: 1px solid rgba(255, 255, 255, 0
 }
 
 #youtube .work-section__poster { object-position: 35% center; }
-#documentary .work-section__poster { object-position: 45% center; }
 
 .work-section__poster.is-transitioning { opacity: 0.76; transform: scale(1.008); }
 
@@ -285,8 +284,6 @@ button:focus-visible, a:focus-visible { outline: 1px solid rgba(255, 255, 255, 0
 }
 
 .work-copy h2 { margin-top: 0; font-size: clamp(1.7rem, 3.4vw, 3.6rem); overflow-wrap: anywhere; }
-#documentary .work-copy { container-type: inline-size; }
-#documentary-title { white-space: nowrap; overflow-wrap: normal; font-size: min(clamp(1.4rem, 3.4vw, 3.6rem), 8cqw); }
 
 .work-copy p {
   max-width: 24rem;
@@ -920,3 +917,18 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
 
 .process-copy::-webkit-scrollbar { display: none; }
 .process-copy p:last-child { margin-bottom: 0; }
+
+.work-copy .work-copy__format {
+  margin-top: .8rem;
+  font-size: clamp(.7rem, 1vw, .9rem);
+  font-weight: 500;
+  letter-spacing: .3em;
+  color: rgba(255,255,255,.82);
+}
+.work-section--shorts .work-section__poster {
+  filter: blur(24px) brightness(.7) saturate(.85);
+  transform: scale(1.12);
+  object-position: center;
+}
+.project-rail--horizontal .project-item__thumb { opacity: .65; transition: opacity 240ms ease, border-color 240ms ease; }
+.project-rail--horizontal .project-item.is-active .project-item__thumb { opacity: 1; border-color: #fff; }

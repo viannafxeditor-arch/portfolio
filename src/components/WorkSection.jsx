@@ -5,7 +5,7 @@ import { usePreviewVideo } from "../hooks/usePreviewVideo.js";
 import { projectDisplayTitle } from "../siteData.js";
 import { CinematicBackground } from "./CinematicBackground.jsx";
 import { nextRailPreview } from "../projectRail.js";
-import { VISIBLE_COUNT, wrapIndex, railSlots } from "../projectRail.js";
+import { VISIBLE_COUNT, wrapIndex, railSlots, centerRailProject } from "../projectRail.js";
 import thumbnails from "../mediaThumbnails.json";
 
 import { bindCarouselWheel, hoveredProject } from "../carouselInteractions.js";
@@ -14,7 +14,7 @@ const RAIL_TRANSITION_MS = 420;
 
 export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, horizontal = false, collectionKey = section.id, transitionPhase = "" }) {
   const [activeId, setActiveId] = useState(section.projects[0]?.id);
-  const [startIndex, setStartIndex] = useState(0);
+  const [startIndex, setStartIndex] = useState(horizontal && section.projects.length > VISIBLE_COUNT ? -1 : 0);
   const [transitioning, setTransitioning] = useState(false);
   const [railMotion, setRailMotion] = useState(null);
   const sectionRef = useRef(null);
@@ -36,13 +36,13 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
     window.clearTimeout(railTimerRef.current);
     motionRef.current = false;
     setRailMotion(null);
-    setStartIndex(0);
+    setStartIndex(horizontal && section.projects.length > VISIBLE_COUNT ? -1 : 0);
     setActiveId(selections.current[collectionKey] || section.projects[0]?.id);
   }, [collectionKey]);
 
   // Hit-test again after moving cards settle, including a stationary pointer.
   useLayoutEffect(() => {
-    if (railMotion || !pointerRef.current) return;
+    if (horizontal || railMotion || !pointerRef.current) return;
     const frame = requestAnimationFrame(() => {
       const point = pointerRef.current;
       if (!point) return;
@@ -50,17 +50,18 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
       if (id) selectProject(id);
     });
     return () => cancelAnimationFrame(frame);
-  }, [startIndex, railMotion, collectionKey]);
+  }, [startIndex, railMotion, collectionKey, horizontal]);
 
   const activeProject = useMemo(
-    () => section.projects.find((project) => project.id === activeId) ?? section.projects[0],
-    [activeId, section.projects],
+    () => horizontal ? centerRailProject(section.projects, startIndex) : section.projects.find((project) => project.id === activeId) ?? section.projects[0],
+    [activeId, section.projects, horizontal, startIndex],
   );
   const carouselProjects = useMemo(
     () => railSlots(section.projects, startIndex),
     [section.projects, startIndex],
   );
-  const sectionCopy = copy.work[section.id];
+  const sectionCopy = copy.work[section.format ? "youtube" : section.id];
+  const sectionLabel = [sectionCopy.title, section.subtitle].filter(Boolean).join(" ");
   const scrollable = section.projects.length > VISIBLE_COUNT;
 
   const cinematic = section.id === "games";
@@ -83,7 +84,7 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
     setTransitioning(true);
     const timer = window.setTimeout(() => setTransitioning(false), 360);
     return () => window.clearTimeout(timer);
-  }, [activeId]);
+  }, [activeProject?.id]);
 
   function moveRail(direction) {
     if (motionRef.current || !scrollable) return;
@@ -118,7 +119,7 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
   }
 
   return (
-    <section ref={sectionRef} id={section.id} data-game={section.gameId} data-format-transition={transitionPhase || undefined} className={`work-section${horizontal ? " work-section--shorts" : ""}`} aria-labelledby={`${section.id}-title`}>
+    <section ref={sectionRef} id={section.id} data-game={section.gameId} data-format-transition={transitionPhase || undefined} className={`work-section${horizontal ? " work-section--shorts" : ""}`} aria-labelledby={`${section.id}-title${section.subtitle ? ` ${section.id}-format` : ""}`}>
       {cinematic && activeProject ? <CinematicBackground clip={activeProject} paused={cinemaOpen} containerRef={sectionRef} onEnded={advancePreview} /> : activeProject?.videoSrc && (
         <video {...videoPresentationProps}
           ref={videoRef}
@@ -136,11 +137,12 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
 
       <div className="work-copy reveal-copy">
         <h2 id={`${section.id}-title`}>{sectionCopy.title}</h2>
+        {section.subtitle && <p id={`${section.id}-format`} className="work-copy__format">{section.subtitle}</p>}
       </div>
 
       <aside ref={railRef}
         onPointerMove={event => { if (event.pointerType === "mouse") pointerRef.current = { x: event.clientX, y: event.clientY }; }}
-        onPointerLeave={() => { pointerRef.current = null; }} className={`project-rail${horizontal ? " project-rail--horizontal" : ""}`} aria-label={`${sectionCopy.title} ${copy.accessibility.projects}`}>
+        onPointerLeave={() => { pointerRef.current = null; }} className={`project-rail${horizontal ? " project-rail--horizontal" : ""}`} aria-label={`${sectionLabel} ${copy.accessibility.projects}`}>
         <div className="project-rail__backdrop" aria-hidden="true" />
         {railHeader}
         {scrollable && <button
@@ -148,7 +150,7 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
           type="button"
           onClick={() => moveRail("up")}
           disabled={Boolean(railMotion)}
-          aria-label={`${copy.accessibility.returnFirst} ${sectionCopy.title} ${copy.accessibility.projects}`}
+          aria-label={`${copy.accessibility.returnFirst} ${sectionLabel} ${copy.accessibility.projects}`}
         >
           {horizontal ? <PiCaretLeftThin aria-hidden="true" /> : <PiCaretUpThin aria-hidden="true" />}
         </button>}
@@ -164,18 +166,18 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
           }}>
           <div className={`project-rail__list ${railMotion ? `is-moving-${railMotion}` : ""}`}>
             {carouselProjects.map(({ project, isPeek }, position) => {
-              const selected = project.id === activeId;
+              const selected = project.id === activeProject?.id;
               const projectTitle = projectDisplayTitle(project, project.title);
-              const projectType = section.id === "youtube" ? "Gameplay" : section.id === "games" ? "Cinematic" : sectionCopy.title;
+              const projectType = (section.format || section.id === "youtube") ? "Gameplay" : section.id === "games" ? "Cinematic" : sectionCopy.title;
               return (
                 <button
                   key={`${project.id}-${position}`}
                   data-project-id={project.id}
                   className={`project-item ${project.orientation === "portrait" ? "is-portrait" : ""} ${selected ? "is-active" : ""} ${isPeek ? "is-peek" : ""}`}
                   type="button"
-                  onPointerEnter={event => { if (!isPeek && event.pointerType === "mouse") selectProject(project.id); }}
-                  onPointerMove={event => { if (!isPeek && event.pointerType === "mouse") selectProject(project.id); }}
-                  onFocus={() => { if (!isPeek) selectProject(project.id); }}
+                  onPointerEnter={event => { if (!horizontal && !isPeek && event.pointerType === "mouse") selectProject(project.id); }}
+                  onPointerMove={event => { if (!horizontal && !isPeek && event.pointerType === "mouse") selectProject(project.id); }}
+                  onFocus={() => { if (!horizontal && !isPeek) selectProject(project.id); }}
                   onClick={(event) => {
                     selectProject(project.id);
                     onPlay({ ...project, title: projectTitle, triggerElement: event.currentTarget });
@@ -204,7 +206,7 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
           type="button"
           onClick={() => moveRail("down")}
           disabled={Boolean(railMotion)}
-          aria-label={`${copy.accessibility.showMore} ${sectionCopy.title} ${copy.accessibility.projects}`}
+          aria-label={`${copy.accessibility.showMore} ${sectionLabel} ${copy.accessibility.projects}`}
         >
           {horizontal ? <PiCaretRightThin aria-hidden="true" /> : <PiCaretDownThin aria-hidden="true" />}
         </button>}
