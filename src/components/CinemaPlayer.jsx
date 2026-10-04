@@ -193,12 +193,11 @@ export function CinemaPlayer({ project, copy, onClose }) {
   }
 
   return (
-    <dialog ref={dialogRef} className={`cinema ${closing ? "is-closing" : ""}`} aria-labelledby="cinema-title"
+    <dialog ref={dialogRef} className={`cinema ${closing ? "is-closing" : ""}`} aria-label={project.title}
       onCancel={event => { event.preventDefault(); close(); }} onKeyDown={onKeyDown}
       onClick={event => { if (event.target === event.currentTarget) close(); }}>
       <div ref={windowRef} tabIndex={-1} className={`cinema__window ${project.orientation === "portrait" ? "is-portrait" : ""} ${controlsHidden ? "is-controls-hidden" : ""} ${immersive ? "is-immersive" : ""}`}>
         <header className="cinema__heading" inert={controlsHidden ? true : undefined}>
-          <h2 id="cinema-title">{project.title}</h2>
           <button className="cinema__button" type="button" aria-label={copy.close} onClick={close} autoFocus><PiXThin /></button>
         </header>
         <div className="cinema__screen">

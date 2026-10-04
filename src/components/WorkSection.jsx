@@ -168,7 +168,6 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
             {carouselProjects.map(({ project, isPeek }, position) => {
               const selected = project.id === activeProject?.id;
               const projectTitle = projectDisplayTitle(project, project.title);
-              const projectType = (section.format || section.id === "youtube") ? "Gameplay" : section.id === "games" ? "Cinematic" : sectionCopy.title;
               return (
                 <button
                   key={`${project.id}-${position}`}
@@ -190,10 +189,6 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
                   <span className="project-item__thumb">
                     <img src={thumbnails[project.thumb] || project.thumb} alt="" loading="lazy" decoding="async" width={project.orientation === "portrait" ? 360 : 640} height={project.orientation === "portrait" ? 640 : 360} />
                     <PiPlayFill aria-hidden="true" />
-                  </span>
-                  <span className="project-item__meta">
-                    <strong>{projectTitle}</strong>
-                    <small>{projectType}</small>
                   </span>
                 </button>
               );
