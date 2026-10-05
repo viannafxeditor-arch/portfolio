@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { createBackgroundPlayback } from "../backgroundPlayback.js";
 
 // Keep observers stable when dialogs open; release resources when inactive.
-export function useViewportVideo(containerRef, videoRef, mediaKey, suspended = false, playbackRate = 0.8) {
+export function useViewportVideo(containerRef, videoRef, mediaKey, suspended = false, playbackRate = 0.8, visibilityThreshold = .55) {
   const playbackRef = useRef(null);
   const suspendedRef = useRef(suspended);
   suspendedRef.current = suspended;
@@ -18,8 +18,8 @@ export function useViewportVideo(containerRef, videoRef, mediaKey, suspended = f
     updateVisibility();
     updateMotion();
     const observer = new IntersectionObserver(([entry]) => {
-      playback.setVisible(entry.isIntersecting && entry.intersectionRatio >= 0.55);
-    }, { threshold: [0, 0.55] });
+      playback.setVisible(entry.isIntersecting && entry.intersectionRatio >= visibilityThreshold);
+    }, { threshold: [0, visibilityThreshold] });
     observer.observe(container);
     document.addEventListener("visibilitychange", updateVisibility);
     motion.addEventListener("change", updateMotion);
@@ -30,6 +30,6 @@ export function useViewportVideo(containerRef, videoRef, mediaKey, suspended = f
       playback.destroy();
       playbackRef.current = null;
     };
-  }, [containerRef, videoRef, mediaKey, playbackRate]);
+  }, [containerRef, videoRef, mediaKey, playbackRate, visibilityThreshold]);
   useEffect(() => { playbackRef.current?.setSuspended(suspended); }, [suspended, mediaKey]);
 }

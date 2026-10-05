@@ -1,5 +1,5 @@
 import { videoPresentationProps } from "../videoPresentation.js";
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { PiCaretDownThin, PiCaretUpThin, PiCaretLeftThin, PiCaretRightThin, PiPlayFill } from "react-icons/pi";
 import { usePreviewVideo } from "../hooks/usePreviewVideo.js";
 import { projectDisplayTitle } from "../siteData.js";
@@ -12,7 +12,7 @@ import { bindCarouselWheel, hoveredProject } from "../carouselInteractions.js";
 
 const RAIL_TRANSITION_MS = 420;
 
-export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, horizontal = false, collectionKey = section.id, transitionPhase = "" }) {
+export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, horizontal = false, collectionKey = section.id, transitionPhase = "", onBackgroundChange }) {
   const featuredVertical = section.format === "long-form";
   const centered = horizontal || featuredVertical;
   const [activeId, setActiveId] = useState(section.projects[0]?.id);
@@ -67,7 +67,11 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
   const scrollable = section.projects.length > VISIBLE_COUNT;
 
   const cinematic = section.id === "games";
-  const baked = usePreviewVideo(sectionRef, videoRef, cinematic ? undefined : activeProject, cinemaOpen);
+  const baked = usePreviewVideo(sectionRef, videoRef, cinematic || onBackgroundChange ? undefined : activeProject, cinemaOpen);
+  const advancePreviewRef = useRef(null);
+  advancePreviewRef.current = advancePreview;
+  const advanceBackground = useCallback(() => advancePreviewRef.current?.(), []);
+  useEffect(() => { onBackgroundChange?.(section.id, activeProject, advanceBackground); }, [onBackgroundChange, section.id, activeProject, advanceBackground]);
 
   function advancePreview() {
     const next = nextRailPreview(section.projects, activeProject?.id, startIndex);
@@ -122,7 +126,7 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
 
   return (
     <section ref={sectionRef} id={section.id} data-game={section.gameId} data-format-transition={transitionPhase || undefined} className={`work-section${horizontal ? " work-section--shorts" : ""}`} aria-labelledby={`${section.id}-title${section.subtitle ? ` ${section.id}-format` : ""}`}>
-      {cinematic && activeProject ? <CinematicBackground clip={activeProject} paused={cinemaOpen} containerRef={sectionRef} onEnded={advancePreview} /> : activeProject?.videoSrc && (
+      {!onBackgroundChange && cinematic && activeProject ? <CinematicBackground clip={activeProject} paused={cinemaOpen} containerRef={sectionRef} onEnded={advancePreview} /> : !onBackgroundChange && activeProject?.videoSrc && (
         <video {...videoPresentationProps}
           ref={videoRef}
           key={activeProject.videoSrc}

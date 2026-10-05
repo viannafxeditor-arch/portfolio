@@ -977,3 +977,30 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
 @media (max-height: 540px) {
   .project-rail--featured { --carousel-peek: 1.5rem; }
 }
+
+
+/* A single viewport backdrop blends into the next scene. */
+.portfolio-page { position: relative; isolation: isolate; background: #050607; }
+.portfolio-backdrop { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; background: #050607; filter: blur(var(--scene-blur, 0px)); transform: scale(1.025); }
+.portfolio-scene { position: absolute; inset: 0; opacity: 0; background: #050607; }
+.portfolio-scene:first-child { opacity: 1; }
+.portfolio-scene video, .portfolio-scene > img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.015); }
+.portfolio-scene--shorts video { filter: blur(24px) brightness(.7) saturate(.85); transform: scale(1.12); }
+.portfolio-scene--closing > img { filter: blur(48px) brightness(.18); transform: scale(1.2); }
+.portfolio-backdrop__shade { position: absolute; inset: 0; background: linear-gradient(90deg,#0007,transparent 60%), linear-gradient(0deg,#0006,transparent 50%,#0004); }
+.portfolio-page > section { position: relative; z-index: 1; background: transparent; border: 0; }
+.portfolio-page > .hero { z-index: auto; }
+.portfolio-page > .hero > .edge-shade,
+.portfolio-page > .work-section > .work-section__shade { display: none; }
+.portfolio-page .hero-title,
+.portfolio-page .work-copy,
+.portfolio-page .project-rail { opacity: var(--content-opacity, 1); }
+.portfolio-page .closing-copy,
+.portfolio-page .contact-panel,
+.portfolio-page .portrait-panel { border: 0; background: transparent; }
+.portfolio-page .closing { opacity: var(--content-opacity, 1); }
+.portfolio-page .portrait-panel { -webkit-mask-image: linear-gradient(to bottom, transparent, #000 14dvh); mask-image: linear-gradient(to bottom, transparent, #000 14dvh); }
+.portfolio-scene .ambient-layer video { transform: none; }
+.cinematic-page .process-copy { opacity: var(--content-opacity, 1); }
+.cinematic-page .project-rail__backdrop { display: none; }
+.cinematic-page .process-section__shade { background: linear-gradient(270deg,#030506ad,#03050633 65%,transparent); -webkit-mask-image: linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent); mask-image: linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent); }

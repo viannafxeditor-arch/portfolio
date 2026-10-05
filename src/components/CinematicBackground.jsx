@@ -4,11 +4,11 @@ import { usePreviewVideo } from "../hooks/usePreviewVideo.js";
 import { selectBackgroundMedia } from "../backgroundMedia.js";
 import { cinematicFadeReducer, fadeDuration, guardCinematicBoundary } from "../cinematicFade.js";
 
-function AmbientLayer({ clip, incoming, fading, duration, paused, transitioning, containerRef, onEnded, onReady, onFadeComplete, videos }) {
+function AmbientLayer({ clip, incoming, fading, duration, paused, transitioning, containerRef, onEnded, onReady, onFadeComplete, videos, visibilityThreshold }) {
   const videoRef = useRef(null);
   const [ready, setReady] = useState(false);
   const timeline = selectBackgroundMedia(clip.backgroundSrc || clip.videoSrc).excerpt;
-  const baked = usePreviewVideo(containerRef, videoRef, clip, paused, !incoming && !transitioning ? onEnded : undefined, incoming || transitioning);
+  const baked = usePreviewVideo(containerRef, videoRef, clip, paused, !incoming && !transitioning ? onEnded : undefined, incoming || transitioning, visibilityThreshold);
   useEffect(() => {
     const video = videoRef.current;
     videos.current.set(clip.id, video);
@@ -26,7 +26,7 @@ function AmbientLayer({ clip, incoming, fading, duration, paused, transitioning,
   </div>;
 }
 
-export function CinematicBackground({ clip, paused, containerRef, onEnded }) {
+export function CinematicBackground({ clip, paused, containerRef, onEnded, visibilityThreshold = .55 }) {
   const [layers, dispatch] = useReducer(cinematicFadeReducer, clip, base => ({ base, incoming: null, phase: "idle" }));
   const videos = useRef(new Map());
   useEffect(() => { dispatch({ type: "request", clip }); }, [clip, layers.phase]);
@@ -53,7 +53,7 @@ export function CinematicBackground({ clip, paused, containerRef, onEnded }) {
   return <div className="ambient-backdrop" aria-hidden="true">
     {[layers.base, layers.incoming].filter(Boolean).map(item => <AmbientLayer key={item.id} clip={item}
       incoming={item.id !== layers.base.id} fading={layers.phase === "fading"} duration={layers.duration}
-      transitioning={layers.phase !== "idle"} paused={paused} containerRef={containerRef}
+      transitioning={layers.phase !== "idle"} paused={paused} containerRef={containerRef} visibilityThreshold={visibilityThreshold}
       onEnded={() => { if (clip.id === layers.base.id) onEnded?.(); }} onReady={ready} onFadeComplete={id => dispatch({ type: "finish", id })} videos={videos} />)}
   </div>;
 }
