@@ -13,8 +13,10 @@ import { bindCarouselWheel, hoveredProject } from "../carouselInteractions.js";
 const RAIL_TRANSITION_MS = 420;
 
 export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, horizontal = false, collectionKey = section.id, transitionPhase = "" }) {
+  const featuredVertical = section.format === "long-form";
+  const centered = horizontal || featuredVertical;
   const [activeId, setActiveId] = useState(section.projects[0]?.id);
-  const [startIndex, setStartIndex] = useState(horizontal && section.projects.length > VISIBLE_COUNT ? -1 : 0);
+  const [startIndex, setStartIndex] = useState(centered && section.projects.length > VISIBLE_COUNT ? -1 : 0);
   const [transitioning, setTransitioning] = useState(false);
   const [railMotion, setRailMotion] = useState(null);
   const sectionRef = useRef(null);
@@ -36,13 +38,13 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
     window.clearTimeout(railTimerRef.current);
     motionRef.current = false;
     setRailMotion(null);
-    setStartIndex(horizontal && section.projects.length > VISIBLE_COUNT ? -1 : 0);
+    setStartIndex(centered && section.projects.length > VISIBLE_COUNT ? -1 : 0);
     setActiveId(selections.current[collectionKey] || section.projects[0]?.id);
   }, [collectionKey]);
 
   // Hit-test again after moving cards settle, including a stationary pointer.
   useLayoutEffect(() => {
-    if (horizontal || railMotion || !pointerRef.current) return;
+    if (centered || railMotion || !pointerRef.current) return;
     const frame = requestAnimationFrame(() => {
       const point = pointerRef.current;
       if (!point) return;
@@ -50,11 +52,11 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
       if (id) selectProject(id);
     });
     return () => cancelAnimationFrame(frame);
-  }, [startIndex, railMotion, collectionKey, horizontal]);
+  }, [startIndex, railMotion, collectionKey, centered]);
 
   const activeProject = useMemo(
-    () => horizontal ? centerRailProject(section.projects, startIndex) : section.projects.find((project) => project.id === activeId) ?? section.projects[0],
-    [activeId, section.projects, horizontal, startIndex],
+    () => centered ? centerRailProject(section.projects, startIndex) : section.projects.find((project) => project.id === activeId) ?? section.projects[0],
+    [activeId, section.projects, centered, startIndex],
   );
   const carouselProjects = useMemo(
     () => railSlots(section.projects, startIndex),
@@ -142,7 +144,7 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
 
       <aside ref={railRef}
         onPointerMove={event => { if (event.pointerType === "mouse") pointerRef.current = { x: event.clientX, y: event.clientY }; }}
-        onPointerLeave={() => { pointerRef.current = null; }} className={`project-rail${horizontal ? " project-rail--horizontal" : ""}`} aria-label={`${sectionLabel} ${copy.accessibility.projects}`}>
+        onPointerLeave={() => { pointerRef.current = null; }} className={`project-rail${horizontal ? " project-rail--horizontal" : ""}${featuredVertical ? " project-rail--featured" : ""}`} aria-label={`${sectionLabel} ${copy.accessibility.projects}`}>
         <div className="project-rail__backdrop" aria-hidden="true" />
         {railHeader}
         {scrollable && <button
@@ -174,10 +176,11 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
                   data-project-id={project.id}
                   className={`project-item ${project.orientation === "portrait" ? "is-portrait" : ""} ${selected ? "is-active" : ""} ${isPeek ? "is-peek" : ""}`}
                   type="button"
-                  onPointerEnter={event => { if (!horizontal && !isPeek && event.pointerType === "mouse") selectProject(project.id); }}
-                  onPointerMove={event => { if (!horizontal && !isPeek && event.pointerType === "mouse") selectProject(project.id); }}
-                  onFocus={() => { if (!horizontal && !isPeek) selectProject(project.id); }}
+                  onPointerEnter={event => { if (!centered && !isPeek && event.pointerType === "mouse") selectProject(project.id); }}
+                  onPointerMove={event => { if (!centered && !isPeek && event.pointerType === "mouse") selectProject(project.id); }}
+                  onFocus={() => { if (!centered && !isPeek) selectProject(project.id); }}
                   onClick={(event) => {
+                    if (featuredVertical && !selected) { moveRail(position < 2 ? "up" : "down"); return; }
                     selectProject(project.id);
                     onPlay({ ...project, title: projectTitle, triggerElement: event.currentTarget });
                   }}

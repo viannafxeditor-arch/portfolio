@@ -33,6 +33,8 @@ test("all languages render separate YouTube formats and no documentary section",
       assert.doesNotMatch(html, /documentary|format-selector/i);
       assert.match(html, /class="work-section work-section--shorts"/);
       assert.match(html, /data-project-id="short-league-1"[^>]*is-active/);
+      assert.match(html, /class="project-rail project-rail--featured"/);
+      assert.match(html, /data-project-id="youtube-trial-v2"[^>]*is-active/);
     }
   } finally { await vite.close(); }
 });

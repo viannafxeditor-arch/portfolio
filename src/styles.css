@@ -946,3 +946,34 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
   mask-image: linear-gradient(to bottom, transparent, #000 8%, #000 92%, transparent);
 }
 .project-rail--horizontal .project-item.is-active .project-item__thumb { opacity: 1; border-color: #fff; }
+
+/* One landscape video in focus, with the neighboring videos peeking into view. */
+.project-rail--featured {
+  --carousel-row: min(38.25vw, 31.5rem, 45dvh);
+  --carousel-peek: clamp(2rem, 7dvh, 4.5rem);
+  --carousel-gap: .85rem;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: min(68vw, 56rem, 80dvh);
+  padding: 0;
+}
+.project-rail--featured .project-rail__backdrop { display: none; }
+.project-rail--featured .project-carousel {
+  height: calc(var(--carousel-row) + 2 * var(--carousel-peek));
+  mask-image: linear-gradient(to bottom, transparent, #000 var(--carousel-peek), #000 calc(100% - var(--carousel-peek)), transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 var(--carousel-peek), #000 calc(100% - var(--carousel-peek)), transparent);
+}
+.project-rail--featured .project-rail__list { transform: translateY(calc(var(--carousel-peek) - 2 * var(--carousel-row) - 2 * var(--carousel-gap))); }
+.project-rail--featured .project-rail__list.is-moving-down { transform: translateY(calc(var(--carousel-peek) - 3 * var(--carousel-row) - 3 * var(--carousel-gap))); }
+.project-rail--featured .project-rail__list.is-moving-up { transform: translateY(calc(var(--carousel-peek) - var(--carousel-row) - var(--carousel-gap))); }
+.project-rail--featured .project-item { display: block; height: var(--carousel-row); }
+.project-rail--featured .project-item__thumb { width: 100%; height: 100%; opacity: .55; transform: none; transition: opacity 240ms ease, border-color 240ms ease; }
+.project-rail--featured .project-item.is-active .project-item__thumb { opacity: 1; border-color: #fff; }
+.project-rail--featured .project-item__thumb svg { font-size: 1.5rem; }
+.project-rail--featured .rail-control { margin: .35rem auto; }
+@media (max-width: 720px) {
+  .project-rail--featured { width: calc(100vw - 2 * var(--page-pad)); --carousel-row: calc((100vw - 2 * var(--page-pad)) * .5625); }
+}
+@media (max-height: 540px) {
+  .project-rail--featured { --carousel-peek: 1.5rem; top: 55%; }
+}
