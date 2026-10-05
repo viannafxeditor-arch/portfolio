@@ -949,12 +949,12 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
 
 /* One landscape video in focus, with the neighboring videos peeking into view. */
 .project-rail--featured {
-  --carousel-row: min(38.25vw, 31.5rem, 45dvh);
+  --carousel-row: min(23.625vw, 21.375rem, 45dvh);
   --carousel-peek: clamp(2rem, 7dvh, 4.5rem);
   --carousel-gap: .85rem;
-  inset: 50% auto auto 50%;
-  transform: translate(-50%, -50%);
-  width: min(68vw, 56rem, 80dvh);
+  inset: 50% var(--page-pad) auto auto;
+  transform: translateY(-50%);
+  width: min(42vw, 38rem, 80dvh);
   padding: 0;
 }
 .project-rail--featured .project-rail__backdrop { display: none; }
@@ -972,8 +972,8 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
 .project-rail--featured .project-item__thumb svg { font-size: 1.5rem; }
 .project-rail--featured .rail-control { margin: .35rem auto; }
 @media (max-width: 720px) {
-  .project-rail--featured { width: calc(100vw - 2 * var(--page-pad)); --carousel-row: calc((100vw - 2 * var(--page-pad)) * .5625); }
+  .project-rail--featured { inset: auto var(--page-pad) 2dvh; transform: none; width: calc(100vw - 2 * var(--page-pad)); --carousel-row: calc((100vw - 2 * var(--page-pad)) * .5625); }
 }
 @media (max-height: 540px) {
-  .project-rail--featured { --carousel-peek: 1.5rem; top: 55%; }
+  .project-rail--featured { --carousel-peek: 1.5rem; }
 }
