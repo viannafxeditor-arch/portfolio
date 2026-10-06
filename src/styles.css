@@ -95,7 +95,7 @@ button:focus-visible, a:focus-visible { outline: 1px solid rgba(255, 255, 255, 0
   letter-spacing: 0.06em;
 }
 
-.language__trigger svg:first-child { font-size: 1.05rem; }
+.language__flag { display: block; width: 1.3rem; height: auto; aspect-ratio: 3 / 2; flex-shrink: 0; overflow: hidden; }
 .language__trigger svg:last-child { font-size: 0.8rem; transition: transform 160ms ease; }
 .language__trigger svg.is-rotated { transform: rotate(180deg); }
 
@@ -213,21 +213,6 @@ button:focus-visible, a:focus-visible { outline: 1px solid rgba(255, 255, 255, 0
 .section-index { display: inline-flex; align-items: center; gap: 0.78rem; font-size: 0.78rem; letter-spacing: 0.04em; }
 .section-index i, .eyebrow i { display: inline-block; width: 2.15rem; height: 1px; background: rgba(255, 255, 255, 0.68); }
 .section-index--hero { position: absolute; left: var(--page-pad); top: 54%; }
-
-.scroll-cue {
-  position: absolute;
-  left: var(--page-pad);
-  bottom: 2.8rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.56rem;
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.scroll-cue svg { font-size: 1.35rem; }
 
 .sound-toggle {
   position: absolute;

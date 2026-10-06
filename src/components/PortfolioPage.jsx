@@ -1,5 +1,4 @@
 import { useCallback, useRef, useState } from "react";
-import { PiArrowDownThin } from "react-icons/pi";
 import { ClosingSections } from "./ClosingSections.jsx";
 import { WorkSection } from "./WorkSection.jsx";
 import { PortfolioBackdrop } from "./PortfolioBackdrop.jsx";
@@ -21,7 +20,6 @@ export function PortfolioPage({ copy, paused, onPlay }) {
     <section id="home" className="hero" aria-label={copy.accessibility.introduction}>
       <div className="edge-shade" aria-hidden="true" />
       <h1 className="hero-title" aria-label={copy.hero.title} tabIndex={-1}>{copy.hero.title}</h1>
-      <a className="scroll-cue" href="#youtube" aria-label={copy.accessibility.scrollToWork}><PiArrowDownThin aria-hidden="true" /><span>{copy.hero.scroll}</span></a>
     </section>
     {workSections.map(section => <WorkSection key={section.id}
       section={section} copy={copy} cinemaOpen={paused} onPlay={onPlay}

@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState } from "react";
-import { PiArrowDownThin, PiCaretDownThin } from "react-icons/pi";
+import { PiCaretDownThin } from "react-icons/pi";
 import { cinematicClips, cinematicGames, cinematicCopy } from "../cinematicData.js";
 import { PortfolioBackdrop } from "./PortfolioBackdrop.jsx";
 import { useSectionTransitions } from "../hooks/useSectionTransitions.js";
@@ -47,7 +47,6 @@ export function CinematicPage({ language, copy, paused, onPlay }) {
     <section ref={heroRef} id="home" className="hero" aria-label={copy.accessibility.introduction}>
       <div className="edge-shade" aria-hidden="true" />
       <h1 className="hero-title" aria-label="Cinematic" tabIndex={-1}>Cinematic</h1>
-      <a className="scroll-cue" href="#games" aria-label={copy.accessibility.scrollToWork}><PiArrowDownThin aria-hidden="true" /><span>{copy.hero.scroll}</span></a>
     </section>
     <WorkSection section={gameSection} collectionKey={game.id} copy={gameCopy} cinemaOpen={paused || libraryOpen} onPlay={onPlay} railHeader={controls} onBackgroundChange={updateBackground} />
     <CinematicProcess game={game} language={language} paused={paused || libraryOpen} onBackgroundChange={updateBackground} />

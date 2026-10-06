@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { discordProfileUrl } from "../contact.js";
-import { PiCaretDownThin, PiGlobeSimpleThin, PiListThin, PiXThin } from "react-icons/pi";
+import { PiCaretDownThin, PiListThin, PiXThin } from "react-icons/pi";
+import { LanguageFlag } from "./LanguageFlag.jsx";
 
 const languages = ["ENG", "PTBR", "ES"];
 
@@ -62,7 +63,7 @@ export function Header({ language, onLanguageChange, copy, cinematic = false, on
             aria-controls="language-options"
             aria-label={copy.accessibility.language}
           >
-            <PiGlobeSimpleThin aria-hidden="true" />
+            <LanguageFlag language={language} />
             <span>{language}</span>
             <PiCaretDownThin className={languageOpen ? "is-rotated" : ""} aria-hidden="true" />
           </button>
@@ -79,6 +80,7 @@ export function Header({ language, onLanguageChange, copy, cinematic = false, on
                     setLanguageOpen(false);
                   }}
                 >
+                  <LanguageFlag language={item} />
                   <span>{item}</span>
                 </button>
               ))}
