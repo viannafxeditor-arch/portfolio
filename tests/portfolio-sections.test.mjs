@@ -3,7 +3,18 @@ import test from "node:test";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createServer } from "vite";
-import { centerRailProject, wrapIndex } from "../src/projectRail.js";
+import { centerRailProject, nextRailPreview, wrapIndex } from "../src/projectRail.js";
+import { cinematicGames } from "../src/cinematicData.js";
+
+test("cinematic previews advance the centered thumbnail through every game and wraparound", () => {
+  for (const game of cinematicGames) {
+    for (let index = 0; index < game.clips.length; index++) {
+      const next = nextRailPreview(game.clips, game.clips[index].id, index - 1, true);
+      assert.equal(next.project.id, game.clips[(index + 1) % game.clips.length].id);
+      assert.equal(centerRailProject(game.clips, next.startIndex).id, next.project.id);
+    }
+  }
+});
 
 test("shorts feature the center card through forward and backward wraparound", () => {
   const projects = Array.from({ length: 6 }, (_, id) => ({ id }));

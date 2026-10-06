@@ -13,7 +13,7 @@ import { bindCarouselWheel, hoveredProject } from "../carouselInteractions.js";
 const RAIL_TRANSITION_MS = 420;
 
 export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, horizontal = false, collectionKey = section.id, transitionPhase = "", onBackgroundChange }) {
-  const featuredVertical = section.format === "long-form";
+  const featuredVertical = section.format === "long-form" || section.id === "games";
   const centered = horizontal || featuredVertical;
   const [activeId, setActiveId] = useState(section.projects[0]?.id);
   const [startIndex, setStartIndex] = useState(centered && section.projects.length > VISIBLE_COUNT ? -1 : 0);
@@ -74,7 +74,7 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
   useEffect(() => { onBackgroundChange?.(section.id, activeProject, advanceBackground); }, [onBackgroundChange, section.id, activeProject, advanceBackground]);
 
   function advancePreview() {
-    const next = nextRailPreview(section.projects, activeProject?.id, startIndex);
+    const next = nextRailPreview(section.projects, activeProject?.id, startIndex, centered);
     if (!next) return;
     // Automatic progression must not reselect the old card beneath a stationary pointer.
     pointerRef.current = null;

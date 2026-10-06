@@ -10,10 +10,11 @@ export function railSlots(projects, startIndex = 0) {
 }
 
 // Keep the newly playing scene inside the three selectable cards.
-export function nextRailPreview(projects, activeId, startIndex) {
+export function nextRailPreview(projects, activeId, startIndex, centered = false) {
   if (projects.length < 2) return null;
   const current = projects.findIndex(project => project.id === activeId);
   const index = wrapIndex(current + 1, projects.length);
+  if (centered && projects.length > VISIBLE_COUNT) return { project: projects[index], startIndex: wrapIndex(index - 1, projects.length) };
   const visibleOffset = wrapIndex(index - startIndex, projects.length);
   return { project: projects[index], startIndex: projects.length <= VISIBLE_COUNT ? 0 : visibleOffset < VISIBLE_COUNT ? startIndex : index };
 }
