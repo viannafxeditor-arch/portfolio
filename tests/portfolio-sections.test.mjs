@@ -21,7 +21,7 @@ test("all languages render separate YouTube formats and no documentary section",
   try {
     const { PortfolioPage } = await vite.ssrLoadModule("/src/components/PortfolioPage.jsx");
     const { siteCopy, workSections } = await vite.ssrLoadModule("/src/siteData.js");
-    assert.deepEqual(workSections[0].projects.slice(0, 3).map(p => p.id), ["youtube-trial-v2", "youtube-01", "youtube-02"]);
+    assert.deepEqual(workSections[0].projects.map(p => p.id), ["youtube-02", "youtube-trial-v2", "youtube-01", "youtube-03"]);
     assert.ok(workSections[0].projects.every(p => p.format === "long-form"));
     assert.ok(workSections[1].projects.every(p => p.format === "shorts"));
     for (const copy of Object.values(siteCopy)) {
@@ -32,9 +32,9 @@ test("all languages render separate YouTube formats and no documentary section",
       assert.match(html, /id="youtube-shorts-format"[^>]*>SHORTS/);
       assert.doesNotMatch(html, /documentary|format-selector/i);
       assert.match(html, /class="work-section work-section--shorts"/);
-      assert.match(html, /data-project-id="short-league-1"[^>]*is-active/);
+      assert.match(html, /data-project-id="short-ring-3"[^>]*is-active/);
       assert.match(html, /class="project-rail project-rail--featured"/);
-      assert.match(html, /data-project-id="youtube-trial-v2"[^>]*is-active/);
+      assert.match(html, /data-project-id="youtube-02"[^>]*is-active/);
     }
   } finally { await vite.close(); }
 });

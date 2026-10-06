@@ -1,5 +1,5 @@
-import { PiArrowRightThin } from "react-icons/pi";
-import { discordProfileUrl } from "../contact.js";
+import { PiDiscordLogo, PiEnvelopeSimple, PiXLogo } from "react-icons/pi";
+import { discordProfileUrl, contactEmail, xProfileUrl } from "../contact.js";
 
 export function ClosingSections({ copy }) {
   const year = new Date().getFullYear();
@@ -12,10 +12,11 @@ export function ClosingSections({ copy }) {
       </div>
 
       <div id="contact" className="contact-panel" aria-label={copy.nav.contact}>
-        <a className="contact-cta" href={discordProfileUrl} target="_blank" rel="noopener noreferrer">
-          <span>{copy.contact.cta}</span>
-          <PiArrowRightThin aria-hidden="true" />
-        </a>
+        <div className="contact-links">
+          <a href={discordProfileUrl} target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord"><PiDiscordLogo aria-hidden="true" /></a>
+          <a href={`mailto:${contactEmail}`} aria-label={`Email: ${contactEmail}`} title={contactEmail}><PiEnvelopeSimple aria-hidden="true" /></a>
+          <a href={xProfileUrl} target="_blank" rel="noopener noreferrer" aria-label="X — ViannaFX" title="X — ViannaFX"><PiXLogo aria-hidden="true" /></a>
+        </div>
       </div>
 
       <div className="portrait-panel">

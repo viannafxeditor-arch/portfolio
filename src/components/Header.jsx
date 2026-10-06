@@ -9,6 +9,28 @@ export function Header({ language, onLanguageChange, copy, cinematic = false, on
   const [languageOpen, setLanguageOpen] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
   const languageRef = useRef(null);
+  const headerRef = useRef(null);
+  const [pastHome, setPastHome] = useState(false);
+
+  useEffect(() => {
+    let frame;
+    function update() {
+      const home = document.getElementById("home");
+      setPastHome(Boolean(home && home.getBoundingClientRect().bottom <= (headerRef.current?.offsetHeight || 0) + 1));
+    }
+    function schedule() {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    }
+    schedule();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+    };
+  }, [cinematic]);
 
   useEffect(() => {
     function handlePointerDown(event) {
@@ -37,7 +59,7 @@ export function Header({ language, onLanguageChange, copy, cinematic = false, on
   }
 
   return (
-    <header className="site-header">
+    <header ref={headerRef} className={`site-header${pastHome ? " is-past-home" : ""}`}>
       <a className="wordmark" href={`${cinematic ? "/cinematic" : "/"}#home`} onClick={navigate} aria-label={copy.accessibility.home}>
         Vianna
       </a>

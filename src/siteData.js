@@ -19,18 +19,17 @@ export const workSections = [
     format: "long-form",
     subtitle: "LONG-FORM",
     projects: [
+      makeProject("youtube-02", "", "/media/content-warning-poster.jpg", "/media/content-warning-poster.jpg", "/media/content-warning-loop.mp4", "⛔️ CONTENT WARNING NÃO FOI FEITO PRA GENTE!.mkv"),
       makeProject("youtube-trial-v2", "", "/media/trial-v2-poster.jpg", "/media/trial-v2-poster.jpg", "/media/trial-v2.mp4", "Trial V2.mp4"),
       makeProject("youtube-01", "", "/media/youtube-frame.jpg", "/media/youtube-frame.jpg", "/media/youtube-loop.mp4", "TimeLine.mp4"),
-      makeProject("youtube-02", "", "/media/content-warning-poster.jpg", "/media/content-warning-poster.jpg", "/media/content-warning-loop.mp4", "⛔️ CONTENT WARNING NÃO FOI FEITO PRA GENTE!.mkv"),
       makeProject("youtube-03", "", "/media/lethal-company-poster.jpg", "/media/lethal-company-poster.jpg", "/media/lethal-company-loop.mp4", "CLIPES DE LETHAL COMPANY QUE NÃO FORAM COMBINADOS!.mkv"),
-      makeProject("youtube-04", "", "/media/lol-poster.jpg", "/media/lol-poster.jpg", "/media/lol-loop.webm", "LOL É UM JOGO QUE [NÃO] DEVERIA EXISTIR 🚫.webm"),
     ].map(project => ({ ...project, format: "long-form" })),
   },
   {
     id: "youtube-shorts",
     format: "shorts",
     subtitle: "SHORTS",
-    projects: additionalMedia.shorts,
+    projects: [...additionalMedia.shorts.filter(project => project.id === "short-ring-3"), ...additionalMedia.shorts.filter(project => project.id !== "short-ring-3")],
   },
  ].map(section => {
   const counts = {};
