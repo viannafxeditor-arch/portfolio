@@ -28,7 +28,7 @@ test("shorts feature the center card through forward and backward wraparound", (
 });
 
 test("all languages render separate YouTube formats and no documentary section", async () => {
-  const vite = await createServer({ configFile: false, esbuild: { jsx: "automatic" }, optimizeDeps: { noDiscovery: true, include: [] }, server: { middlewareMode: true }, appType: "custom" });
+  const vite = await createServer({ configFile: false, define: { "import.meta.env.VITE_CLIENTS_PREVIEW": JSON.stringify("true") }, esbuild: { jsx: "automatic" }, optimizeDeps: { noDiscovery: true, include: [] }, server: { middlewareMode: true }, appType: "custom" });
   try {
     const { PortfolioPage } = await vite.ssrLoadModule("/src/components/PortfolioPage.jsx");
     const { siteCopy, workSections } = await vite.ssrLoadModule("/src/siteData.js");
@@ -37,7 +37,8 @@ test("all languages render separate YouTube formats and no documentary section",
     assert.ok(workSections[1].projects.every(p => p.format === "shorts"));
     for (const copy of Object.values(siteCopy)) {
       const html = renderToStaticMarkup(React.createElement(PortfolioPage, { copy, paused: false, onPlay() {} }));
-      assert.deepEqual([...html.matchAll(/<section[^>]* id="([^"]+)"/g)].map(m => m[1]), ["home", "youtube", "youtube-shorts"]);
+      assert.deepEqual([...html.matchAll(/<section[^>]* id="([^"]+)"/g)].map(m => m[1]), ["home", "youtube", "youtube-shorts", "clients"]);
+      assert.deepEqual([...html.matchAll(/href="https:\/\/www.youtube.com\/@([^"]+)"/g)].map(m => m[1]), ["MugmV2", "Taejon"]);
       assert.equal((html.match(/<h2[^>]*>YouTube<\/h2>/g) || []).length, 2);
       assert.match(html, /id="youtube-format"[^>]*>LONG-FORM/);
       assert.match(html, /id="youtube-shorts-format"[^>]*>SHORTS/);
