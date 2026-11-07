@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VITE_MEDIA_ORIGIN: ${{ vars.MEDIA_ORIGIN }}
+      VITE_CLIENTS_PREVIEW: "true"
+      VITE_CLIENTS_API_URL: ${{ vars.CLIENTS_API_URL }}
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v4
@@ -20,7 +22,9 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: node --test tests/portfolio-sections.test.mjs tests/pages-build.test.mjs tests/playback-quality.test.mjs tests/background-playback.test.mjs tests/background-media.test.mjs tests/media-controls.test.mjs tests/cinematic-fade.test.mjs tests/minecraft-library.test.mjs
+      - run: node --test tests/client-stats.test.mjs tests/section-transitions.test.mjs tests/portfolio-sections.test.mjs tests/pages-build.test.mjs tests/playback-quality.test.mjs tests/background-playback.test.mjs tests/background-media.test.mjs tests/media-controls.test.mjs tests/cinematic-fade.test.mjs tests/minecraft-library.test.mjs
+      - name: Check subscribers endpoint configuration
+        run: test -n "$VITE_CLIENTS_API_URL"
       - run: npm run build:pages
       - run: node scripts/verify-pages-media.mjs
       - uses: actions/configure-pages@v5

@@ -22,11 +22,12 @@ function Scene({ id, project, paused, shorts }) {
   </div>;
 }
 
-export function PortfolioBackdrop({ scenes, paused }) {
+export function PortfolioBackdrop({ scenes, paused, clients = false }) {
   return <div className="portfolio-backdrop" aria-hidden="true">
     {scenes.map(scene => scene.cinematic
       ? <CinematicScene key={scene.id} {...scene} paused={paused} />
       : <Scene key={scene.id} {...scene} paused={paused} />)}
+    {clients && <div data-scene="clients" className="portfolio-scene portfolio-scene--clients" />}
     <div data-scene="closing" className="portfolio-scene portfolio-scene--closing">
       <img src="/media/andreas-portrait.png" alt="" />
     </div>

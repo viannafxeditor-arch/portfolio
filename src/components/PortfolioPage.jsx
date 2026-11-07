@@ -4,6 +4,8 @@ import { WorkSection } from "./WorkSection.jsx";
 import { PortfolioBackdrop } from "./PortfolioBackdrop.jsx";
 import { useSectionTransitions } from "../hooks/useSectionTransitions.js";
 import { workSections } from "../siteData.js";
+import { ClientsSection } from "./ClientsSection.jsx";
+import { clientsPreviewEnabled } from "../clients.js";
 
 export function PortfolioPage({ copy, paused, onPlay }) {
   const pageRef = useRef(null);
@@ -16,7 +18,7 @@ export function PortfolioPage({ copy, paused, onPlay }) {
     setScenes(current => current.map(scene => scene.id === id && scene.project !== project ? { ...scene, project } : scene));
   }, []);
   return <div ref={pageRef} className="portfolio-page">
-    <PortfolioBackdrop scenes={scenes} paused={paused} />
+    <PortfolioBackdrop scenes={scenes} paused={paused} clients={clientsPreviewEnabled} />
     <section id="home" className="hero" aria-label={copy.accessibility.introduction}>
       <div className="edge-shade" aria-hidden="true" />
       <h1 className="hero-title" aria-label={copy.hero.title} tabIndex={-1}>{copy.hero.title}</h1>
@@ -24,6 +26,7 @@ export function PortfolioPage({ copy, paused, onPlay }) {
     {workSections.map(section => <WorkSection key={section.id}
       section={section} copy={copy} cinemaOpen={paused} onPlay={onPlay}
       horizontal={section.format === "shorts"} onBackgroundChange={updateBackground} />)}
+    {clientsPreviewEnabled && <ClientsSection lang={copy.lang} />}
     <ClosingSections copy={copy} />
   </div>;
 }

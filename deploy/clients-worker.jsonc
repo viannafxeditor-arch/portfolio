@@ -1,0 +1,13 @@
+{
+  "name": "vianna-client-stats",
+  "main": "../worker/clients.js",
+  "compatibility_date": "2026-10-31",
+  "account_id": "645c2f26259019a7d0cd8ad5008d7db0",
+  "workers_dev": true,
+  "ratelimits": [
+    { "name": "CLIENTS_RATE_LIMIT", "namespace_id": "2026110601", "simple": { "limit": 20, "period": 60 } }
+  ],
+  "vars": {
+    "CLIENTS_ALLOWED_ORIGINS": "https://www.viannafx.media,https://viannafx.media"
+  }
+}

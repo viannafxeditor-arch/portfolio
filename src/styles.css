@@ -48,7 +48,7 @@ button:focus-visible, a:focus-visible { outline: 1px solid rgba(255, 255, 255, 0
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--page-pad);
-  background: linear-gradient(to bottom, rgba(3, 4, 5, 0.62), rgba(3, 4, 5, 0));
+  background: transparent;
   pointer-events: none;
 }
 
@@ -58,17 +58,13 @@ button:focus-visible, a:focus-visible { outline: 1px solid rgba(255, 255, 255, 0
   position: absolute;
   z-index: -1;
   inset: 0 0 -1rem;
-  background: rgba(5, 6, 7, .52);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: rgba(5, 6, 7, calc(.52 * var(--header-progress, 0)));
+  backdrop-filter: blur(calc(18px * var(--header-progress, 0)));
+  -webkit-backdrop-filter: blur(calc(18px * var(--header-progress, 0)));
   mask-image: linear-gradient(#000 70%, transparent);
   -webkit-mask-image: linear-gradient(#000 70%, transparent);
-  opacity: 0;
-  transition: opacity 300ms ease;
   pointer-events: none;
 }
-.site-header.is-past-home::before { opacity: 1; }
-@media (prefers-reduced-motion: reduce) { .site-header::before { transition: none; } }
 
 .wordmark {
   text-transform: uppercase;
@@ -949,12 +945,12 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
 
 /* One landscape video in focus, with the neighboring videos peeking into view. */
 .project-rail--featured {
-  --carousel-row: min(23.625vw, 21.375rem, 45dvh);
-  --carousel-peek: clamp(2rem, 7dvh, 4.5rem);
+  --carousel-row: min(18.9vw, 17.1rem, 36dvh);
+  --carousel-peek: clamp(1.6rem, 5.6dvh, 3.6rem);
   --carousel-gap: .85rem;
   inset: 50% var(--page-pad) auto auto;
   transform: translateY(-50%);
-  width: min(42vw, 38rem, 80dvh);
+  width: min(33.6vw, 30.4rem, 64dvh);
   padding: 0;
 }
 .project-rail--featured .project-rail__backdrop { display: none; }
