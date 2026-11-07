@@ -1,10 +1,11 @@
 # Inscritos dos clientes
 
 Estado em 07/11/2026: publicação autorizada pelo usuário; preparação e testes concluídos.
-Worker implantado e URL configurada no GitHub Actions. Falta cadastrar o secret
-YOUTUBE_API_KEY na Cloudflare, verificar a consulta real e publicar o frontend.
-O envio automático da chave foi bloqueado pela revisão de aprovação; o usuário
-deve inserir o valor diretamente no painel, como Secret, e aplicar o deploy.
+Worker implantado e URL configurada no GitHub Actions. O usuário cadastrou a chave
+diretamente no painel como secret `YT`. O Worker aceita `YOUTUBE_API_KEY` ou `YT`.
+Consulta pública real verificada: HTTP 200, MUGM 247.000 e Tae 122.000, sem cache.
+Contagens de contingência atualizadas com essa data. O frontend está pronto para
+publicação pelo push para `main`.
 
 Endpoint: `https://vianna-client-stats.viannafxeditor.workers.dev/api/clients`.
 Worker: `vianna-client-stats`, conta `645c2f26259019a7d0cd8ad5008d7db0`.
@@ -15,7 +16,7 @@ Configuração local concluída em 31/10/2026: projeto Google Cloud `Vianna Port
 restrita à YouTube Data API v3. O valor está somente em `.env.local` e não deve ser
 copiado para documentação ou backups. Consulta real e renderização na prévia
 confirmaram MUGM 245.000 e Tae 122.000 nessa data. Os valores salvos de contingência
-continuam identificados com a data original. Após uma formatação, será necessário
+foram atualizados em 07/11/2026 conforme descrito acima. Após uma formatação, será necessário
 configurar novamente a credencial privada; o ZIP de 21/10 não contém esta integração.
 
 Clientes ativos: MUGM e Tae. Os IDs oficiais estão em `shared/clientChannels.js`.

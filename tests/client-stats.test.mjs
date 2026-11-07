@@ -71,3 +71,18 @@ test("worker limits repeated visits before contacting YouTube and fails closed w
   assert.equal(response.headers.get("Access-Control-Allow-Origin"), "https://www.viannafx.media");
   assert.deepEqual(await response.json(), { error: "too_many_requests" });
 });
+
+test("worker uses the YT secret configured in production without exposing it", async t => {
+  t.mock.method(globalThis, "fetch", async url => {
+    assert.equal(url.searchParams.get("key"), "private-test-key");
+    return Response.json(payload());
+  });
+  const response = await worker.fetch(new Request("https://example.com/api/clients", { headers: { Origin: "https://www.viannafx.media" } }), {
+    YT: "private-test-key",
+    CLIENTS_RATE_LIMIT: { async limit() { return { success: true }; } },
+  });
+  assert.equal(response.status, 200);
+  const body = await response.text();
+  assert.ok(!body.includes("private-test-key"));
+  assert.equal(validateClientStats(JSON.parse(body)).counts.length, 2);
+});

@@ -12,7 +12,7 @@ export default {
     if (!env.CLIENTS_RATE_LIMIT) return Response.json({ error: "temporarily_unavailable" }, { status: 503, headers });
     const { success } = await env.CLIENTS_RATE_LIMIT.limit({ key: request.headers.get("CF-Connecting-IP") || "unknown" });
     if (!success) return Response.json({ error: "too_many_requests" }, { status: 429, headers: { ...headers, "Retry-After": "60" } });
-    const response = await clientStatsResponse(env.YOUTUBE_API_KEY);
+    const response = await clientStatsResponse(env.YOUTUBE_API_KEY || env.YT);
     for (const [key, value] of Object.entries(headers)) response.headers.set(key, value);
     return response;
   },
