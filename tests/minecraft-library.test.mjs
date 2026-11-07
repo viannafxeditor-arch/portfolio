@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { cinematicGames, cinematicClips } from '../src/cinematicData.js';
+import { cinematicGames, cinematicClips, cinematicHome } from '../src/cinematicData.js';
 import process from '../src/cinematicProcessMedia.json' with { type: 'json' };
 import backgrounds from '../src/backgroundMedia.json' with { type: 'json' };
 import visibility from '../src/backgroundVisibility.json' with { type: 'json' };
@@ -8,27 +8,22 @@ import qualities from '../src/videoQualities.json' with { type: 'json' };
 import manifest from '../deploy/media-manifest.json' with { type: 'json' };
 import { selectBackgroundMedia } from '../src/backgroundMedia.js';
 
-test('Minecraft adds four scenes and the second Home shot without replacing existing Home shots', () => {
-  assert.deepEqual(cinematicGames.map(g=>[g.id,g.clips.length]), [['cyberpunk',16],['red-dead-redemption-2',5],['fallout-4',14],['fallout-76',14],['minecraft',4]]);
-  assert.equal(cinematicClips[1].sourceFilename, 'Render Minecraft Video #1.mkv');
-  const home = cinematicClips[1];
-  const homePreview = selectBackgroundMedia(home.backgroundSrc);
-  assert.equal(homePreview.excerpt.start, 0);
-  assert.equal(homePreview.excerpt.end, 13);
-  assert.ok(homePreview.excerpt.safeEnd - 13 >= 1.4);
-  assert.equal(home.videoSrc, '/media/minecraft-01.mp4');
-  assert.equal(selectBackgroundMedia(home.videoSrc).excerpt.end, 3.5);
-  assert.deepEqual(cinematicClips.filter(c=>c.id!=='minecraft-1').map(c=>c.id), ['ambient-75','cyberpunk-20260906-14411025-00000209','rdr2-1','fallout76-ambient-23','ambient-296','cyberpunk-3','rdr2-3','fallout76-ambient-20','rdr2-2']);
+test('Cinematics contains only Minecraft, with 262 first in the carousel and transitions on Home', () => {
+  assert.deepEqual(cinematicGames.map(g=>[g.id,g.clips.length]), [['minecraft',10]]);
+  assert.deepEqual(cinematicClips.slice(0,6).filter(c=>c.id!=='minecraft-clean-transitions').map(c=>c.sourceFilename), ['262.mp4','19.mp4','24.mp4','35.mp4','86.mp4']);
+  assert.equal(cinematicClips[0].id, 'minecraft-new-262');
+  assert.equal(cinematicClips[1].id, 'minecraft-clean-transitions');
+  assert.equal(cinematicHome.backgroundSrc, '/cinematic-media/minecraft/clean-transitions-bg.mp4');
+  assert.deepEqual(cinematicClips.slice(6).map(c=>c.id), ['minecraft-1','minecraft-2','minecraft-3','minecraft-4']);
   for (const game of cinematicGames) assert.deepEqual(game.clips.map(c=>c.sequence),game.clips.map((_,i)=>i+1));
 });
-
 test('Minecraft has complete lightweight previews, native player quality and process media below the storage limit', () => {
   const minecraft = cinematicGames.find(g=>g.id==='minecraft');
   const files = new Set(manifest.files.map(f=>'/'+f.key));
   assert.equal(process.minecraft.length,4);
   assert.ok(manifest.totalBytes < 10_000_000_000);
   assert.equal(manifest.files.reduce((sum,f)=>sum+f.bytes,0),manifest.totalBytes);
-  for (const clip of minecraft.clips) {
+  for (const clip of minecraft.clips.filter(c => c.videoSrc.startsWith("/media/"))) {
     assert.ok(files.has(clip.videoSrc) && files.has(clip.poster));
     assert.equal(qualities[clip.videoSrc][0].height,1080);
     assert.equal(qualities[clip.videoSrc][0].fps,60);

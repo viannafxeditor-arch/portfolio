@@ -42,11 +42,12 @@ test("all languages feature the new Long-Form video, clients, and no Shorts or d
     for (const copy of Object.values(siteCopy)) {
       const html = renderToStaticMarkup(React.createElement(PortfolioPage, { copy, paused: false, onPlay() {} }));
       assert.deepEqual([...html.matchAll(/<section[^>]* id="([^"]+)"/g)].map(m => m[1]), ["home", "youtube", "clients"]);
-      assert.deepEqual([...html.matchAll(/href="https:\/\/www.youtube.com\/@([^"]+)"/g)].map(m => m[1]), ["MugmV2", "Taejon"]);
+      const clientsHtml = html.match(/<section[^>]* id="clients"[\s\S]*?<\/section>/)?.[0] || "";
+      assert.deepEqual([...clientsHtml.matchAll(/href="https:\/\/www.youtube.com\/@([^"]+)"/g)].map(m => m[1]), ["MugmV2", "Taejon"]);
       assert.equal((html.match(/<h2[^>]*>YouTube<\/h2>/g) || []).length, 1);
       assert.match(html, /id="youtube-format"[^>]*>LONG-FORM/);
       assert.doesNotMatch(html, /documentary|format-selector|youtube-shorts|short-ring|>SHORTS</i);
-      assert.match(html, /class="project-rail project-rail--featured"/);
+      assert.match(html, /class="project-rail has-video-details project-rail--featured"/);
       assert.match(html, /data-project-id="youtube-mugm-assassin"[^>]*is-active/);
       assert.match(html, /data-scene="youtube"[^>]*><video[^>]*poster="\/media\/mugm-home-simplified-poster.jpg"/);
       assert.doesNotMatch(html, /portfolio-scene--youtube/);

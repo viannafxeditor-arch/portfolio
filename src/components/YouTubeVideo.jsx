@@ -1,3 +1,4 @@
+import { createYouTubeVolumeRamp } from "../youtubeVolumeRamp.js";
 import { useEffect, useRef, useState } from "react";
 import { loadYouTubeAPI, youtubePlayerOptions } from "../youtubePlayer.js";
 
@@ -12,11 +13,12 @@ export function YouTubeVideo({ project, background = false, active = true, copy 
     let disposed = false;
     let ready = false;
     let instance;
+    let volumeRamp;
     setStarted(false);
     setFailed(false);
     const sync = () => {
       if (!ready || disposed) return;
-      if (document.hidden || !activeRef.current) instance.pauseVideo();
+      if (document.hidden || !activeRef.current) { volumeRamp?.pause(); instance.pauseVideo(); }
       else { if (background) instance.mute(); instance.playVideo(); }
     };
     loadYouTubeAPI().then(YT => {
@@ -33,13 +35,15 @@ export function YouTubeVideo({ project, background = false, active = true, copy 
             iframe.title = project.title || "YouTube video";
             iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
             if (background) iframe.tabIndex = -1;
+            if (!background) volumeRamp = createYouTubeVolumeRamp(event.target);
             sync();
           },
           onStateChange: event => {
             if (disposed) return;
+            if (event.data !== 1) volumeRamp?.pause();
             if (event.data === 1) {
-              if (document.hidden || !activeRef.current) instance.pauseVideo();
-              else setStarted(true);
+              if (document.hidden || !activeRef.current) { volumeRamp?.pause(); instance.pauseVideo(); }
+              else { setStarted(true); volumeRamp?.start(); }
             }
           },
           onError: () => { if (!disposed) setFailed(true); },
@@ -52,6 +56,7 @@ export function YouTubeVideo({ project, background = false, active = true, copy 
       disposed = true;
       document.removeEventListener("visibilitychange", sync);
       player.current = null;
+      volumeRamp?.destroy();
       instance?.destroy();
       host.current?.replaceChildren();
     };

@@ -8,7 +8,7 @@ import { youtubePlayerOptions } from "../src/youtubePlayer.js";
 import { cinematicGames } from "../src/cinematicData.js";
 
 test("hosted backgrounds have separate media while player originals remain the maximum quality", () => {
-  for (const project of [...workSections.flatMap(section => section.projects), ...cinematicGames.flatMap(game => game.clips)].filter(project => !project.youtubeId)) {
+  for (const project of [...workSections.flatMap(section => section.projects), ...cinematicGames.flatMap(game => game.clips)].filter(project => !project.youtubeId && project.videoSrc.startsWith("/media/"))) {
     const selected = selectBackgroundMedia(project.videoSrc);
     assert.ok(selected.baked, project.videoSrc);
     assert.ok(selected.src.startsWith("/media/backgrounds/"));
@@ -50,7 +50,7 @@ test("1080p screens avoid 4K decoding while larger screens retain a native 4K ba
 });
 
 test("cinematic derivatives preserve the central start and provide room for adaptive fades", () => {
-  for (const game of cinematicGames) for (const clip of game.clips) {
+  for (const game of cinematicGames) for (const clip of game.clips.filter(clip => clip.videoSrc.startsWith("/media/"))) {
     const media = backgrounds[clip.videoSrc];
     assert.equal(media.excerpt.end - media.excerpt.start, 3.5);
     assert.ok(media.duration - media.excerpt.end >= 1.4, clip.title);

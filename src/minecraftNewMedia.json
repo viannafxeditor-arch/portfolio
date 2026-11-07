@@ -1,0 +1,81 @@
+[
+  {
+    "id": "minecraft-new-262",
+    "title": "Minecraft 262",
+    "sourceFilename": "262.mp4",
+    "videoSrc": "/cinematic-media/minecraft/262.mp4",
+    "backgroundSrc": "/cinematic-media/minecraft/262-bg.mp4",
+    "poster": "/cinematic-media/minecraft/262.jpg",
+    "thumb": "/cinematic-media/minecraft/262.jpg",
+    "width": 1920,
+    "height": 1080,
+    "fps": 60,
+    "hasAudio": true
+  },
+  {
+    "id": "minecraft-clean-transitions",
+    "title": "Minecraft Cinematic Transitions",
+    "sourceFilename": "Vianna_-_I_was_doing_some_cinematics_and_those_transitions_are_so_clean_ngl____GmIAAh.mp4",
+    "videoSrc": "/cinematic-media/minecraft/clean-transitions.mp4",
+    "backgroundSrc": "/cinematic-media/minecraft/clean-transitions-bg.mp4",
+    "poster": "/cinematic-media/minecraft/clean-transitions.jpg",
+    "thumb": "/cinematic-media/minecraft/clean-transitions.jpg",
+    "width": 1920,
+    "height": 800,
+    "fps": 60,
+    "hasAudio": true
+  },
+  {
+    "id": "minecraft-new-19",
+    "title": "Minecraft 19",
+    "sourceFilename": "19.mp4",
+    "videoSrc": "/cinematic-media/minecraft/19.mp4",
+    "backgroundSrc": "/cinematic-media/minecraft/19-bg.mp4",
+    "poster": "/cinematic-media/minecraft/19.jpg",
+    "thumb": "/cinematic-media/minecraft/19.jpg",
+    "width": 1920,
+    "height": 1080,
+    "fps": 60,
+    "hasAudio": false
+  },
+  {
+    "id": "minecraft-new-24",
+    "title": "Minecraft 24",
+    "sourceFilename": "24.mp4",
+    "videoSrc": "/cinematic-media/minecraft/24.mp4",
+    "backgroundSrc": "/cinematic-media/minecraft/24-bg.mp4",
+    "poster": "/cinematic-media/minecraft/24.jpg",
+    "thumb": "/cinematic-media/minecraft/24.jpg",
+    "width": 1920,
+    "height": 1080,
+    "fps": 60,
+    "hasAudio": false
+  },
+  {
+    "id": "minecraft-new-35",
+    "title": "Minecraft 35",
+    "sourceFilename": "35.mp4",
+    "videoSrc": "/cinematic-media/minecraft/35.mp4",
+    "backgroundSrc": "/cinematic-media/minecraft/35-bg.mp4",
+    "poster": "/cinematic-media/minecraft/35.jpg",
+    "thumb": "/cinematic-media/minecraft/35.jpg",
+    "width": 1920,
+    "height": 1080,
+    "fps": 60,
+    "hasAudio": false
+  },
+  {
+    "id": "minecraft-new-86",
+    "title": "Minecraft 86",
+    "sourceFilename": "86.mp4",
+    "videoSrc": "/cinematic-media/minecraft/86.mp4",
+    "backgroundSrc": "/cinematic-media/minecraft/86-bg.mp4",
+    "poster": "/cinematic-media/minecraft/86.jpg",
+    "thumb": "/cinematic-media/minecraft/86.jpg",
+    "width": 1920,
+    "height": 1080,
+    "fps": 60,
+    "hasAudio": false
+  }
+]
+

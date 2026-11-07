@@ -1,4 +1,4 @@
-import { copyFileSync, mkdirSync, writeFileSync } from "node:fs";
+import { copyFileSync, mkdirSync, writeFileSync, cpSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 const output = fileURLToPath(new URL("../dist/pages/", import.meta.url));
 mkdirSync(`${output}/cinematic`, { recursive: true });
@@ -8,3 +8,7 @@ writeFileSync(`${output}/CNAME`, "www.viannafx.media\n");
 writeFileSync(`${output}/.nojekyll`, "");
 writeFileSync(`${output}/robots.txt`, "User-agent: *\nAllow: /\n");
 console.log("GitHub Pages package prepared with the existing custom domain and direct Cinematic route.");
+
+// Package the bundled Cinematics media for GitHub Pages.
+const previewMedia = fileURLToPath(new URL("../public/cinematic-media/", import.meta.url));
+if (existsSync(previewMedia)) cpSync(previewMedia, `${output}/cinematic-media`, { recursive: true });

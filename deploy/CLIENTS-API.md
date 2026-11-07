@@ -63,3 +63,16 @@ Documentação oficial:
 - https://developers.google.com/youtube/data/getting-started
 - https://developers.google.com/youtube/data/reference/rest/v3/channels/list
 - https://developers.google.com/youtube/data/reference/rest/v3/channels
+
+## Release 2026-11-07
+
+The video metadata route `/api/video-details` is deployed in the existing
+`vianna-client-stats` Worker, with the same CORS allowlist, rate limit and private
+YouTube secret. The frontend derives its URL from `VITE_CLIENTS_API_URL`.
+
+Cinematics now contains Minecraft only. HOME uses `minecraft-clean-transitions`;
+the carousel starts with `minecraft-new-262`. Six newly imported clips, their
+silent backgrounds and posters are bundled from `public/cinematic-media` into
+GitHub Pages (approximately 241 MB). They do not consume additional R2 storage.
+Original full-quality video streams are retained. Existing hosted media stays
+in R2. The source files in `public/cinematic-media` must be preserved in backups.

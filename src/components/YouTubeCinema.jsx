@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { PiXThin } from "react-icons/pi";
 import { YouTubeVideo } from "./YouTubeVideo.jsx";
 
 export function YouTubeCinema({ project, copy, onClose }) {
@@ -28,7 +27,7 @@ export function YouTubeCinema({ project, copy, onClose }) {
     onCancel={event => { event.preventDefault(); close(); }}
     onClick={event => { if (event.target === event.currentTarget) close(); }}>
     <div className="cinema__window cinema__window--youtube">
-      <header className="cinema__heading"><button className="cinema__button" type="button" aria-label={copy.close} onClick={close} autoFocus><PiXThin /></button></header>
+      <button className="cinema__accessible-close" type="button" onClick={close} autoFocus>{copy.close}</button>
       <div className="cinema__screen"><YouTubeVideo project={project} copy={copy} active={!closing} /></div>
     </div>
   </dialog>;

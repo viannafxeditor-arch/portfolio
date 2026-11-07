@@ -8,7 +8,7 @@ import { watchCinematicExcerpt } from "../src/cinematicExcerpt.js";
 
 test("every game's fades fit before the first encoded wrap, including the shortest clips", () => {
   let shortened = 0;
-  for (const game of cinematicGames) for (const clip of game.clips) {
+  for (const clip of Object.entries(backgrounds).filter(([source, media]) => media.excerpt && !source.startsWith("/media/backgrounds/")).map(([videoSrc]) => ({videoSrc, id: videoSrc}))) {
     const media = backgrounds[clip.videoSrc];
     const timeline = selectBackgroundMedia(clip.videoSrc).excerpt;
     const firstWrap = Math.min(media.duration, media.sourceDuration - media.sourceStart);
