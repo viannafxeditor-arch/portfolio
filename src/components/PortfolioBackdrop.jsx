@@ -19,13 +19,13 @@ function Scene({ id, project, paused, shorts }) {
   const baked = usePreviewVideo(sectionRef, videoRef, project, paused, undefined, false, .01);
   return <div data-scene={id} className={`portfolio-scene${shorts ? " portfolio-scene--shorts" : ""}`}>
     <video {...videoPresentationProps} ref={videoRef} className={baked ? "is-baked-preview" : ""}
-      poster={project.poster} loop muted playsInline preload="none" />
+      poster={project.backgroundPoster || project.poster} loop muted playsInline preload="none" />
   </div>;
 }
 
 export function PortfolioBackdrop({ scenes, paused, clients = false }) {
   return <div className="portfolio-backdrop" aria-hidden="true">
-    {scenes.map(scene => scene.project?.youtubeId
+    {scenes.map(scene => scene.project?.youtubeId && !scene.project.backgroundSrc
       ? <YouTubeBackground key={scene.id} {...scene} paused={paused} />
       : scene.cinematic
       ? <CinematicScene key={scene.id} {...scene} paused={paused} />

@@ -8,6 +8,8 @@ export const homeProject = {
 const featuredYouTubeProject = {
   id: "youtube-mugm-assassin",
   youtubeId: "rH3nU3F1oF8",
+  backgroundSrc: homeProject.videoSrc,
+  backgroundPoster: homeProject.poster,
   startSeconds: 0,
   title: "I Became An Invisible Assassin",
   thumb: "https://i.ytimg.com/vi/rH3nU3F1oF8/maxresdefault.jpg",

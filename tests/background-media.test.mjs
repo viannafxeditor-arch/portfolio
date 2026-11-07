@@ -24,6 +24,7 @@ test("featured YouTube video starts at zero with silent looping backgrounds and 
   assert.equal(homeBackground.src, homeProject.videoSrc);
   assert.equal(homeBackground.playbackRate, 1);
   assert.equal(homeBackground.excerpt, undefined);
+  assert.deepEqual(selectBackgroundMedia(workSections[0].projects[0].backgroundSrc), homeBackground);
   const background = youtubePlayerOptions(workSections[0].projects[0], true, "https://www.viannafx.media");
   const player = youtubePlayerOptions(workSections[0].projects[0], false, "https://www.viannafx.media");
   assert.equal(background.videoId, "rH3nU3F1oF8");

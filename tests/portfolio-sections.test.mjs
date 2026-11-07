@@ -48,6 +48,8 @@ test("all languages feature the new Long-Form video, clients, and no Shorts or d
       assert.doesNotMatch(html, /documentary|format-selector|youtube-shorts|short-ring|>SHORTS</i);
       assert.match(html, /class="project-rail project-rail--featured"/);
       assert.match(html, /data-project-id="youtube-mugm-assassin"[^>]*is-active/);
+      assert.match(html, /data-scene="youtube"[^>]*><video[^>]*poster="\/media\/mugm-home-simplified-poster.jpg"/);
+      assert.doesNotMatch(html, /portfolio-scene--youtube/);
     }
   } finally { await vite.close(); }
 });
