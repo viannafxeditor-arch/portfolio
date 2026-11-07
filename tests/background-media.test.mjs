@@ -20,7 +20,11 @@ test("hosted backgrounds have separate media while player originals remain the m
 });
 
 test("featured YouTube video starts at zero with silent looping backgrounds and normal player controls", () => {
-  const background = youtubePlayerOptions(homeProject, true, "https://www.viannafx.media");
+  const homeBackground = selectBackgroundMedia(homeProject.videoSrc);
+  assert.equal(homeBackground.src, homeProject.videoSrc);
+  assert.equal(homeBackground.playbackRate, 1);
+  assert.equal(homeBackground.excerpt, undefined);
+  const background = youtubePlayerOptions(workSections[0].projects[0], true, "https://www.viannafx.media");
   const player = youtubePlayerOptions(workSections[0].projects[0], false, "https://www.viannafx.media");
   assert.equal(background.videoId, "rH3nU3F1oF8");
   assert.equal(background.playerVars.start, 0);

@@ -1491,7 +1491,15 @@
     {
       "key": "media/youtube-loop.mp4",
       "bytes": 1406166199
+    },
+    {
+      "key": "media/backgrounds/mugm-home-simplified-v1.mp4",
+      "bytes": 35769481
+    },
+    {
+      "key": "media/mugm-home-simplified-poster.jpg",
+      "bytes": 287160
     }
   ],
-  "totalBytes": 9934909646
+  "totalBytes": 9970966287
 }

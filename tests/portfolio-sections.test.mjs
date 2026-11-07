@@ -32,9 +32,9 @@ test("all languages feature the new Long-Form video, clients, and no Shorts or d
   try {
     const { PortfolioPage } = await vite.ssrLoadModule("/src/components/PortfolioPage.jsx");
     const { siteCopy, workSections, homeProject } = await vite.ssrLoadModule("/src/siteData.js");
-    assert.equal(homeProject.youtubeId, "rH3nU3F1oF8");
-    assert.equal(homeProject.startSeconds, 0);
-    assert.equal(workSections[0].projects[0].youtubeId, homeProject.youtubeId);
+    assert.equal(homeProject.youtubeId, undefined);
+    assert.equal(homeProject.videoSrc, "/media/backgrounds/mugm-home-simplified-v1.mp4");
+    assert.equal(workSections[0].projects[0].youtubeId, "rH3nU3F1oF8");
     assert.equal(workSections[0].projects[0].startSeconds, 0);
     assert.deepEqual(workSections[0].projects.map(p => p.id), ["youtube-mugm-assassin", "youtube-02", "youtube-trial-v2", "youtube-01", "youtube-03"]);
     assert.ok(workSections[0].projects.every(p => p.format === "long-form"));

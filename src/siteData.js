@@ -1,4 +1,11 @@
 export const homeProject = {
+  id: "home-mugm-simplified",
+  videoSrc: "/media/backgrounds/mugm-home-simplified-v1.mp4",
+  poster: "/media/mugm-home-simplified-poster.jpg",
+  sourceFilename: "YT VIDEO - Simplified.mp4",
+};
+
+const featuredYouTubeProject = {
   id: "youtube-mugm-assassin",
   youtubeId: "rH3nU3F1oF8",
   startSeconds: 0,
@@ -27,7 +34,7 @@ export const workSections = [
     format: "long-form",
     subtitle: "LONG-FORM",
     projects: [
-      homeProject,
+      featuredYouTubeProject,
       makeProject("youtube-02", "", "/media/content-warning-poster.jpg", "/media/content-warning-poster.jpg", "/media/content-warning-loop.mp4", "⛔️ CONTENT WARNING NÃO FOI FEITO PRA GENTE!.mkv"),
       makeProject("youtube-trial-v2", "", "/media/trial-v2-poster.jpg", "/media/trial-v2-poster.jpg", "/media/trial-v2.mp4", "Trial V2.mp4"),
       makeProject("youtube-01", "", "/media/youtube-frame.jpg", "/media/youtube-frame.jpg", "/media/youtube-loop.mp4", "TimeLine.mp4"),

@@ -1568,5 +1568,22 @@
         "bytes": 34384155
       }
     ]
+  },
+  "/media/backgrounds/mugm-home-simplified-v1.mp4": {
+    "treatment": "home-simplified-full-length",
+    "sourceFilename": "YT VIDEO - Simplified.mp4",
+    "sourceBytes": 225420189,
+    "sourceDuration": 47.5,
+    "duration": 47.5,
+    "playbackRate": 1,
+    "variants": [
+      {
+        "src": "/media/backgrounds/mugm-home-simplified-v1.mp4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 60,
+        "bytes": 35769481
+      }
+    ]
   }
 }
