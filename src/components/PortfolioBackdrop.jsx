@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef } from "react";
 import { usePreviewVideo } from "../hooks/usePreviewVideo.js";
 import { videoPresentationProps } from "../videoPresentation.js";
 import { CinematicBackground } from "./CinematicBackground.jsx";
+import { YouTubeBackground } from "./YouTubeVideo.jsx";
 
 function CinematicScene({ id, project, paused, onEnded }) {
   const sectionRef = useRef(null);
@@ -24,7 +25,9 @@ function Scene({ id, project, paused, shorts }) {
 
 export function PortfolioBackdrop({ scenes, paused, clients = false }) {
   return <div className="portfolio-backdrop" aria-hidden="true">
-    {scenes.map(scene => scene.cinematic
+    {scenes.map(scene => scene.project?.youtubeId
+      ? <YouTubeBackground key={scene.id} {...scene} paused={paused} />
+      : scene.cinematic
       ? <CinematicScene key={scene.id} {...scene} paused={paused} />
       : <Scene key={scene.id} {...scene} paused={paused} />)}
     {clients && <div data-scene="clients" className="portfolio-scene portfolio-scene--clients" />}

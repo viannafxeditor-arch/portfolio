@@ -3,11 +3,12 @@ import test from "node:test";
 import { selectBackgroundMedia } from "../src/backgroundMedia.js";
 import backgrounds from "../src/backgroundMedia.json" with { type: "json" };
 import qualities from "../src/videoQualities.json" with { type: "json" };
-import { workSections } from "../src/siteData.js";
+import { homeProject, workSections } from "../src/siteData.js";
+import { youtubePlayerOptions } from "../src/youtubePlayer.js";
 import { cinematicGames } from "../src/cinematicData.js";
 
-test("all backgrounds have separate media while player originals remain the maximum quality", () => {
-  for (const project of [...workSections.flatMap(section => section.projects), ...cinematicGames.flatMap(game => game.clips)]) {
+test("hosted backgrounds have separate media while player originals remain the maximum quality", () => {
+  for (const project of [...workSections.flatMap(section => section.projects), ...cinematicGames.flatMap(game => game.clips)].filter(project => !project.youtubeId)) {
     const selected = selectBackgroundMedia(project.videoSrc);
     assert.ok(selected.baked, project.videoSrc);
     assert.ok(selected.src.startsWith("/media/backgrounds/"));
@@ -16,6 +17,20 @@ test("all backgrounds have separate media while player originals remain the maxi
     assert.equal(original.src, project.videoSrc);
     assert.ok(qualities[project.videoSrc].every(quality => quality.height <= original.height));
   }
+});
+
+test("featured YouTube video starts at zero with silent looping backgrounds and normal player controls", () => {
+  const background = youtubePlayerOptions(homeProject, true, "https://www.viannafx.media");
+  const player = youtubePlayerOptions(workSections[0].projects[0], false, "https://www.viannafx.media");
+  assert.equal(background.videoId, "rH3nU3F1oF8");
+  assert.equal(background.playerVars.start, 0);
+  assert.equal(player.playerVars.start, 0);
+  assert.equal(background.playerVars.mute, 1);
+  assert.equal(background.playerVars.loop, 1);
+  assert.equal(background.playerVars.playlist, background.videoId);
+  assert.equal(player.playerVars.controls, 1);
+  assert.equal(player.playerVars.mute, undefined);
+  assert.equal(player.playerVars.origin, "https://www.viannafx.media");
 });
 
 test("1080p screens avoid 4K decoding while larger screens retain a native 4K background", () => {

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Header } from "./components/Header.jsx";
 import { CinemaPlayer } from "./components/CinemaPlayer.jsx";
+import { YouTubeCinema } from "./components/YouTubeCinema.jsx";
 import { CinematicPage } from "./components/CinematicPage.jsx";
 import { PortfolioPage } from "./components/PortfolioPage.jsx";
 import { PageTransition } from "./components/PageTransition.jsx";
@@ -34,7 +35,9 @@ export function App() {
         ? <CinematicPage language={language} copy={copy} paused={paused} onPlay={setPlayingProject} />
         : <PortfolioPage copy={copy} paused={paused} onPlay={setPlayingProject} />}
     </main>
-    {playingProject && <CinemaPlayer project={playingProject} copy={copy.player} onClose={() => setPlayingProject(null)} />}
+    {playingProject && (playingProject.youtubeId
+      ? <YouTubeCinema project={playingProject} copy={copy.player} onClose={() => setPlayingProject(null)} />
+      : <CinemaPlayer project={playingProject} copy={copy.player} onClose={() => setPlayingProject(null)} />)}
     <PageTransition transition={transition} />
   </>;
 }

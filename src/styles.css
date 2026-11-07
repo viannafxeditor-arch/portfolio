@@ -980,6 +980,15 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
 .portfolio-backdrop { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; background: #050607; filter: blur(var(--scene-blur, 0px)); transform: scale(1.025); }
 .portfolio-scene { position: absolute; inset: 0; opacity: 0; background: #050607; }
 .portfolio-scene:first-child { opacity: 1; }
+.youtube-video { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; overflow: hidden; }
+.youtube-video__poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.youtube-video__host, .youtube-video__host iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.youtube-video.has-error .youtube-video__host { visibility: hidden; }
+.youtube-video--background { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; }
+.youtube-video--background .youtube-video__host { left: 50%; top: 50%; width: max(100vw, 177.78vh); height: max(100vh, 56.25vw); transform: translate(-50%, -50%); opacity: 0; transition: opacity 600ms ease; pointer-events: none; }
+.youtube-video--background.is-playing .youtube-video__host { opacity: 1; }
+.cinema__window--youtube { width: min(100%, 88rem, calc((100dvh - 8rem) * 16 / 9)); }
+@media (prefers-reduced-motion: reduce) { .youtube-video--background .youtube-video__host { transition: none; } }
 .portfolio-scene video, .portfolio-scene > img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.015); }
 .portfolio-scene--shorts video { filter: blur(24px) brightness(.7) saturate(.85); transform: scale(1.12); }
 .portfolio-scene--closing > img { filter: blur(48px) brightness(.18); transform: scale(1.2); }

@@ -3,7 +3,7 @@ import { ClosingSections } from "./ClosingSections.jsx";
 import { WorkSection } from "./WorkSection.jsx";
 import { PortfolioBackdrop } from "./PortfolioBackdrop.jsx";
 import { useSectionTransitions } from "../hooks/useSectionTransitions.js";
-import { workSections } from "../siteData.js";
+import { homeProject, workSections } from "../siteData.js";
 import { ClientsSection } from "./ClientsSection.jsx";
 import { clientsPreviewEnabled } from "../clients.js";
 
@@ -11,7 +11,7 @@ export function PortfolioPage({ copy, paused, onPlay }) {
   const pageRef = useRef(null);
   useSectionTransitions(pageRef);
   const [scenes, setScenes] = useState(() => [
-    { id: "home", project: { videoSrc: "/media/trial-v2.mp4", poster: "/media/trial-v2-poster.jpg" } },
+    { id: "home", project: homeProject },
     ...workSections.map(section => ({ id: section.id, project: section.projects[0], shorts: section.format === "shorts" })),
   ]);
   const updateBackground = useCallback((id, project) => {
