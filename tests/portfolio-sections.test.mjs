@@ -43,7 +43,7 @@ test("all languages feature the new Long-Form video, clients, and no Shorts or d
       const html = renderToStaticMarkup(React.createElement(PortfolioPage, { copy, paused: false, onPlay() {} }));
       assert.deepEqual([...html.matchAll(/<section[^>]* id="([^"]+)"/g)].map(m => m[1]), ["home", "youtube", "clients"]);
       const clientsHtml = html.match(/<section[^>]* id="clients"[\s\S]*?<\/section>/)?.[0] || "";
-      assert.deepEqual([...clientsHtml.matchAll(/href="https:\/\/www.youtube.com\/@([^"]+)"/g)].map(m => m[1]), ["MugmV2", "Taejon"]);
+      assert.deepEqual([...clientsHtml.matchAll(/href="https:\/\/www.youtube.com\/@([^"]+)"/g)].map(m => m[1]), ["MugmV2", "Taejon", "Lomedy"]);
       assert.equal((html.match(/<h2[^>]*>YouTube<\/h2>/g) || []).length, 1);
       assert.match(html, /id="youtube-format"[^>]*>LONG-FORM/);
       assert.doesNotMatch(html, /documentary|format-selector|youtube-shorts|short-ring|>SHORTS</i);
@@ -54,3 +54,4 @@ test("all languages feature the new Long-Form video, clients, and no Shorts or d
     }
   } finally { await vite.close(); }
 });
+

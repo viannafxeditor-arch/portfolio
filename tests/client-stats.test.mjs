@@ -7,8 +7,8 @@ import worker from "../worker/clients.js";
 
 const payload = () => ({ items: [...clientChannels].reverse().map((client, index) => ({ id: client.channelId, statistics: { subscriberCount: String(100000 + index), hiddenSubscriberCount: false } })) });
 
-test("only MUGM and Tae are requested, together, freshly on each visit", async () => {
-  assert.deepEqual(clientChannels.map(client => client.handle), ["MugmV2", "Taejon"]);
+test("MUGM, Tae and Lomedy are requested, together, freshly on each visit", async () => {
+  assert.deepEqual(clientChannels.map(client => client.handle), ["MugmV2", "Taejon", "Lomedy"]);
   let calls = 0;
   const fetcher = async (url, options) => {
     calls++;
@@ -18,8 +18,8 @@ test("only MUGM and Tae are requested, together, freshly on each visit", async (
     return Response.json(payload());
   };
   const result = await getClientStats("test-key", fetcher);
-  assert.equal(result.counts[0].subscribers, 100001);
-  assert.equal(result.counts[1].subscribers, 100000);
+  assert.equal(result.counts[0].subscribers, 100002);
+  assert.equal(result.counts[1].subscribers, 100001);
   assert.deepEqual(validateClientStats(result), result);
   await getClientStats("test-key", fetcher);
   assert.equal(calls, 2);
@@ -38,7 +38,7 @@ test("hidden counts remain unavailable instead of becoming zero", async () => {
   const data = payload();
   data.items[0].statistics = { hiddenSubscriberCount: true };
   const result = await getClientStats("test-key", async () => Response.json(data));
-  assert.equal(result.counts[1].subscribers, null);
+  assert.equal(result.counts[2].subscribers, null);
   validateClientStats(result);
 });
 
@@ -84,5 +84,6 @@ test("worker uses the YT secret configured in production without exposing it", a
   assert.equal(response.status, 200);
   const body = await response.text();
   assert.ok(!body.includes("private-test-key"));
-  assert.equal(validateClientStats(JSON.parse(body)).counts.length, 2);
+  assert.equal(validateClientStats(JSON.parse(body)).counts.length, 3);
 });
+
