@@ -57,7 +57,7 @@ test("all languages feature the new Long-Form video, clients, and no Shorts or d
 
 
 
-test("YouTube cards show the correct creator and separate YT Jobs verification states", async () => {
+test("YouTube cards show the correct creator and confirmed YT Jobs verification states", async () => {
   const vite = await createServer({ configFile: false, esbuild: { jsx: "automatic" }, optimizeDeps: { noDiscovery: true, include: [] }, server: { middlewareMode: true }, appType: "custom" });
   try {
     const { VideoDetails } = await vite.ssrLoadModule("/src/components/VideoDetails.jsx");
@@ -68,8 +68,9 @@ test("YouTube cards show the correct creator and separate YT Jobs verification s
     const card = project => renderToStaticMarkup(React.createElement(VideoDetails, {project,lang:"en",details:{id:project.youtubeId,creator:project.creator,title:project.title,views:12345}}));
     assert.match(card(mugm), /Work verified on YT Jobs/);
     const taeHtml=card(tae);
-    assert.match(taeHtml,/Tae/);assert.match(taeHtml,/verification pending/);
-    assert.doesNotMatch(taeHtml,/Mugm|Work verified on YT Jobs/);
+    assert.match(taeHtml,/Tae/);assert.match(taeHtml,/Work verified on YT Jobs/);
+    assert.doesNotMatch(taeHtml,/Mugm|verification pending/);
     assert.match(taeHtml,/ytjobs.co\/talent\/profile\/636450/);
   } finally { await vite.close(); }
 });
+
