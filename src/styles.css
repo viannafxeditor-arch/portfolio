@@ -1078,3 +1078,8 @@ html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; heig
 .project-rail--featured .rail-control:hover { background: #414141; transform: scale(1.1); }
 .project-rail--featured .rail-control:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 .project-rail--featured .rail-control:disabled { opacity: .75; }
+.video-details__jobs { display: inline-flex; align-items: center; gap: .2rem; color: #83c7ff; text-decoration: none; padding: .15rem .3rem; border-radius: .25rem; font-size: .72rem; }
+.video-details__jobs svg { width: .9rem; height: .9rem; }
+.video-details__jobs:hover { background: #ffffff15; color: #fff; }
+.video-details__jobs:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.video-details__jobs.is-pending { color: #c3beb0; }

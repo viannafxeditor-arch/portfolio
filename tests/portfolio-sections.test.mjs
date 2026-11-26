@@ -36,7 +36,7 @@ test("all languages feature the new Long-Form video, clients, and no Shorts or d
     assert.equal(homeProject.videoSrc, "/media/backgrounds/mugm-home-simplified-v1.mp4");
     assert.equal(workSections[0].projects[0].youtubeId, "rH3nU3F1oF8");
     assert.equal(workSections[0].projects[0].startSeconds, 0);
-    assert.deepEqual(workSections[0].projects.map(p => p.id), ["youtube-mugm-assassin", "youtube-02", "youtube-trial-v2", "youtube-01", "youtube-03"]);
+    assert.deepEqual(workSections[0].projects.map(p => p.id), ["youtube-mugm-assassin", "youtube-tae-secret-base", "youtube-02", "youtube-trial-v2", "youtube-01", "youtube-03"]);
     assert.ok(workSections[0].projects.every(p => p.format === "long-form"));
     assert.equal(workSections.length, 1);
     for (const copy of Object.values(siteCopy)) {
@@ -55,3 +55,21 @@ test("all languages feature the new Long-Form video, clients, and no Shorts or d
   } finally { await vite.close(); }
 });
 
+
+
+test("YouTube cards show the correct creator and separate YT Jobs verification states", async () => {
+  const vite = await createServer({ configFile: false, esbuild: { jsx: "automatic" }, optimizeDeps: { noDiscovery: true, include: [] }, server: { middlewareMode: true }, appType: "custom" });
+  try {
+    const { VideoDetails } = await vite.ssrLoadModule("/src/components/VideoDetails.jsx");
+    const { workSections } = await vite.ssrLoadModule("/src/siteData.js");
+    const [mugm, tae] = workSections[0].projects;
+    assert.equal(tae.youtubeId, "GpLefsKpu-g");
+    assert.equal(tae.startSeconds, 0);
+    const card = project => renderToStaticMarkup(React.createElement(VideoDetails, {project,lang:"en",details:{id:project.youtubeId,creator:project.creator,title:project.title,views:12345}}));
+    assert.match(card(mugm), /Work verified on YT Jobs/);
+    const taeHtml=card(tae);
+    assert.match(taeHtml,/Tae/);assert.match(taeHtml,/verification pending/);
+    assert.doesNotMatch(taeHtml,/Mugm|Work verified on YT Jobs/);
+    assert.match(taeHtml,/ytjobs.co\/talent\/profile\/636450/);
+  } finally { await vite.close(); }
+});

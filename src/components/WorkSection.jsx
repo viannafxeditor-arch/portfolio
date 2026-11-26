@@ -199,7 +199,7 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
                   <span className="project-item__thumb">
                     <img src={thumbnails[project.thumb] || project.thumb} alt="" loading="lazy" decoding="async" width={project.orientation === "portrait" ? 360 : 640} height={project.orientation === "portrait" ? 640 : 360} />
                     <PiPlayFill aria-hidden="true" />
-                    {details && details.id === project.youtubeId && videoDuration(details.duration) && <span className="project-duration">{videoDuration(details.duration)}</span>}
+                    {details[project.youtubeId] && videoDuration(details[project.youtubeId].duration) && <span className="project-duration">{videoDuration(details[project.youtubeId].duration)}</span>}
                   </span>
                 </button>
               );
@@ -207,7 +207,7 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
           </div>
         </div>
 
-        {section.format === "long-form" && <VideoDetails project={activeProject} lang={copy.lang} details={details} />}
+        {section.format === "long-form" && <VideoDetails project={activeProject} lang={copy.lang} details={details[activeProject.youtubeId]} />}
         {scrollable && <button
           className="rail-control rail-control--next"
           type="button"
@@ -222,3 +222,4 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
     </section>
   );
 }
+

@@ -7,6 +7,7 @@ export const homeProject = {
 
 const featuredYouTubeProject = {
   id: "youtube-mugm-assassin",
+  creator: "Mugm", creatorHandle: "MugmV2", youtubeVerified: true, ytJobsStatus: "verified",
   youtubeId: "rH3nU3F1oF8",
   backgroundSrc: homeProject.videoSrc,
   backgroundPoster: homeProject.poster,
@@ -37,6 +38,14 @@ export const workSections = [
     subtitle: "LONG-FORM",
     projects: [
       featuredYouTubeProject,
+      {
+        id: "youtube-tae-secret-base", youtubeId: "GpLefsKpu-g", startSeconds: 0,
+        title: "My Team Can Find ANY Secret Base...", creator: "Tae", creatorHandle: "Taejon",
+        ytJobsStatus: "pending",
+        thumb: "https://i.ytimg.com/vi/GpLefsKpu-g/maxresdefault.jpg",
+        poster: "https://i.ytimg.com/vi/GpLefsKpu-g/maxresdefault.jpg",
+        format: "long-form",
+      },
       makeProject("youtube-02", "", "/media/content-warning-poster.jpg", "/media/content-warning-poster.jpg", "/media/content-warning-loop.mp4", "⛔️ CONTENT WARNING NÃO FOI FEITO PRA GENTE!.mkv"),
       makeProject("youtube-trial-v2", "", "/media/trial-v2-poster.jpg", "/media/trial-v2-poster.jpg", "/media/trial-v2.mp4", "Trial V2.mp4"),
       makeProject("youtube-01", "", "/media/youtube-frame.jpg", "/media/youtube-frame.jpg", "/media/youtube-loop.mp4", "TimeLine.mp4"),
@@ -199,3 +208,4 @@ export const siteCopy = {
     footer: { copyright: "Vianna Visuals", rights: "Todos los derechos reservados" },
   },
 };
+
