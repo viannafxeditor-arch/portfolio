@@ -40,7 +40,7 @@ export const workSections = [
       featuredYouTubeProject,
       {
         id: "youtube-tae-secret-base", youtubeId: "GpLefsKpu-g", startSeconds: 0,
-        title: "My Team Can Find ANY Secret Base...", creator: "Tae", creatorHandle: "Taejon",
+        title: "My Team Can Find ANY Secret Base...", creator: "Tae", creatorHandle: "Taejon", youtubeVerified: true,
         ytJobsStatus: "verified",
         thumb: "https://i.ytimg.com/vi/GpLefsKpu-g/maxresdefault.jpg",
         poster: "https://i.ytimg.com/vi/GpLefsKpu-g/maxresdefault.jpg",
@@ -208,5 +208,6 @@ export const siteCopy = {
     footer: { copyright: "Vianna Visuals", rights: "Todos los derechos reservados" },
   },
 };
+
 
 

@@ -65,6 +65,7 @@ test("YouTube cards show the correct creator and confirmed YT Jobs verification 
     const [mugm, tae] = workSections[0].projects;
     assert.equal(tae.youtubeId, "GpLefsKpu-g");
     assert.equal(tae.startSeconds, 0);
+    assert.equal(tae.youtubeVerified, true);
     const card = project => renderToStaticMarkup(React.createElement(VideoDetails, {project,lang:"en",details:{id:project.youtubeId,creator:project.creator,title:project.title,views:12345}}));
     assert.match(card(mugm), /Work verified on YT Jobs/);
     const taeHtml=card(tae);
@@ -73,4 +74,5 @@ test("YouTube cards show the correct creator and confirmed YT Jobs verification 
     assert.match(taeHtml,/ytjobs.co\/talent\/profile\/636450/);
   } finally { await vite.close(); }
 });
+
 
