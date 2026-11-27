@@ -19,7 +19,7 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
   const featuredVertical = section.format === "long-form" || section.id === "games";
   const centered = horizontal || featuredVertical;
   const [activeId, setActiveId] = useState(section.projects[0]?.id);
-  const [startIndex, setStartIndex] = useState(centered && section.projects.length > VISIBLE_COUNT ? -1 : 0);
+  const [startIndex, setStartIndex] = useState(centered && section.projects.length > 1 ? -1 : 0);
   const [transitioning, setTransitioning] = useState(false);
   const [railMotion, setRailMotion] = useState(null);
   const sectionRef = useRef(null);
@@ -41,7 +41,7 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
     window.clearTimeout(railTimerRef.current);
     motionRef.current = false;
     setRailMotion(null);
-    setStartIndex(centered && section.projects.length > VISIBLE_COUNT ? -1 : 0);
+    setStartIndex(centered && section.projects.length > 1 ? -1 : 0);
     setActiveId(selections.current[collectionKey] || section.projects[0]?.id);
   }, [collectionKey]);
 
@@ -58,16 +58,16 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
   }, [startIndex, railMotion, collectionKey, centered]);
 
   const activeProject = useMemo(
-    () => centered ? centerRailProject(section.projects, startIndex) : section.projects.find((project) => project.id === activeId) ?? section.projects[0],
+    () => centered ? centerRailProject(section.projects, startIndex, centered) : section.projects.find((project) => project.id === activeId) ?? section.projects[0],
     [activeId, section.projects, centered, startIndex],
   );
   const carouselProjects = useMemo(
-    () => railSlots(section.projects, startIndex),
-    [section.projects, startIndex],
+    () => railSlots(section.projects, startIndex, centered),
+    [section.projects, startIndex, centered],
   );
   const sectionCopy = copy.work[section.format ? "youtube" : section.id];
   const sectionLabel = [sectionCopy.title, section.subtitle].filter(Boolean).join(" ");
-  const scrollable = section.projects.length > VISIBLE_COUNT;
+  const scrollable = section.projects.length > (centered ? 1 : VISIBLE_COUNT);
 
   const cinematic = section.id === "games";
   const baked = usePreviewVideo(sectionRef, videoRef, cinematic || onBackgroundChange ? undefined : activeProject, cinemaOpen);
@@ -175,7 +175,7 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
           }}>
           <div className={`project-rail__list ${railMotion ? `is-moving-${railMotion}` : ""}`}>
             {carouselProjects.map(({ project, isPeek }, position) => {
-              const selected = project.id === activeProject?.id;
+              const selected = project.id === activeProject?.id && (!featuredVertical || position === 2);
               const projectTitle = projectDisplayTitle(project, project.title);
               return (
                 <button
@@ -191,7 +191,7 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
                     selectProject(project.id);
                     onPlay({ ...project, title: projectTitle, triggerElement: event.currentTarget });
                   }}
-                  tabIndex={isPeek ? -1 : 0}
+                  tabIndex={isPeek || (featuredVertical && position !== 2) ? -1 : 0}
                   aria-hidden={isPeek || undefined}
                   aria-pressed={selected}
                   aria-label={`${copy.accessibility.play} ${projectTitle}`}
@@ -222,4 +222,5 @@ export function WorkSection({ section, copy, cinemaOpen, onPlay, railHeader, hor
     </section>
   );
 }
+
 

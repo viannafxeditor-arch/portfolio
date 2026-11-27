@@ -18,15 +18,6 @@ const featuredYouTubeProject = {
   format: "long-form",
 };
 
-const makeProject = (id, year, thumb, poster, videoSrc = null, sourceFilename = null) => ({
-  id,
-  year,
-  thumb,
-  poster,
-  videoSrc,
-  sourceFilename,
-});
-
 export function projectDisplayTitle(project, fallback) {
   return project.displayTitle || (project.sourceFilename ? project.sourceFilename.replace(/\.[^.]+$/, "") : fallback);
 }
@@ -46,10 +37,6 @@ export const workSections = [
         poster: "https://i.ytimg.com/vi/GpLefsKpu-g/maxresdefault.jpg",
         format: "long-form",
       },
-      makeProject("youtube-02", "", "/media/content-warning-poster.jpg", "/media/content-warning-poster.jpg", "/media/content-warning-loop.mp4", "⛔️ CONTENT WARNING NÃO FOI FEITO PRA GENTE!.mkv"),
-      makeProject("youtube-trial-v2", "", "/media/trial-v2-poster.jpg", "/media/trial-v2-poster.jpg", "/media/trial-v2.mp4", "Trial V2.mp4"),
-      makeProject("youtube-01", "", "/media/youtube-frame.jpg", "/media/youtube-frame.jpg", "/media/youtube-loop.mp4", "TimeLine.mp4"),
-      makeProject("youtube-03", "", "/media/lethal-company-poster.jpg", "/media/lethal-company-poster.jpg", "/media/lethal-company-loop.mp4", "CLIPES DE LETHAL COMPANY QUE NÃO FORAM COMBINADOS!.mkv"),
     ].map(project => ({ ...project, format: "long-form" })),
   },
  ].map(section => {
@@ -208,6 +195,7 @@ export const siteCopy = {
     footer: { copyright: "Vianna Visuals", rights: "Todos los derechos reservados" },
   },
 };
+
 
 
 

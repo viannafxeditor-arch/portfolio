@@ -3,7 +3,7 @@ import test from "node:test";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createServer } from "vite";
-import { centerRailProject, nextRailPreview, wrapIndex } from "../src/projectRail.js";
+import { centerRailProject, nextRailPreview, wrapIndex, railSlots } from "../src/projectRail.js";
 import { cinematicGames } from "../src/cinematicData.js";
 
 test("cinematic previews advance the centered thumbnail through every game and wraparound", () => {
@@ -36,7 +36,7 @@ test("all languages feature the new Long-Form video, clients, and no Shorts or d
     assert.equal(homeProject.videoSrc, "/media/backgrounds/mugm-home-simplified-v1.mp4");
     assert.equal(workSections[0].projects[0].youtubeId, "rH3nU3F1oF8");
     assert.equal(workSections[0].projects[0].startSeconds, 0);
-    assert.deepEqual(workSections[0].projects.map(p => p.id), ["youtube-mugm-assassin", "youtube-tae-secret-base", "youtube-02", "youtube-trial-v2", "youtube-01", "youtube-03"]);
+    assert.deepEqual(workSections[0].projects.map(p => p.id), ["youtube-mugm-assassin", "youtube-tae-secret-base"]);
     assert.ok(workSections[0].projects.every(p => p.format === "long-form"));
     assert.equal(workSections.length, 1);
     for (const copy of Object.values(siteCopy)) {
@@ -76,3 +76,14 @@ test("YouTube cards show the correct creator and confirmed YT Jobs verification 
 });
 
 
+
+
+test("two-video featured carousel starts with Mugm and wraps in either direction", () => {
+  const projects = [{id:"mugm"},{id:"tae"}];
+  for (const [start, expected] of [[-1,"mugm"],[0,"tae"],[1,"mugm"],[-2,"tae"]]) {
+    assert.equal(centerRailProject(projects,start,true).id,expected);
+    assert.equal(railSlots(projects,start,true)[2].project.id,expected);
+    const next=nextRailPreview(projects,expected,start,true);
+    assert.equal(centerRailProject(projects,next.startIndex,true).id,expected === "mugm" ? "tae" : "mugm");
+  }
+});
