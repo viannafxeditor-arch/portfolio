@@ -57,3 +57,19 @@ test("cinematic derivatives preserve the central start and provide room for adap
     assert.ok(Math.abs(media.sourceStart - Math.max(0, (media.sourceDuration - 3.5) / 2)) < .001);
   }
 });
+
+test("Tae alone uses the uploaded INTRO while clicking retains YouTube playback", () => {
+  const [mugm, tae] = workSections[0].projects;
+  assert.equal(tae.backgroundSrc, "/portfolio-media/tae-intro-v1.mp4");
+  assert.equal(tae.backgroundPoster, "/portfolio-media/tae-intro-v1.jpg");
+  assert.notEqual(mugm.backgroundSrc, tae.backgroundSrc);
+  assert.equal(mugm.backgroundSrc, homeProject.videoSrc);
+  const media = selectBackgroundMedia(tae.backgroundSrc);
+  assert.equal(media.src, tae.backgroundSrc);
+  assert.equal(media.playbackRate, 1);
+  assert.equal(media.excerpt, undefined);
+  const player = youtubePlayerOptions(tae, false, "https://www.viannafx.media");
+  assert.equal(player.videoId, "GpLefsKpu-g");
+  assert.equal(player.playerVars.start, 0);
+  assert.equal(player.playerVars.controls, 1);
+});

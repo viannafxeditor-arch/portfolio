@@ -1585,5 +1585,21 @@
         "bytes": 35769481
       }
     ]
+  },
+  "/portfolio-media/tae-intro-v1.mp4": {
+    "treatment": "tae-intro-full-length",
+    "sourceFilename": "INTRO.mp4",
+    "sourceDuration": 37.716667,
+    "duration": 37.716667,
+    "playbackRate": 1,
+    "variants": [
+      {
+        "src": "/portfolio-media/tae-intro-v1.mp4",
+        "width": 1920,
+        "height": 1080,
+        "fps": 60,
+        "bytes": 27497084
+      }
+    ]
   }
 }

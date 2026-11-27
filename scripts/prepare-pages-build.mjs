@@ -12,3 +12,6 @@ console.log("GitHub Pages package prepared with the existing custom domain and d
 // Package the bundled Cinematics media for GitHub Pages.
 const previewMedia = fileURLToPath(new URL("../public/cinematic-media/", import.meta.url));
 if (existsSync(previewMedia)) cpSync(previewMedia, `${output}/cinematic-media`, { recursive: true });
+
+const portfolioMedia = fileURLToPath(new URL("../public/portfolio-media/", import.meta.url));
+if (existsSync(portfolioMedia)) cpSync(portfolioMedia, `${output}/portfolio-media`, { recursive: true });

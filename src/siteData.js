@@ -31,6 +31,8 @@ export const workSections = [
       featuredYouTubeProject,
       {
         id: "youtube-tae-secret-base", youtubeId: "GpLefsKpu-g", startSeconds: 0,
+        backgroundSrc: "/portfolio-media/tae-intro-v1.mp4",
+        backgroundPoster: "/portfolio-media/tae-intro-v1.jpg",
         title: "My Team Can Find ANY Secret Base...", creator: "Tae", creatorHandle: "Taejon", youtubeVerified: true,
         ytJobsStatus: "verified",
         thumb: "https://i.ytimg.com/vi/GpLefsKpu-g/maxresdefault.jpg",
