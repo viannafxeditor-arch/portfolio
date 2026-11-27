@@ -33,6 +33,7 @@ test("featured YouTube video starts at zero with silent looping backgrounds and 
   assert.equal(background.playerVars.mute, 1);
   assert.equal(background.playerVars.loop, 1);
   assert.equal(background.playerVars.playlist, background.videoId);
+  assert.equal(player.host, "https://www.youtube.com");
   assert.equal(player.playerVars.controls, 1);
   assert.equal(player.playerVars.mute, undefined);
   assert.equal(player.playerVars.origin, "https://www.viannafx.media");

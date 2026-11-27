@@ -31,7 +31,7 @@ export function loadYouTubeAPI() {
 export function youtubePlayerOptions(project, background, origin) {
   return {
     videoId: project.youtubeId,
-    host: "https://www.youtube-nocookie.com",
+    host: "https://www.youtube.com",
     playerVars: {
       origin, autoplay: 0, playsinline: 1, rel: 0,
       start: project.startSeconds || 0,

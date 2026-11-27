@@ -46,7 +46,7 @@ export function YouTubeVideo({ project, background = false, active = true, copy 
               else { setStarted(true); volumeRamp?.start(); }
             }
           },
-          onError: () => { if (!disposed) setFailed(true); },
+          onError: event => { if (!disposed) setFailed(event.data || true); },
         },
       });
       player.current = { sync };
@@ -65,7 +65,7 @@ export function YouTubeVideo({ project, background = false, active = true, copy 
   return <div className={`youtube-video${background ? " youtube-video--background" : ""}${started ? " is-playing" : ""}${failed ? " has-error" : ""}`}>
     <img className="youtube-video__poster" src={project.poster} alt="" />
     <div ref={host} className="youtube-video__host" />
-    {!background && failed && <div className="cinema__message" role="status"><p>{copy.error}</p>
+    {!background && failed && <div className="cinema__message" role="status"><p>{[101, 150].includes(failed) ? copy.embedUnavailable : copy.error}</p>
       <a href={`https://www.youtube.com/watch?v=${project.youtubeId}&t=${project.startSeconds || 0}s`} target="_blank" rel="noopener noreferrer">YouTube ↗</a>
     </div>}
   </div>;

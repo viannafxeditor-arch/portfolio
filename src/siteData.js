@@ -73,7 +73,7 @@ export const siteCopy = {
       portraitAlt: "Portrait of Vianna",
     },
     hero: { title: "Portfolio", scroll: "Scroll to explore" },
-    player: { close: "Close player", play: "Play", pause: "Pause", back: "Back 5 seconds", forward: "Forward 5 seconds", mute: "Mute", unmute: "Unmute", volume: "Volume", seek: "Playback position", quality: "Quality", original: "Original", fullscreen: "Full screen", exitFullscreen: "Exit full screen", unavailable: "This video is not available yet.", error: "Unable to load this video.", retry: "Try again", loading: "Loading video…" },
+    player: { close: "Close player", play: "Play", pause: "Pause", back: "Back 5 seconds", forward: "Forward 5 seconds", mute: "Mute", unmute: "Unmute", volume: "Volume", seek: "Playback position", quality: "Quality", original: "Original", fullscreen: "Full screen", exitFullscreen: "Exit full screen", unavailable: "This video is not available yet.", error: "Unable to load this video.", embedUnavailable: "YouTube does not allow this video to play on this website.", retry: "Try again", loading: "Loading video…" },
     library: { empty: "Videos coming soon", format: "Video format" },
     work: {
       youtube: {
@@ -121,7 +121,7 @@ export const siteCopy = {
       portraitAlt: "Retrato de Vianna",
     },
     hero: { title: "Portfólio", scroll: "Role para explorar" },
-    player: { close: "Fechar player", play: "Reproduzir", pause: "Pausar", back: "Voltar 5 segundos", forward: "Avançar 5 segundos", mute: "Silenciar", unmute: "Ativar som", volume: "Volume", seek: "Posição da reprodução", quality: "Qualidade", original: "Original", fullscreen: "Tela cheia", exitFullscreen: "Sair da tela cheia", unavailable: "Este vídeo ainda não está disponível.", error: "Não foi possível carregar este vídeo.", retry: "Tentar novamente", loading: "Carregando vídeo…" },
+    player: { close: "Fechar player", play: "Reproduzir", pause: "Pausar", back: "Voltar 5 segundos", forward: "Avançar 5 segundos", mute: "Silenciar", unmute: "Ativar som", volume: "Volume", seek: "Posição da reprodução", quality: "Qualidade", original: "Original", fullscreen: "Tela cheia", exitFullscreen: "Sair da tela cheia", unavailable: "Este vídeo ainda não está disponível.", error: "Não foi possível carregar este vídeo.", embedUnavailable: "O YouTube não permite reproduzir este vídeo neste site.", retry: "Tentar novamente", loading: "Carregando vídeo…" },
     library: { empty: "Vídeos em breve", format: "Formato de vídeo" },
     work: {
       youtube: {
@@ -169,7 +169,7 @@ export const siteCopy = {
       portraitAlt: "Retrato de Vianna",
     },
     hero: { title: "Portafolio", scroll: "Desplázate para explorar" },
-    player: { close: "Cerrar reproductor", play: "Reproducir", pause: "Pausar", back: "Retroceder 5 segundos", forward: "Avanzar 5 segundos", mute: "Silenciar", unmute: "Activar sonido", volume: "Volumen", seek: "Posición de reproducción", quality: "Calidad", original: "Original", fullscreen: "Pantalla completa", exitFullscreen: "Salir de pantalla completa", unavailable: "Este video aún no está disponible.", error: "No se pudo cargar este video.", retry: "Intentar de nuevo", loading: "Cargando video…" },
+    player: { close: "Cerrar reproductor", play: "Reproducir", pause: "Pausar", back: "Retroceder 5 segundos", forward: "Avanzar 5 segundos", mute: "Silenciar", unmute: "Activar sonido", volume: "Volumen", seek: "Posición de reproducción", quality: "Calidad", original: "Original", fullscreen: "Pantalla completa", exitFullscreen: "Salir de pantalla completa", unavailable: "Este video aún no está disponible.", error: "No se pudo cargar este video.", embedUnavailable: "YouTube no permite reproducir este video en este sitio.", retry: "Intentar de nuevo", loading: "Cargando video…" },
     library: { empty: "Videos próximamente", format: "Formato de video" },
     work: {
       youtube: {
